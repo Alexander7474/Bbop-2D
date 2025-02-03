@@ -190,7 +190,6 @@ void Sprite::Draw(GLint* renderUniforms) const
       glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_TEXTURE_NMAP);
 
       glActiveTexture(GL_TEXTURE1);
-      spriteNormalMap->Bind();
     }else{
       glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_TEXTURE);
     }
@@ -199,7 +198,6 @@ void Sprite::Draw(GLint* renderUniforms) const
       glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_MIX_NMAP);
 
       glActiveTexture(GL_TEXTURE1);
-      spriteNormalMap->Bind();
     }else{
       glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_MIX);
     }
@@ -220,8 +218,6 @@ void Sprite::Draw(GLint* renderUniforms) const
   //unbind all data
   shapeVAO.Unbind();
   spriteTexture->Unbind();
-  if(spriteNormalMap != nullptr)
-    spriteNormalMap->Unbind();
 }
 
 void Sprite::setTexture(const Texture &nTexture)
