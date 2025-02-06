@@ -53,7 +53,7 @@ void main()
 {
   // Pixel de sortie des frame_buffer couleur/frag
   vec4 provisoryColor = vec4(0,0,0,0);
-  vec4 provisoryMap = vec4(1,1,1,1);
+  vec4 provisoryMap = vec4(0,0,0,1);
 
   // coloration du pixel en fonction de rendermode
   switch (renderMode){
@@ -179,7 +179,7 @@ void main()
   provisory = texture(outTexture, TexCoord);
 
   //position du fragment actuelle
-  vec2 convertedFrag = convertCoords(gl_FragCoord.xy);
+  vec2 convertedFrag = normalizeVec2(convertCoords(gl_FragCoord.xy));
 
   vec4 finalLight = ambiantLight;
   for (int i = 0; i < nLight; i++){
@@ -189,20 +189,27 @@ void main()
 
     //déterminer si le fragment est dans le cône de lumière 
     vec2 lightDir = normalize(vec2(cos(lights[i].rotationAngle), sin(lights[i].rotationAngle))); // Direction de la lumière
-    vec2 fragDir = normalize(normalizeVec2(convertedFrag) - lightPos.xy); // Direction du fragment vers la lumière
+    vec2 fragDir = normalize(convertedFrag - lightPos.xy); // Direction du fragment vers la lumière
     float angleCos = dot(lightDir, fragDir); // Cosinus de l'angle entre les deux
     if (angleCos >= cos(lights[i].openAngle)) {
       // Le fragment est dans le cône
 
       //disatnce entre la light et le fragment 
-      float distance = length(lightPos.xy - normalizeVec2(convertedFrag)) * camScale;
+      float distance = length(lightPos.xy - convertedFrag) * camScale;
 
       //valeur rgb de la normal map a notre position 
-      vec3 normal = texture(outNMapTexture, TexCoord).rgb * 2.0 - 1.0;
+      vec3 normal = normalize(texture(outNMapTexture, TexCoord).rgb);
 
-      //diffusion en tre le vecteur normal et celui de la lumière
-      float diffuse = max(dot(normal.xyz, vec3(lightDir,0.0)), 0.0);
+      float diffuse;
 
+      if(normal.xyz != vec3(0.0,0.0,0.0)){
+        lightDir = normalize(convertedFrag - lightPos.xy);
+        //diffusion en tre le vecteur normal et celui de la lumière
+        diffuse = max(dot(normal.xyz, vec3(lightDir,0.0)), 0.0);
+      }else{
+        diffuse = 1.0;
+      }
+      
       //attenuation en fonction de la distance et des différente valeur de la light 
       float attenuation = 1.0 / (lights[i].constantAttenuation + lights[i].linearAttenuation * distance + lights[i].quadraticAttenuation * distance * distance);
 
@@ -220,6 +227,7 @@ void main()
 
   //pixel final
   FragColor = provisory*finalLight;
+  //FragColor = texture(outNMapTexture, TexCoord);
 }
 
 )glsl";
