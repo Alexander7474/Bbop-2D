@@ -53,7 +53,7 @@ void main()
 {
   // Pixel de sortie des frame_buffer couleur/frag
   vec4 provisoryColor = vec4(0,0,0,0);
-  vec4 provisoryMap = vec4(0,0,1,1);
+  vec4 provisoryMap = vec4(0,0,0,1);
 
   // coloration du pixel en fonction de rendermode
   switch (renderMode){
@@ -200,13 +200,12 @@ void main()
       //valeur rgb de la normal map a notre position 
       vec3 normal = texture(outNMapTexture, TexCoord).rgb * 2.0 - 1.0;
 
-      float diffuse;
 
-      if(normal.xyz != vec3(0.0,0.0,0.0)){
-        lightDir = normalize(lightPos.xy - convertedFrag);
-        //diffusion en tre le vecteur normal et celui de la lumière
-        diffuse = max(dot(normal, vec3(lightDir,0.0)), 0.0);
-      }else{
+      lightDir = normalize(lightPos.xy - convertedFrag);
+      //diffusion en tre le vecteur normal et celui de la lumière
+      float diffuse = max(dot(normal, vec3(lightDir,0.0)), 0.0);
+
+      if(normal == vec3(-1,-1,-1)){
         diffuse = 1.0;
       }
       
@@ -214,10 +213,10 @@ void main()
       float attenuation = 1.0 / (lights[i].constantAttenuation + lights[i].linearAttenuation * distance + lights[i].quadraticAttenuation * distance * distance);
 
       //intensité de la light en fonction de son atténuation et de sa diffusion 
-      float intensity = attenuation*lights[i].intensity*diffuse;
+      float intensity = attenuation*lights[i].intensity;
 
       //emballage dans un vec4
-      vec4 thislight = intensity*vec4(lights[i].color, 0.0);
+      vec4 thislight = intensity*vec4(lights[i].color, 0.0)*diffuse;
       finalLight+=thislight;
     }
   }
