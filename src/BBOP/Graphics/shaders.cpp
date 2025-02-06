@@ -53,7 +53,7 @@ void main()
 {
   // Pixel de sortie des frame_buffer couleur/frag
   vec4 provisoryColor = vec4(0,0,0,0);
-  vec4 provisoryMap = vec4(0,0,0,1);
+  vec4 provisoryMap = vec4(0,0,1,1);
 
   // coloration du pixel en fonction de rendermode
   switch (renderMode){
@@ -198,14 +198,14 @@ void main()
       float distance = length(lightPos.xy - convertedFrag) * camScale;
 
       //valeur rgb de la normal map a notre position 
-      vec3 normal = normalize(texture(outNMapTexture, TexCoord).rgb);
+      vec3 normal = texture(outNMapTexture, TexCoord).rgb * 2.0 - 1.0;
 
       float diffuse;
 
       if(normal.xyz != vec3(0.0,0.0,0.0)){
-        lightDir = normalize(convertedFrag - lightPos.xy);
+        lightDir = normalize(lightPos.xy - convertedFrag);
         //diffusion en tre le vecteur normal et celui de la lumière
-        diffuse = max(dot(normal.xyz, vec3(lightDir,0.0)), 0.0);
+        diffuse = max(dot(normal, vec3(lightDir,0.0)), 0.0);
       }else{
         diffuse = 1.0;
       }
