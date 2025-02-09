@@ -21,7 +21,7 @@ int bbopInit(int windowX, int windowY, const char* windowName, GLFWwindow*& wind
   //Initialisation Début ############################################################################
   // Initialisation de GLFW
   if (!glfwInit()) {
-      cerr << "Échec de l'initialisation de GLFW" << endl;
+      LOGS.push_back("BBOP ERROR -> Échec de l'initialisation de GLFW");
       return -1;
   }
   // Configuration de GLFW pour utiliser le profil OpenGL Core
@@ -32,19 +32,19 @@ int bbopInit(int windowX, int windowY, const char* windowName, GLFWwindow*& wind
   // Création d'une fenêtre GLFW
   window = glfwCreateWindow(windowX, windowY, windowName, nullptr, nullptr);
   if (!window) {
-      cerr << "Échec de la création de la fenêtre GLFW" << endl;
-      glfwTerminate();
+      LOGS.push_back("BBOP ERROR -> Échec de la création de la fenêtre GLFW");
       return -1;
   }
   BBOP_WINDOW_SIZE.x = windowX; BBOP_WINDOW_SIZE.y = windowY;
   BBOP_WINDOW_RESOLUTION.x = windowX; BBOP_WINDOW_RESOLUTION.y = windowY;
+  
   // Définition de la fenêtre comme le contexte OpenGL courant
   glfwMakeContextCurrent(window);
+
   // Initialisation de GLEW
   glewExperimental = GL_TRUE;
   if (glewInit() != GLEW_OK) {
-      cerr << "Échec de l'initialisation de GLEW" << endl;
-      glfwTerminate();
+      LOGS.push_back("BBOP ERROR -> Échec de l'initialisation de GLEW");
       return -1;
   }
   
