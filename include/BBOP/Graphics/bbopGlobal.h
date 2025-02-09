@@ -17,7 +17,7 @@
 /**
  * @brief Version de bbop
  */
-#define BBOP_VERSION "0.4-alpha"
+#define BBOP_VERSION "0.4.1-alpha"
 
 /**
  * Local headers

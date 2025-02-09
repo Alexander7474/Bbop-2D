@@ -33,7 +33,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4-alpha</span>
+   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4.1-alpha</span>
    </div>
    <div id="projectbrief">Opengl library to build 2d apps and game that implement a light system named Lumop</div>
   </td>
@@ -123,7 +123,7 @@ $(function(){initNavTree('bbopGlobal_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef GLOBALS_H</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define GLOBALS_H</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a38cfa5a9f73ba8c98bd7795f47f777ba">   20</a></span><span class="preprocessor">#define BBOP_VERSION &quot;0.3&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a38cfa5a9f73ba8c98bd7795f47f777ba">   20</a></span><span class="preprocessor">#define BBOP_VERSION &quot;0.4.1-alpha&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="bbopMathClass_8h.html">bbopMathClass.h</a>&quot;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
@@ -138,40 +138,57 @@ $(function(){initNavTree('bbopGlobal_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169">   40</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169">BBOP_SHADER_MODE_ENUM</a>:<span class="keywordtype">int</span> {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4">   41</a></span>  <a class="code hl_enumvalue" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4">BBOP_SHADER_MODE_TEXTURE</a>=0,</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35">   42</a></span>  <a class="code hl_enumvalue" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35">BBOP_SHADER_MODE_COLOR</a>=1,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c">   43</a></span>  <a class="code hl_enumvalue" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c">BBOP_SHADER_MODE_MIX</a>=2</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c">   43</a></span>  <a class="code hl_enumvalue" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c">BBOP_SHADER_MODE_MIX</a>=2,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2">   44</a></span>  <a class="code hl_enumvalue" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2">BBOP_SHADER_MODE_TEXTURE_NMAP</a>=3,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b">   45</a></span>  <a class="code hl_enumvalue" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b">BBOP_SHADER_MODE_MIX_NMAP</a>=4</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">extern</span> <a class="code hl_class" href="classVector2i.html">Vector2i</a> <a class="code hl_variable" href="bbopGlobal_8h.html#aef57dad90411a93905fa9f29c6f459cf">BBOP_WINDOW_SIZE</a>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">extern</span> <a class="code hl_class" href="classVector2i.html">Vector2i</a> <a class="code hl_variable" href="bbopGlobal_8h.html#aab5088d67a1f295b589fb44bc21834c9">BBOP_WINDOW_RESOLUTION</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>std::string <a class="code hl_function" href="bbopGlobal_8h.html#a5887937da025250f07c56783a4099d21">bbopGetFileData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classBbopDrawable.html">   72</a></span><span class="keyword">class </span><a class="code hl_class" href="classBbopDrawable.html">BbopDrawable</a></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classBbopDrawable.html#aa5e3bb4b5f543296e3fd4040d182a93a">   82</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBbopDrawable.html#aa5e3bb4b5f543296e3fd4040d182a93a">Draw</a>(GLint renderModeLoc) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
-</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a8c7b75dc789dbc490fcef678150d085c">   51</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_RENDER_MODE 0</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#ab013dbf6f5ca8c5ab3498a4c46ecbb1d">   52</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_TEXTURE 1</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a5caba84101da29034331171976c7cb79">   53</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_NORMAL_MAP 2</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#ae0b0803e37207cbe4a9c388715bf6b1f">   54</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_PROJECTION 3 </span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a3280b736e7e484796d5888a88198f8a9">   55</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_PROJECTION_CAM 4 </span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#aee6a7688899fd3fa53dd9c1bfc66e281">   56</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_WINDOW_SIZE 5</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a4b65eabd2147d7254176da438587b9d6">   57</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION 6 </span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#aec14444a3634529b8669ad40c03430ff">   58</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_CAM_SCALE 7</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a49e2f165364a33a7c3853b60e54f30c2">   59</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_AMBIANT_LIGHT 8</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#adba29c13b74bea711aa1d291c5d4e1e4">   60</a></span><span class="preprocessor">#define BBOP_UNIFORM_ADDR_LIGHTS_N 9</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="bbopGlobal_8h.html#a2c8251c11feedb6c8ec7ffc6bdfebf2e">   65</a></span><span class="preprocessor">#define BBOP_UNIFORM_N 10</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">extern</span> <a class="code hl_class" href="classVector2i.html">Vector2i</a> <a class="code hl_variable" href="bbopGlobal_8h.html#aef57dad90411a93905fa9f29c6f459cf">BBOP_WINDOW_SIZE</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">extern</span> <a class="code hl_class" href="classVector2i.html">Vector2i</a> <a class="code hl_variable" href="bbopGlobal_8h.html#aab5088d67a1f295b589fb44bc21834c9">BBOP_WINDOW_RESOLUTION</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>std::string <a class="code hl_function" href="bbopGlobal_8h.html#a5887937da025250f07c56783a4099d21">bbopGetFileData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">extern</span> std::vector&lt;std::string&gt; <a class="code hl_variable" href="bbopGlobal_8h.html#a05ea7bea4c3d99689174e9ee3f7c0b96">LOGS</a>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif </span><span class="comment">// ! GLOBALS_H</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="};">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classBbopDrawable.html">   93</a></span><span class="keyword">class </span><a class="code hl_class" href="classBbopDrawable.html">BbopDrawable</a></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classBbopDrawable.html#aa4427000ecfdf949ece85876692b7e09">  103</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBbopDrawable.html#aa4427000ecfdf949ece85876692b7e09">Draw</a>(GLint* renderUniforms) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">extern</span> std::vector&lt;std::string&gt; <a class="code hl_variable" href="bbopGlobal_8h.html#a05ea7bea4c3d99689174e9ee3f7c0b96">LOGS</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif </span><span class="comment">// ! GLOBALS_H</span></div>
 <div class="ttc" id="abbopGlobal_8h_html_a05ea7bea4c3d99689174e9ee3f7c0b96"><div class="ttname"><a href="bbopGlobal_8h.html#a05ea7bea4c3d99689174e9ee3f7c0b96">LOGS</a></div><div class="ttdeci">std::vector&lt; std::string &gt; LOGS</div><div class="ttdef"><b>Definition</b> bbopGlobal.cpp:22</div></div>
 <div class="ttc" id="abbopGlobal_8h_html_a2bd6ca7b9ba892cf01317f0639b01169"><div class="ttname"><a href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169">BBOP_SHADER_MODE_ENUM</a></div><div class="ttdeci">BBOP_SHADER_MODE_ENUM</div><div class="ttdoc">RenderMode avec uniquement les textures.</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:40</div></div>
 <div class="ttc" id="abbopGlobal_8h_html_a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35"><div class="ttname"><a href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35">BBOP_SHADER_MODE_COLOR</a></div><div class="ttdeci">@ BBOP_SHADER_MODE_COLOR</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:42</div></div>
+<div class="ttc" id="abbopGlobal_8h_html_a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b"><div class="ttname"><a href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b">BBOP_SHADER_MODE_MIX_NMAP</a></div><div class="ttdeci">@ BBOP_SHADER_MODE_MIX_NMAP</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:45</div></div>
 <div class="ttc" id="abbopGlobal_8h_html_a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c"><div class="ttname"><a href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c">BBOP_SHADER_MODE_MIX</a></div><div class="ttdeci">@ BBOP_SHADER_MODE_MIX</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:43</div></div>
 <div class="ttc" id="abbopGlobal_8h_html_a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4"><div class="ttname"><a href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4">BBOP_SHADER_MODE_TEXTURE</a></div><div class="ttdeci">@ BBOP_SHADER_MODE_TEXTURE</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:41</div></div>
+<div class="ttc" id="abbopGlobal_8h_html_a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2"><div class="ttname"><a href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2">BBOP_SHADER_MODE_TEXTURE_NMAP</a></div><div class="ttdeci">@ BBOP_SHADER_MODE_TEXTURE_NMAP</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:44</div></div>
 <div class="ttc" id="abbopGlobal_8h_html_a5887937da025250f07c56783a4099d21"><div class="ttname"><a href="bbopGlobal_8h.html#a5887937da025250f07c56783a4099d21">bbopGetFileData</a></div><div class="ttdeci">std::string bbopGetFileData(const char *filename)</div><div class="ttdoc">Récupère les données d&#39;un fichier et les renvoie sous forme de string.</div><div class="ttdef"><b>Definition</b> bbopGlobal.cpp:25</div></div>
 <div class="ttc" id="abbopGlobal_8h_html_aab5088d67a1f295b589fb44bc21834c9"><div class="ttname"><a href="bbopGlobal_8h.html#aab5088d67a1f295b589fb44bc21834c9">BBOP_WINDOW_RESOLUTION</a></div><div class="ttdeci">Vector2i BBOP_WINDOW_RESOLUTION</div><div class="ttdoc">Variable global qui stoke la résolution de la fenêtre.</div></div>
 <div class="ttc" id="abbopGlobal_8h_html_aef57dad90411a93905fa9f29c6f459cf"><div class="ttname"><a href="bbopGlobal_8h.html#aef57dad90411a93905fa9f29c6f459cf">BBOP_WINDOW_SIZE</a></div><div class="ttdeci">Vector2i BBOP_WINDOW_SIZE</div><div class="ttdoc">Variable global qui stoke la taille de la fenêtre.</div></div>
 <div class="ttc" id="abbopMathClass_8h_html"><div class="ttname"><a href="bbopMathClass_8h.html">bbopMathClass.h</a></div></div>
-<div class="ttc" id="aclassBbopDrawable_html"><div class="ttname"><a href="classBbopDrawable.html">BbopDrawable</a></div><div class="ttdoc">Class Parent de tous ce qui peut être dessiné par une Scene.</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:73</div></div>
-<div class="ttc" id="aclassBbopDrawable_html_aa5e3bb4b5f543296e3fd4040d182a93a"><div class="ttname"><a href="classBbopDrawable.html#aa5e3bb4b5f543296e3fd4040d182a93a">BbopDrawable::Draw</a></div><div class="ttdeci">virtual void Draw(GLint renderModeLoc) const =0</div><div class="ttdoc">Déssine l&#39;objet héritant de la class.</div></div>
+<div class="ttc" id="aclassBbopDrawable_html"><div class="ttname"><a href="classBbopDrawable.html">BbopDrawable</a></div><div class="ttdoc">Class Parent de tous ce qui peut être dessiné par une Scene.</div><div class="ttdef"><b>Definition</b> bbopGlobal.h:94</div></div>
+<div class="ttc" id="aclassBbopDrawable_html_aa4427000ecfdf949ece85876692b7e09"><div class="ttname"><a href="classBbopDrawable.html#aa4427000ecfdf949ece85876692b7e09">BbopDrawable::Draw</a></div><div class="ttdeci">virtual void Draw(GLint *renderUniforms) const =0</div><div class="ttdoc">Déssine l&#39;objet héritant de la class.</div></div>
 <div class="ttc" id="aclassVector2i_html"><div class="ttname"><a href="classVector2i.html">Vector2i</a></div><div class="ttdef"><b>Definition</b> bbopMathClass.h:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

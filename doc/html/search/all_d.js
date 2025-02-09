@@ -6,7 +6,7 @@ var searchData=
   ['lasttime_3',['lastTime',['../benchmark_8cpp.html#a9648c4b3c5e8528ebc2745f7cb76ff62',1,'benchmark.cpp']]],
   ['les_20triangles_4',['Et les triangles ?',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md7',1,'']]],
   ['librairies_20externes_20nécessaires_5',['Librairies externes nécessaires',['../md_README.html#autotoc_md20',1,'']]],
-  ['library_6',['Bbop Library',['../md_README.html',1,'']]],
+  ['library_6',['Bbop 2D Library',['../md_README.html',1,'']]],
   ['light_7',['Light',['../classLight.html',1,'Light'],['../classLight.html#aa7ca93de13c3d0ff60c26328b79dd008',1,'Light::Light(Vector2f nPos, float nIntensity, Vector3i nRGB, float nConstantAttenuation, float nLinearAttenuation, float nQuadraticAttenuation)'],['../classLight.html#aeb5df09a25a32f19fdffa761268ba24f',1,'Light::Light()'],['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md13',1,'Light']]],
   ['lightclass_2ecpp_8',['lightClass.cpp',['../lightClass_8cpp.html',1,'']]],
   ['lightclass_2eh_9',['lightClass.h',['../lightClass_8h.html',1,'']]],

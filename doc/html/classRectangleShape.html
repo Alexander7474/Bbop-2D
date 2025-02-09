@@ -33,7 +33,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4-alpha</span>
+   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4.1-alpha</span>
    </div>
    <div id="projectbrief">Opengl library to build 2d apps and game that implement a light system named Lumop</div>
   </td>
@@ -138,9 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3b8068272a111ae153ffe8d7bd1f7686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab433178500de4f595f0cce295af08a7f" id="r_ab433178500de4f595f0cce295af08a7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab433178500de4f595f0cce295af08a7f">RectangleShape</a> (<a class="el" href="classVector2f.html">Vector2f</a> nSize, <a class="el" href="classVector2f.html">Vector2f</a> nPos, <a class="el" href="classVector3i.html">Vector3i</a> nRGB, <a class="el" href="classVector2f.html">Vector2f</a> nOrigin, float nRotation, float nAlpha)</td></tr>
 <tr class="separator:ab433178500de4f595f0cce295af08a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28e8a69884d7c609a377a09910a4b892" id="r_a28e8a69884d7c609a377a09910a4b892"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28e8a69884d7c609a377a09910a4b892">Draw</a> (GLint renderModeLoc) const override</td></tr>
-<tr class="memdesc:a28e8a69884d7c609a377a09910a4b892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déssine l'objet héritant de la class.  <br /></td></tr>
-<tr class="separator:a28e8a69884d7c609a377a09910a4b892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1dd5c46c27d9c36f4482848d7519a8a" id="r_ae1dd5c46c27d9c36f4482848d7519a8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1dd5c46c27d9c36f4482848d7519a8a">Draw</a> (GLint *renderUniforms) const override</td></tr>
+<tr class="memdesc:ae1dd5c46c27d9c36f4482848d7519a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déssine l'objet héritant de la class.  <br /></td></tr>
+<tr class="separator:ae1dd5c46c27d9c36f4482848d7519a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classShape"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classShape')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classShape.html">Shape</a></td></tr>
 <tr class="memitem:a4226dfc8b139b36d995b583b8e940681 inherit pub_methods_classShape" id="r_a4226dfc8b139b36d995b583b8e940681"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShape.html#a4226dfc8b139b36d995b583b8e940681">Shape</a> (GLfloat *vertices, GLsizeiptr verticesSize, GLuint *indices, GLsizeiptr indicesSize)</td></tr>
 <tr class="memdesc:a4226dfc8b139b36d995b583b8e940681 inherit pub_methods_classShape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de <a class="el" href="classShape.html" title="Class parente de toutes les formes géométriques(RectangleShape, ConvexShape, CircleShape,...">Shape</a>.  <br /></td></tr>
@@ -369,8 +369,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a28e8a69884d7c609a377a09910a4b892" name="a28e8a69884d7c609a377a09910a4b892"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28e8a69884d7c609a377a09910a4b892">&#9670;&#160;</a></span>Draw()</h2>
+<a id="ae1dd5c46c27d9c36f4482848d7519a8a" name="ae1dd5c46c27d9c36f4482848d7519a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1dd5c46c27d9c36f4482848d7519a8a">&#9670;&#160;</a></span>Draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -381,7 +381,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void RectangleShape::Draw </td>
           <td>(</td>
-          <td class="paramtype">GLint</td>          <td class="paramname"><span class="paramname"><em>renderModeLoc</em></span></td><td>)</td>
+          <td class="paramtype">GLint *</td>          <td class="paramname"><span class="paramname"><em>renderUniforms</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -396,7 +396,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Cette méthode est utilisé dans Scene.Draw(BbopDrawable) qui lui transmet le renderModeLoc.</p>
 <dl class="section see"><dt>See also</dt><dd>Scene.Draw(BbopDrawable) </dd></dl>
 
-<p>Implements <a class="el" href="classBbopDrawable.html#aa5e3bb4b5f543296e3fd4040d182a93a">BbopDrawable</a>.</p>
+<p>Implements <a class="el" href="classBbopDrawable.html#aa4427000ecfdf949ece85876692b7e09">BbopDrawable</a>.</p>
 
 </div>
 </div>

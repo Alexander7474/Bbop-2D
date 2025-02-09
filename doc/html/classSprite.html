@@ -33,7 +33,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4-alpha</span>
+   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4.1-alpha</span>
    </div>
    <div id="projectbrief">Opengl library to build 2d apps and game that implement a light system named Lumop</div>
   </td>
@@ -153,15 +153,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb3f0673884d42b6b116f0c4d1a47b77" id="r_abb3f0673884d42b6b116f0c4d1a47b77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSprite.html">Sprite</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb3f0673884d42b6b116f0c4d1a47b77">operator=</a> (const <a class="el" href="classSprite.html">Sprite</a> &amp;other)</td></tr>
 <tr class="memdesc:abb3f0673884d42b6b116f0c4d1a47b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operateur = de sprite.  <br /></td></tr>
 <tr class="separator:abb3f0673884d42b6b116f0c4d1a47b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9be42bc2be161b8eec4bcc9d1141ba5" id="r_af9be42bc2be161b8eec4bcc9d1141ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9be42bc2be161b8eec4bcc9d1141ba5">Draw</a> (GLint renderModeLoc) const override</td></tr>
-<tr class="memdesc:af9be42bc2be161b8eec4bcc9d1141ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déssine l'objet héritant de la class.  <br /></td></tr>
-<tr class="separator:af9be42bc2be161b8eec4bcc9d1141ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2777509b78584c2dc289387a1951fcbd" id="r_a2777509b78584c2dc289387a1951fcbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2777509b78584c2dc289387a1951fcbd">Draw</a> (GLint *renderUniforms) const override</td></tr>
+<tr class="memdesc:a2777509b78584c2dc289387a1951fcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déssine l'objet héritant de la class.  <br /></td></tr>
+<tr class="separator:a2777509b78584c2dc289387a1951fcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e579e2e543017ea87acc42e5d7108b0" id="r_a2e579e2e543017ea87acc42e5d7108b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e579e2e543017ea87acc42e5d7108b0">setTexture</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;nTexture)</td></tr>
 <tr class="memdesc:a2e579e2e543017ea87acc42e5d7108b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la texture du sprite.  <br /></td></tr>
 <tr class="separator:a2e579e2e543017ea87acc42e5d7108b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a0c1b20bc89e2898a75a7ec4c721427" id="r_a9a0c1b20bc89e2898a75a7ec4c721427"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTexture.html">Texture</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a0c1b20bc89e2898a75a7ec4c721427">getTexture</a> ()</td></tr>
-<tr class="memdesc:a9a0c1b20bc89e2898a75a7ec4c721427"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie un pointeur vers la texture du sprite  <br /></td></tr>
-<tr class="separator:a9a0c1b20bc89e2898a75a7ec4c721427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c2d1f891be61ecb841266d1dbf9f5dc" id="r_a8c2d1f891be61ecb841266d1dbf9f5dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTexture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c2d1f891be61ecb841266d1dbf9f5dc">getTexture</a> ()</td></tr>
+<tr class="memdesc:a8c2d1f891be61ecb841266d1dbf9f5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie un pointeur vers la texture du sprite  <br /></td></tr>
+<tr class="separator:a8c2d1f891be61ecb841266d1dbf9f5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeffb47a9068348799c1d452e8607ac7" id="r_afeffb47a9068348799c1d452e8607ac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afeffb47a9068348799c1d452e8607ac7">setNormalMap</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;nNormalMap)</td></tr>
+<tr class="memdesc:afeffb47a9068348799c1d452e8607ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la texture de la normal map du sprite.  <br /></td></tr>
+<tr class="separator:afeffb47a9068348799c1d452e8607ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb7104232133a8c2c3dfa5e3b8b5864" id="r_abdb7104232133a8c2c3dfa5e3b8b5864"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTexture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdb7104232133a8c2c3dfa5e3b8b5864">getNormalMap</a> ()</td></tr>
+<tr class="memdesc:abdb7104232133a8c2c3dfa5e3b8b5864"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la normal map du sprite  <br /></td></tr>
+<tr class="separator:abdb7104232133a8c2c3dfa5e3b8b5864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a893f004e6c5e827be939b0e362c97cc9" id="r_a893f004e6c5e827be939b0e362c97cc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a893f004e6c5e827be939b0e362c97cc9">getRGBFilterState</a> () const</td></tr>
 <tr class="memdesc:a893f004e6c5e827be939b0e362c97cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie si oui ou non le filtre de couleur est activé  <br /></td></tr>
 <tr class="separator:a893f004e6c5e827be939b0e362c97cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -505,8 +511,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af9be42bc2be161b8eec4bcc9d1141ba5" name="af9be42bc2be161b8eec4bcc9d1141ba5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9be42bc2be161b8eec4bcc9d1141ba5">&#9670;&#160;</a></span>Draw()</h2>
+<a id="a2777509b78584c2dc289387a1951fcbd" name="a2777509b78584c2dc289387a1951fcbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2777509b78584c2dc289387a1951fcbd">&#9670;&#160;</a></span>Draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -517,7 +523,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Sprite::Draw </td>
           <td>(</td>
-          <td class="paramtype">GLint</td>          <td class="paramname"><span class="paramname"><em>renderModeLoc</em></span></td><td>)</td>
+          <td class="paramtype">GLint *</td>          <td class="paramname"><span class="paramname"><em>renderUniforms</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -532,7 +538,7 @@ Protected Attributes</h2></td></tr>
 <p>Cette méthode est utilisé dans Scene.Draw(BbopDrawable) qui lui transmet le renderModeLoc.</p>
 <dl class="section see"><dt>See also</dt><dd>Scene.Draw(BbopDrawable) </dd></dl>
 
-<p>Implements <a class="el" href="classBbopDrawable.html#aa5e3bb4b5f543296e3fd4040d182a93a">BbopDrawable</a>.</p>
+<p>Implements <a class="el" href="classBbopDrawable.html#aa4427000ecfdf949ece85876692b7e09">BbopDrawable</a>.</p>
 
 </div>
 </div>
@@ -574,6 +580,26 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="abdb7104232133a8c2c3dfa5e3b8b5864" name="abdb7104232133a8c2c3dfa5e3b8b5864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb7104232133a8c2c3dfa5e3b8b5864">&#9670;&#160;</a></span>getNormalMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Sprite::getNormalMap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie la normal map du sprite </p>
+<dl class="section return"><dt>Returns</dt><dd>spriteNormalMap pointeur vers la <a class="el" href="classTexture.html" title="Contient une texture qui peut être utilisé dans un sprite.">Texture</a> de la normal map </dd></dl>
+
+</div>
+</div>
 <a id="a893f004e6c5e827be939b0e362c97cc9" name="a893f004e6c5e827be939b0e362c97cc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a893f004e6c5e827be939b0e362c97cc9">&#9670;&#160;</a></span>getRGBFilterState()</h2>
 
@@ -594,14 +620,14 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9a0c1b20bc89e2898a75a7ec4c721427" name="a9a0c1b20bc89e2898a75a7ec4c721427"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a0c1b20bc89e2898a75a7ec4c721427">&#9670;&#160;</a></span>getTexture()</h2>
+<a id="a8c2d1f891be61ecb841266d1dbf9f5dc" name="a8c2d1f891be61ecb841266d1dbf9f5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2d1f891be61ecb841266d1dbf9f5dc">&#9670;&#160;</a></span>getTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classTexture.html">Texture</a> &amp; Sprite::getTexture </td>
+          <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Sprite::getTexture </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -610,6 +636,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>renvoie un pointeur vers la texture du sprite </p>
+<dl class="section return"><dt>Returns</dt><dd>spriteTexture pointeur vers la <a class="el" href="classTexture.html" title="Contient une texture qui peut être utilisé dans un sprite.">Texture</a> du sprite </dd></dl>
 
 </div>
 </div>
@@ -629,6 +656,32 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Operateur = de sprite. </p>
+
+</div>
+</div>
+<a id="afeffb47a9068348799c1d452e8607ac7" name="afeffb47a9068348799c1d452e8607ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeffb47a9068348799c1d452e8607ac7">&#9670;&#160;</a></span>setNormalMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sprite::setNormalMap </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTexture.html">Texture</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>nNormalMap</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change la texture de la normal map du sprite. </p>
+<p>le <a class="el" href="classSprite.html" title="Gère un Sprite (Rectangle avec une Texture)">Sprite</a> utilise automatiquement sa normal map lors du rendue dès que le pointer vers celle ci est non null</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nNormalMap</td><td><a class="el" href="classTexture.html" title="Contient une texture qui peut être utilisé dans un sprite.">Texture</a> de normal map </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

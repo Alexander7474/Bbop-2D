@@ -7,7 +7,7 @@ var classConvexShape =
     [ "ConvexShape", "classConvexShape.html#a07a925553047371dab9f74e69f046efc", null ],
     [ "ConvexShape", "classConvexShape.html#aaf1377030443034b94c25df481d140cb", null ],
     [ "~ConvexShape", "classConvexShape.html#acc0bda1a2bd265e50e3a64d6bf6ff6c7", null ],
-    [ "Draw", "classConvexShape.html#a4963a13641d5e3284cba8f8ccaf8551e", null ],
+    [ "Draw", "classConvexShape.html#ac20858b16a342abe588e5ab8c15619ff", null ],
     [ "initConvex", "classConvexShape.html#a453050d756ba196d902b48257364a7a4", null ],
     [ "operator=", "classConvexShape.html#acb4e6c079deca6cb0b3fda2c44fa8f9e", null ]
 ];

@@ -33,7 +33,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4-alpha</span>
+   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4.1-alpha</span>
    </div>
    <div id="projectbrief">Opengl library to build 2d apps and game that implement a light system named Lumop</div>
   </td>
@@ -131,15 +131,44 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a38cfa5a9f73ba8c98bd7795f47f777ba" id="r_a38cfa5a9f73ba8c98bd7795f47f777ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38cfa5a9f73ba8c98bd7795f47f777ba">BBOP_VERSION</a>&#160;&#160;&#160;&quot;0.3&quot;</td></tr>
+<tr class="memitem:a38cfa5a9f73ba8c98bd7795f47f777ba" id="r_a38cfa5a9f73ba8c98bd7795f47f777ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38cfa5a9f73ba8c98bd7795f47f777ba">BBOP_VERSION</a>&#160;&#160;&#160;&quot;0.4.1-alpha&quot;</td></tr>
 <tr class="memdesc:a38cfa5a9f73ba8c98bd7795f47f777ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version de bbop.  <br /></td></tr>
 <tr class="separator:a38cfa5a9f73ba8c98bd7795f47f777ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7b75dc789dbc490fcef678150d085c" id="r_a8c7b75dc789dbc490fcef678150d085c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c7b75dc789dbc490fcef678150d085c">BBOP_UNIFORM_ADDR_RENDER_MODE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a8c7b75dc789dbc490fcef678150d085c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détermine la place de l'adresse d'une valeur uniform dans le tableau d'adresse d'uniform du shader par default.  <br /></td></tr>
+<tr class="separator:a8c7b75dc789dbc490fcef678150d085c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab013dbf6f5ca8c5ab3498a4c46ecbb1d" id="r_ab013dbf6f5ca8c5ab3498a4c46ecbb1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab013dbf6f5ca8c5ab3498a4c46ecbb1d">BBOP_UNIFORM_ADDR_TEXTURE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ab013dbf6f5ca8c5ab3498a4c46ecbb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5caba84101da29034331171976c7cb79" id="r_a5caba84101da29034331171976c7cb79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5caba84101da29034331171976c7cb79">BBOP_UNIFORM_ADDR_NORMAL_MAP</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a5caba84101da29034331171976c7cb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b0803e37207cbe4a9c388715bf6b1f" id="r_ae0b0803e37207cbe4a9c388715bf6b1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0b0803e37207cbe4a9c388715bf6b1f">BBOP_UNIFORM_ADDR_PROJECTION</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:ae0b0803e37207cbe4a9c388715bf6b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3280b736e7e484796d5888a88198f8a9" id="r_a3280b736e7e484796d5888a88198f8a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3280b736e7e484796d5888a88198f8a9">BBOP_UNIFORM_ADDR_PROJECTION_CAM</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a3280b736e7e484796d5888a88198f8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6a7688899fd3fa53dd9c1bfc66e281" id="r_aee6a7688899fd3fa53dd9c1bfc66e281"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee6a7688899fd3fa53dd9c1bfc66e281">BBOP_UNIFORM_ADDR_WINDOW_SIZE</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:aee6a7688899fd3fa53dd9c1bfc66e281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b65eabd2147d7254176da438587b9d6" id="r_a4b65eabd2147d7254176da438587b9d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b65eabd2147d7254176da438587b9d6">BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a4b65eabd2147d7254176da438587b9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec14444a3634529b8669ad40c03430ff" id="r_aec14444a3634529b8669ad40c03430ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec14444a3634529b8669ad40c03430ff">BBOP_UNIFORM_ADDR_CAM_SCALE</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:aec14444a3634529b8669ad40c03430ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e2f165364a33a7c3853b60e54f30c2" id="r_a49e2f165364a33a7c3853b60e54f30c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49e2f165364a33a7c3853b60e54f30c2">BBOP_UNIFORM_ADDR_AMBIANT_LIGHT</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a49e2f165364a33a7c3853b60e54f30c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba29c13b74bea711aa1d291c5d4e1e4" id="r_adba29c13b74bea711aa1d291c5d4e1e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adba29c13b74bea711aa1d291c5d4e1e4">BBOP_UNIFORM_ADDR_LIGHTS_N</a>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:adba29c13b74bea711aa1d291c5d4e1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8251c11feedb6c8ec7ffc6bdfebf2e" id="r_a2c8251c11feedb6c8ec7ffc6bdfebf2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c8251c11feedb6c8ec7ffc6bdfebf2e">BBOP_UNIFORM_N</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a2c8251c11feedb6c8ec7ffc6bdfebf2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre d'uniform a envoyer au shader.  <br /></td></tr>
+<tr class="separator:a2c8251c11feedb6c8ec7ffc6bdfebf2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a2bd6ca7b9ba892cf01317f0639b01169" id="r_a2bd6ca7b9ba892cf01317f0639b01169"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169">BBOP_SHADER_MODE_ENUM</a> : int { <a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4">BBOP_SHADER_MODE_TEXTURE</a> =0
+<tr class="memitem:a2bd6ca7b9ba892cf01317f0639b01169" id="r_a2bd6ca7b9ba892cf01317f0639b01169"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169">BBOP_SHADER_MODE_ENUM</a> : int { <br />
+&#160;&#160;<a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4">BBOP_SHADER_MODE_TEXTURE</a> =0
 , <a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35">BBOP_SHADER_MODE_COLOR</a> =1
 , <a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c">BBOP_SHADER_MODE_MIX</a> =2
+, <a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2">BBOP_SHADER_MODE_TEXTURE_NMAP</a> =3
+, <br />
+&#160;&#160;<a class="el" href="#a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b">BBOP_SHADER_MODE_MIX_NMAP</a> =4
+<br />
  }</td></tr>
 <tr class="memdesc:a2bd6ca7b9ba892cf01317f0639b01169"><td class="mdescLeft">&#160;</td><td class="mdescRight">RenderMode avec uniquement les textures.  <a href="#a2bd6ca7b9ba892cf01317f0639b01169">More...</a><br /></td></tr>
 <tr class="separator:a2bd6ca7b9ba892cf01317f0639b01169"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,6 +191,164 @@ Variables</h2></td></tr>
 <tr class="separator:a05ea7bea4c3d99689174e9ee3f7c0b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a49e2f165364a33a7c3853b60e54f30c2" name="a49e2f165364a33a7c3853b60e54f30c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49e2f165364a33a7c3853b60e54f30c2">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_AMBIANT_LIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_AMBIANT_LIGHT&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec14444a3634529b8669ad40c03430ff" name="aec14444a3634529b8669ad40c03430ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec14444a3634529b8669ad40c03430ff">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_CAM_SCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_CAM_SCALE&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adba29c13b74bea711aa1d291c5d4e1e4" name="adba29c13b74bea711aa1d291c5d4e1e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba29c13b74bea711aa1d291c5d4e1e4">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_LIGHTS_N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_LIGHTS_N&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5caba84101da29034331171976c7cb79" name="a5caba84101da29034331171976c7cb79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5caba84101da29034331171976c7cb79">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_NORMAL_MAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_NORMAL_MAP&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0b0803e37207cbe4a9c388715bf6b1f" name="ae0b0803e37207cbe4a9c388715bf6b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b0803e37207cbe4a9c388715bf6b1f">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_PROJECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_PROJECTION&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3280b736e7e484796d5888a88198f8a9" name="a3280b736e7e484796d5888a88198f8a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3280b736e7e484796d5888a88198f8a9">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_PROJECTION_CAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_PROJECTION_CAM&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c7b75dc789dbc490fcef678150d085c" name="a8c7b75dc789dbc490fcef678150d085c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c7b75dc789dbc490fcef678150d085c">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_RENDER_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_RENDER_MODE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détermine la place de l'adresse d'une valeur uniform dans le tableau d'adresse d'uniform du shader par default. </p>
+
+</div>
+</div>
+<a id="ab013dbf6f5ca8c5ab3498a4c46ecbb1d" name="ab013dbf6f5ca8c5ab3498a4c46ecbb1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab013dbf6f5ca8c5ab3498a4c46ecbb1d">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_TEXTURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_TEXTURE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b65eabd2147d7254176da438587b9d6" name="a4b65eabd2147d7254176da438587b9d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b65eabd2147d7254176da438587b9d6">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee6a7688899fd3fa53dd9c1bfc66e281" name="aee6a7688899fd3fa53dd9c1bfc66e281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6a7688899fd3fa53dd9c1bfc66e281">&#9670;&#160;</a></span>BBOP_UNIFORM_ADDR_WINDOW_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_ADDR_WINDOW_SIZE&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c8251c11feedb6c8ec7ffc6bdfebf2e" name="a2c8251c11feedb6c8ec7ffc6bdfebf2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8251c11feedb6c8ec7ffc6bdfebf2e">&#9670;&#160;</a></span>BBOP_UNIFORM_N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BBOP_UNIFORM_N&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nombre d'uniform a envoyer au shader. </p>
+
+</div>
+</div>
 <a id="a38cfa5a9f73ba8c98bd7795f47f777ba" name="a38cfa5a9f73ba8c98bd7795f47f777ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38cfa5a9f73ba8c98bd7795f47f777ba">&#9670;&#160;</a></span>BBOP_VERSION</h2>
 
@@ -169,7 +356,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BBOP_VERSION&#160;&#160;&#160;&quot;0.3&quot;</td>
+          <td class="memname">#define BBOP_VERSION&#160;&#160;&#160;&quot;0.4.1-alpha&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -197,6 +384,8 @@ Variables</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4" name="a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4"></a>BBOP_SHADER_MODE_TEXTURE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35" name="a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35"></a>BBOP_SHADER_MODE_COLOR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c" name="a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c"></a>BBOP_SHADER_MODE_MIX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2" name="a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2"></a>BBOP_SHADER_MODE_TEXTURE_NMAP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b" name="a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b"></a>BBOP_SHADER_MODE_MIX_NMAP&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

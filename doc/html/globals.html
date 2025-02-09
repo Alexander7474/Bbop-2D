@@ -33,7 +33,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4-alpha</span>
+   <div id="projectname">Bbop-Library<span id="projectnumber">&#160;0.4.1-alpha</span>
    </div>
    <div id="projectbrief">Opengl library to build 2d apps and game that implement a light system named Lumop</div>
   </td>
@@ -110,7 +110,20 @@ $(function(){initNavTree('globals.html',''); initResizable(true); });
 <li>BBOP_SHADER_MODE_COLOR&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a49aa58859de9e3d5e522471e26122a35">bbopGlobal.h</a></li>
 <li>BBOP_SHADER_MODE_ENUM&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169">bbopGlobal.h</a></li>
 <li>BBOP_SHADER_MODE_MIX&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a983ca8a5acf9a6a0f97b874453a5482c">bbopGlobal.h</a></li>
+<li>BBOP_SHADER_MODE_MIX_NMAP&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a6126083ec88d0b5fa72ba47606f1077b">bbopGlobal.h</a></li>
 <li>BBOP_SHADER_MODE_TEXTURE&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169a9b815b1c9a6cb3b69241e9bd1e1367f4">bbopGlobal.h</a></li>
+<li>BBOP_SHADER_MODE_TEXTURE_NMAP&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a2bd6ca7b9ba892cf01317f0639b01169afcc69b472ff3d66e6d35e46d14d076d2">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_AMBIANT_LIGHT&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a49e2f165364a33a7c3853b60e54f30c2">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_CAM_SCALE&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#aec14444a3634529b8669ad40c03430ff">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_LIGHTS_N&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#adba29c13b74bea711aa1d291c5d4e1e4">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_NORMAL_MAP&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a5caba84101da29034331171976c7cb79">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_PROJECTION&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#ae0b0803e37207cbe4a9c388715bf6b1f">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_PROJECTION_CAM&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a3280b736e7e484796d5888a88198f8a9">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_RENDER_MODE&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a8c7b75dc789dbc490fcef678150d085c">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_TEXTURE&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#ab013dbf6f5ca8c5ab3498a4c46ecbb1d">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a4b65eabd2147d7254176da438587b9d6">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_ADDR_WINDOW_SIZE&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#aee6a7688899fd3fa53dd9c1bfc66e281">bbopGlobal.h</a></li>
+<li>BBOP_UNIFORM_N&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a2c8251c11feedb6c8ec7ffc6bdfebf2e">bbopGlobal.h</a></li>
 <li>BBOP_VERSION&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#a38cfa5a9f73ba8c98bd7795f47f777ba">bbopGlobal.h</a></li>
 <li>BBOP_WINDOW_RESOLUTION&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#aab5088d67a1f295b589fb44bc21834c9">bbopGlobal.h</a>, <a class="el" href="bbopGlobal_8cpp.html#a4488113ba5f94eeaab76fb934da5e6ca">bbopGlobal.cpp</a></li>
 <li>BBOP_WINDOW_SIZE&#160;:&#160;<a class="el" href="bbopGlobal_8h.html#aef57dad90411a93905fa9f29c6f459cf">bbopGlobal.h</a>, <a class="el" href="bbopGlobal_8cpp.html#a72ec0cece9cd8dc6ac3ec89f411a0e6c">bbopGlobal.cpp</a></li>
@@ -137,6 +150,11 @@ $(function(){initNavTree('globals.html',''); initResizable(true); });
 <li>distribs()&#160;:&#160;<a class="el" href="benchmark_8cpp.html#ac13ce953afde1d0b1596ade1c7e225f6">benchmark.cpp</a></li>
 <li>distribx()&#160;:&#160;<a class="el" href="benchmark_8cpp.html#ae7a4f2400d44ccf47e7c6ffd3283d694">benchmark.cpp</a></li>
 <li>distriby()&#160;:&#160;<a class="el" href="benchmark_8cpp.html#a7f2722cd355a36cfebb56e7caf8ce51d">benchmark.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>fast_rand()&#160;:&#160;<a class="el" href="main_8cpp.html#a42b4ee712e7ff06dd0a15400a8ae281c">main.cpp</a></li>
 </ul>
 
 

@@ -46,7 +46,7 @@ var NAVTREE =
       [ "Math", "md_doc_2doc__markdown__page_2tuto.html#autotoc_md15", null ],
       [ "Texture", "md_doc_2doc__markdown__page_2tuto.html#autotoc_md16", null ]
     ] ],
-    [ "Bbop Library", "md_README.html", [
+    [ "Bbop 2D Library", "md_README.html", [
       [ "Naviguer", "md_README.html#autotoc_md18", null ],
       [ "Installation", "md_README.html#autotoc_md19", [
         [ "Librairies externes nécessaires", "md_README.html#autotoc_md20", [
@@ -98,8 +98,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "EBO_8cpp.html",
-"classShape.html#a87892a43869e05f2d41b1bcf31004650",
-"shaderClass_8cpp.html"
+"classShape.html#a5616a680b154c1460a7fc0fb0b2ab1d2",
+"md_doc_2doc__markdown__page_2tuto.html#autotoc_md13"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -4,7 +4,7 @@ var classTexteBox =
     [ "TexteBox", "classTexteBox.html#af14956c5e4e70fb729b3e585ca4c2d26", null ],
     [ "~TexteBox", "classTexteBox.html#a2020c2579996cd680fa25ea0bc7da7f3", null ],
     [ "buildTexteBox", "classTexteBox.html#a135516640b52173098a952829136390f", null ],
-    [ "Draw", "classTexteBox.html#a0c452f1a6afeb9922537218b790d13d1", null ],
+    [ "Draw", "classTexteBox.html#a63ef77ed47ae4169e0f1577548b61bc3", null ],
     [ "getAlpha", "classTexteBox.html#a0bf2c8b01a09bb424e0235c817c0784f", null ],
     [ "getColor", "classTexteBox.html#a909dc207bc703c4a281e6094f58f7c7d", null ],
     [ "getOrigin", "classTexteBox.html#a103719512b93cf3760af77e39e877dec", null ],
