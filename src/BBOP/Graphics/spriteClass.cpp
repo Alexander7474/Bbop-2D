@@ -47,6 +47,7 @@ Sprite::Sprite()
     spriteTexture(nullptr),
     isRGBFilter(false)
 {
+  spriteNormalMap = nullptr;
   size.x = 50.0f; size.y = 50.0f;
   buildVAO();
 }
@@ -56,6 +57,13 @@ Sprite::Sprite(const Sprite& other)
     spriteTexture(new Texture(*other.spriteTexture)),
     isRGBFilter(other.isRGBFilter)
 {
+  //copy de la normal map si non null 
+  if(other.spriteNormalMap != nullptr){
+    spriteNormalMap = new Texture(*other.spriteNormalMap);
+  }else{
+    spriteNormalMap = nullptr;
+  }
+
   //init une forme vierge
   shapeVBO.init(vertices, sizeof(vertices), GL_DYNAMIC_DRAW);
   shapeEBO.init(indices, sizeof(indices));
@@ -77,6 +85,13 @@ Sprite& Sprite::operator=(const Sprite& other)
     if (spriteTexture != nullptr){
       delete spriteTexture;
       spriteTexture = new Texture(*other.spriteTexture);
+      //copy de la normal map si non null 
+      if(spriteNormalMap != nullptr){
+        delete spriteNormalMap;
+        if(other.spriteNormalMap != nullptr){
+          spriteNormalMap = new Texture(*other.spriteNormalMap);
+        }
+      }
     }
   }
   return *this;
@@ -84,9 +99,13 @@ Sprite& Sprite::operator=(const Sprite& other)
 
 Sprite::~Sprite()
 {
-  delete spriteTexture;
+  if(spriteTexture != nullptr){
+    delete spriteTexture;
+  }
+  if(spriteNormalMap != nullptr){
+    delete spriteNormalMap;
+  }
 }
-
 void Sprite::buildVAO()
 {
   //initialisation des vertices et des indices a 0.0f avant de build le vao

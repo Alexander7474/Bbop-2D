@@ -45,23 +45,27 @@ int main() {
   GLFWwindow * window;
   bbopInit(1920,1080,"name",window);
   
-  Scene scene(0.f, Vector3i(255,255,255));
+  Scene scene(0.1f, Vector3i(255,255,255));
   Camera cam;
 
-  Sprite bougie("imgTesting/bougie/sprite_sheet_candle1.png");
-  bougie.setNormalMap(Texture("imgTesting/bougie/sprite_sheet_candle1_normal_map.png"));
+  AnimatedSprite bougie("imgTesting/bougie/sprite_sheet_candle1-sheet.png",Vector2i(5,1),0.1f,0);
 
   Sprite rock("imgTesting/rock.png");
   rock.setNormalMap(Texture("imgTesting/rock_map.png"));
   rock.setPosition(800.f,400.f);
   rock.setSize(500.f,500.f);
+  
+  Sprite box("imgTesting/box.png");
+  box.setNormalMap(Texture("imgTesting/box_normal.png"));
+  box.setPosition(100.f,100.f);
+  box.setSize(500.f,500.f);
 
   bougie.setSize(270.f,270.f);
   bougie.setOrigin(bougie.getSize().x/2.f, 55.f);
 
   Light light(Vector2f(0.f,0.f), 0.9f, Vector3i(255,255,255),1.5f,3.0f,4.5f); // bougie
   Vector2f maxIntensity(0.9f,1.2f); // intensité max de la bougie
-  float variation = 0.05f;
+  float variation = 0.10f;
 
    // Masquer le curseur de la souris
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
@@ -87,7 +91,7 @@ int main() {
     bougie.setPosition(mouseWorldPos);
 
     // variation de l'intensité de la bougie 
-    //light.setIntensity(light.getIntensity() + fast_rand(-variation, variation));
+    light.setIntensity(light.getIntensity() + fast_rand(-variation, variation));
     if(light.getIntensity() > maxIntensity.y)
       light.setIntensity(maxIntensity.y - variation);
     if(light.getIntensity() < maxIntensity.x)
@@ -97,12 +101,13 @@ int main() {
     scene.Use();
 
     //
-    //bougie.update();
+    bougie.update();
 
     // Affichage du rectangle
-    scene.Draw(rectangle);
+   // scene.Draw(rectangle);
 
     scene.Draw(rock);
+    scene.Draw(box);
     scene.Draw(bougie);
 
     // ajout de la lumière 

@@ -53,7 +53,7 @@ void main()
 {
   // Pixel de sortie des frame_buffer couleur/frag
   vec4 provisoryColor = vec4(0,0,0,0);
-  vec4 provisoryMap = vec4(0,0,0,1);
+  vec4 provisoryMap = vec4(0,0,0,0);
 
   // coloration du pixel en fonction de rendermode
   switch (renderMode){
@@ -80,6 +80,8 @@ void main()
   }
   
   //pixel final
+  provisoryMap.w = provisoryColor.w; // belnd pour que l'alpah de la normal map sois celui de la texture
+  
   FragColor = provisoryColor;
   FragNormalMap = provisoryMap;
 }
@@ -178,13 +180,16 @@ void main()
   // texture du frame buffer
   provisory = texture(outTexture, TexCoord);
 
-  //position du fragment actuelle
+  // position du fragment actuelle dans le monde
   vec2 convertedFrag = normalizeVec2(convertCoords(gl_FragCoord.xy));
 
+  //par défault on utilise la lumière ambiante puis on vient rajouter l'intensité de chaque lumière 
   vec4 finalLight = ambiantLight;
+
+  // pour chaque lumière de l'UBO 
   for (int i = 0; i < nLight; i++){
 
-    //position de la light actuelle 
+    //position de la light 
     vec4 lightPos = projectionCam * vec4(lights[i].pos, 0.0, 1.0);
 
     //déterminer si le fragment est dans le cône de lumière 
@@ -206,17 +211,17 @@ void main()
       float diffuse = max(dot(normal, vec3(lightDir,0.0)), 0.0);
 
       if(normal == vec3(-1,-1,-1)){
-        diffuse = 1.0;
+        diffuse = 0.0;
       }
       
       //attenuation en fonction de la distance et des différente valeur de la light 
       float attenuation = 1.0 / (lights[i].constantAttenuation + lights[i].linearAttenuation * distance + lights[i].quadraticAttenuation * distance * distance);
 
       //intensité de la light en fonction de son atténuation et de sa diffusion 
-      float intensity = attenuation*lights[i].intensity;
+      float intensity = (attenuation*lights[i].intensity)+(diffuse*attenuation);
 
       //emballage dans un vec4
-      vec4 thislight = intensity*vec4(lights[i].color, 0.0)*diffuse;
+      vec4 thislight = intensity*vec4(lights[i].color, 0.0);
       finalLight+=thislight;
     }
   }
