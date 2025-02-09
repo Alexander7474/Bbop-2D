@@ -1,4 +1,6 @@
 #include "../../../include/BBOP/Graphics/animatedSpriteClass.h"
+#include "../../../include/BBOP/Graphics.h"
+
 #include <GLFW/glfw3.h>
 #include <cstdlib>
 #include <iostream>
@@ -22,6 +24,7 @@ AnimatedSprite::AnimatedSprite(std::string _animated_sprite_sheet, Vector2i _siz
   total_t = n_frame * frame_t;
   anim_start = glfwGetTime();
   last_frame_t = glfwGetTime();
+
   setTexture(animated_sprite_texture[0]);
 }
 

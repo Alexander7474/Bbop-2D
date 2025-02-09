@@ -153,25 +153,20 @@ private:
   Vector3i ambiantLightColor; //<! couleur lumière ambiante
   
   //adresse mem shader
-  GLint ambiantLightLoc; //<! GPU MEM addr de la lumière ambiante
-  GLint renderModeLoc; //<! GPU MEM addr du mode de renue (BBOP_SHADER_MODE_COLOR, BBOP_SHADER_MODE_TEXTURE, BBOP_SHADER_MODE_MIX)
-  GLint projectionLoc; //<! GPU MEM addre de la matrice de projection
+  GLint *renderUniforms; //<! GPU MEM addr des uniforms du shader par default 
   
   //adresse mem light shader 
-  GLint nLightLoc; //<! GPU MEM addr de la list de lumière dans le shader
+  GLint *lightRenderUniforms; //<! GPU MEM addr des uniforms du shader de lumière
+  
   GLuint lightsUBO; //<! ID de l'ubo pour transfert la list de UniformLight vers la list de Light ddu shader
   std::vector<UniformLight> lightsVec; //<! Liste des lumières à transférer vers le shader avec lightUBO
-  GLint lightWindowSizeLoc; //<! GPU MEM addr de la taille en pixel de l'écran 
-  GLint lightWindowResoLoc; //<! GPU MEM addr de la resolution d'affichage de bbop
-  GLint lightCamScaleLoc; //<! GPU MEM addr scale de la cam pour déterminer la distance avec un point  
-  GLint lightProjectionLoc; //<! GPU MEM addr matrice de projection 
-  GLint lightProjectionCamLoc; //<! GPU MEM addr matrice de projection de la cam
-  
   Vector3f ambiantLight; //<! lumière ambiante de Scene
+
   Camera* sceneCamera; //<! camera à utilser lors de Draw()
   
   unsigned int frameBuffer; //<! frame buffer de la scene
   unsigned int textureColorBuffer; //<! texture lié au frame buffer
+  unsigned int textureNormalMapBuffer; //<! texture de la normal map du buffer
   NoTextureSprite frameBufferSprite; //<! NoTextureSprite utilisé pour afficher le frame buffer
 };
 

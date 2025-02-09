@@ -35,7 +35,8 @@ void main()
 const char* defaultFragment = R"glsl(
 #version 330 core
 // pixel de sortie du frag
-out vec4 FragColor;
+layout(location = 0) out vec4 FragColor;
+layout(location = 1) out vec4 FragNormalMap;
 
 // info entrantes dans le fragshader depuis le vertexshader
 in vec4 outColor;
@@ -44,25 +45,45 @@ in vec2 TexCoord;
 // Permet de déterminer sir le shader doit render une texture, de la couluer ou les deux
 uniform int renderMode;
 
-// Texture a render quand rendermode vaut 0 ou 2
+// Texture a render
 uniform sampler2D outTexture;
-
-// Pixel de sortie du frag provisoire avant les calcule de la lumière
-vec4 provisory;
+uniform sampler2D outNMapTexture;
 
 void main()
 {
+  // Pixel de sortie des frame_buffer couleur/frag
+  vec4 provisoryColor = vec4(0,0,0,0);
+  vec4 provisoryMap = vec4(0,0,0,0);
+
   // coloration du pixel en fonction de rendermode
-  if (renderMode == 0){ 
-    provisory = texture(outTexture, TexCoord);
-  } else if (renderMode == 1){
-    provisory = outColor;
-  } else if (renderMode == 2){
-    provisory = texture(outTexture, TexCoord) * outColor;
+  switch (renderMode){
+    case 0:
+      provisoryColor = texture(outTexture, TexCoord);
+      break;
+    case 1:
+      provisoryColor = outColor;
+      break;
+    case 2:
+      provisoryColor = texture(outTexture, TexCoord) * outColor;
+      break;
+    case 3:
+      provisoryColor = texture(outTexture, TexCoord);
+      provisoryMap = texture(outNMapTexture, TexCoord);
+      break;
+    case 4:
+      provisoryColor = texture(outTexture, TexCoord) * outColor;
+      provisoryMap = texture(outNMapTexture, TexCoord);
+      break;
+    default:
+      provisoryColor = vec4(1.0,0.0,0.0,1.0);
+      break;
   }
   
   //pixel final
-  FragColor = provisory;
+  provisoryMap.w = provisoryColor.w; // belnd pour que l'alpah de la normal map sois celui de la texture
+  
+  FragColor = provisoryColor;
+  FragNormalMap = provisoryMap;
 }
 
 )glsl";
@@ -109,8 +130,9 @@ uniform vec4 ambiantLight;
 uniform vec2 windowSize;
 uniform vec2 windowResolution;
 
-// Texture a render quand rendermode vaut 0 ou 2
+// Texture du frame buffer
 uniform sampler2D outTexture;
+uniform sampler2D outNMapTexture;
 
 // Pixel de sortie du frag provisoire avant les calcule de la lumière
 vec4 provisory;
@@ -158,29 +180,45 @@ void main()
   // texture du frame buffer
   provisory = texture(outTexture, TexCoord);
 
-  //position du fragment actuelle
-  vec2 convertedFrag = convertCoords(gl_FragCoord.xy);
+  // position du fragment actuelle dans le monde
+  vec2 convertedFrag = normalizeVec2(convertCoords(gl_FragCoord.xy));
 
+  //par défault on utilise la lumière ambiante puis on vient rajouter l'intensité de chaque lumière 
   vec4 finalLight = ambiantLight;
+
+  // pour chaque lumière de l'UBO 
   for (int i = 0; i < nLight; i++){
 
-    //position de la light actuelle 
+    //position de la light 
     vec4 lightPos = projectionCam * vec4(lights[i].pos, 0.0, 1.0);
 
     //déterminer si le fragment est dans le cône de lumière 
     vec2 lightDir = normalize(vec2(cos(lights[i].rotationAngle), sin(lights[i].rotationAngle))); // Direction de la lumière
-    vec2 fragDir = normalize(normalizeVec2(convertedFrag) - lightPos.xy); // Direction du fragment vers la lumière
+    vec2 fragDir = normalize(convertedFrag - lightPos.xy); // Direction du fragment vers la lumière
     float angleCos = dot(lightDir, fragDir); // Cosinus de l'angle entre les deux
     if (angleCos >= cos(lights[i].openAngle)) {
       // Le fragment est dans le cône
-        ////disatnce entre la light et le fragment 
-      float distance = length(lightPos.xy - normalizeVec2(convertedFrag)) * camScale;
 
+      //disatnce entre la light et le fragment 
+      float distance = length(lightPos.xy - convertedFrag) * camScale;
+
+      //valeur rgb de la normal map a notre position 
+      vec3 normal = texture(outNMapTexture, TexCoord).rgb * 2.0 - 1.0;
+
+
+      lightDir = normalize(lightPos.xy - convertedFrag);
+      //diffusion en tre le vecteur normal et celui de la lumière
+      float diffuse = max(dot(normal, vec3(lightDir,0.0)), 0.0);
+
+      if(normal == vec3(-1,-1,-1)){
+        diffuse = 0.0;
+      }
+      
       //attenuation en fonction de la distance et des différente valeur de la light 
       float attenuation = 1.0 / (lights[i].constantAttenuation + lights[i].linearAttenuation * distance + lights[i].quadraticAttenuation * distance * distance);
 
-      //intensité de la light en fonction de son atténuation calculé 
-      float intensity = attenuation*lights[i].intensity;
+      //intensité de la light en fonction de son atténuation et de sa diffusion 
+      float intensity = (attenuation*lights[i].intensity)+(diffuse*attenuation);
 
       //emballage dans un vec4
       vec4 thislight = intensity*vec4(lights[i].color, 0.0);
@@ -193,6 +231,7 @@ void main()
 
   //pixel final
   FragColor = provisory*finalLight;
+  //FragColor = texture(outNMapTexture, TexCoord);
 }
 
 )glsl";

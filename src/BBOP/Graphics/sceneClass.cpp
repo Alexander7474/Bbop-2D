@@ -14,7 +14,6 @@
 #include "../../../include/BBOP/Graphics/sceneClass.h"
 
 #include <cmath>
-#include <iostream>
 
 Scene::Scene() : Scene(1.f, Vector3i(255,255,255)) {}
 
@@ -26,21 +25,31 @@ Scene::Scene(float nAmbiantLightValue, Vector3i nAmbiantLightColor)
     sceneCamera(nullptr)
 {
   //mise en place adresse mem du shader 
-  renderModeLoc = sceneShader.getUniformLoc("renderMode");
-  projectionLoc = sceneShader.getUniformLoc("projection");
+  renderUniforms = new GLint[BBOP_UNIFORM_N]; // tableau de GLint en fonction du nombre de uniform a passer 
+  //
+  // on remplie le tableau avec les addresses
+  renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE] = sceneShader.getUniformLoc("renderMode");
+  renderUniforms[BBOP_UNIFORM_ADDR_PROJECTION] = sceneShader.getUniformLoc("projection");
+  renderUniforms[BBOP_UNIFORM_ADDR_TEXTURE] = sceneShader.getUniformLoc("outTexture");
+  renderUniforms[BBOP_UNIFORM_ADDR_NORMAL_MAP] = sceneShader.getUniformLoc("outNMapTexture");
 
   //mise en place adresse mem du light shader
-  ambiantLight = Vector3f(ambiantLightValue*(ambiantLightColor.x/255.0f), ambiantLightValue*(ambiantLightColor.y/255.0f), ambiantLightValue*(ambiantLightColor.z/255.0f));
-  ambiantLightLoc = sceneLightShader.getUniformLoc("ambiantLight");
-  nLightLoc = sceneLightShader.getUniformLoc("nLight");
-  lightCamScaleLoc = sceneLightShader.getUniformLoc("camScale");
-  lightProjectionLoc = sceneLightShader.getUniformLoc("projection");
-  lightProjectionCamLoc = sceneLightShader.getUniformLoc("projectionCam");
-  lightWindowSizeLoc = sceneLightShader.getUniformLoc("windowSize");
-  lightWindowResoLoc = sceneLightShader.getUniformLoc("windowResolution");
+  lightRenderUniforms = new GLint[BBOP_UNIFORM_N];
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_AMBIANT_LIGHT] = sceneLightShader.getUniformLoc("ambiantLight");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_LIGHTS_N] = sceneLightShader.getUniformLoc("nLight");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_CAM_SCALE] = sceneLightShader.getUniformLoc("camScale");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_PROJECTION] = sceneLightShader.getUniformLoc("projection");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_PROJECTION_CAM] = sceneLightShader.getUniformLoc("projectionCam");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_WINDOW_SIZE] = sceneLightShader.getUniformLoc("windowSize");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION] = sceneLightShader.getUniformLoc("windowResolution");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_TEXTURE] = sceneLightShader.getUniformLoc("outTexture");
+  lightRenderUniforms[BBOP_UNIFORM_ADDR_NORMAL_MAP] = sceneLightShader.getUniformLoc("outNMapTexture");
+
+  //UBO de lumières
   glGenBuffers(1, &lightsUBO);
   glBindBuffer(GL_UNIFORM_BUFFER, lightsUBO);
   glBufferData(GL_UNIFORM_BUFFER, 100 * sizeof(UniformLight), &lightsVec[0], GL_DYNAMIC_DRAW);
+  ambiantLight = Vector3f(ambiantLightValue*(ambiantLightColor.x/255.0f), ambiantLightValue*(ambiantLightColor.y/255.0f), ambiantLightValue*(ambiantLightColor.z/255.0f));
   
   //gestion du frameBuffer 
   glGenFramebuffers(1, &frameBuffer);
@@ -52,7 +61,19 @@ Scene::Scene(float nAmbiantLightValue, Vector3i nAmbiantLightColor)
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, BBOP_WINDOW_SIZE.x, BBOP_WINDOW_SIZE.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+  //texture normal map frame buffer 
+  glGenTextures(1, &textureNormalMapBuffer);
+  glBindTexture(GL_TEXTURE_2D, textureNormalMapBuffer);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, BBOP_WINDOW_SIZE.x, BBOP_WINDOW_SIZE.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  
+  glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT1, GL_TEXTURE_2D, textureNormalMapBuffer, 0);
   glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureColorBuffer, 0);
+
+  GLuint attachments[2] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1 };
+  glDrawBuffers(2, attachments); // Enable rendering to both textures
 
   frameBufferSprite.setPosition(0,0);
 
@@ -72,10 +93,17 @@ void Scene::Use()
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-  // activation du frame buffer 
-  glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
   glBindTexture(GL_TEXTURE_2D, textureColorBuffer);
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, BBOP_WINDOW_SIZE.x, BBOP_WINDOW_SIZE.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+  
+  glBindTexture(GL_TEXTURE_2D, textureNormalMapBuffer);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, BBOP_WINDOW_SIZE.x, BBOP_WINDOW_SIZE.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+    
+  // activation du frame buffer 
+  glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+
+  glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT1, GL_TEXTURE_2D, textureNormalMapBuffer, 0);
+  glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureColorBuffer, 0);
 
   //activation du shader et transfert des données nécessaire 
   sceneShader.Activate();
@@ -87,7 +115,7 @@ void Scene::Use()
   }else{
     projection = glm::ortho(0.0f, static_cast<float>(BBOP_WINDOW_RESOLUTION.x), static_cast<float>(BBOP_WINDOW_RESOLUTION.y), 0.0f, -1.0f, 1.0f);
   }
-  glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+  glUniformMatrix4fv(renderUniforms[BBOP_UNIFORM_ADDR_PROJECTION], 1, GL_FALSE, glm::value_ptr(projection));
 
  }
 
@@ -98,7 +126,7 @@ void Scene::useCamera(Camera* camAddr)
 
 void Scene::Draw(const BbopDrawable& spr) const
 {
-  spr.Draw(renderModeLoc);
+  spr.Draw(renderUniforms);
 }
 
 void Scene::DrawFrameBuffer(const NoTextureSprite& spr) const
@@ -112,34 +140,43 @@ void Scene::render()
   glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
   sceneLightShader.Activate();
-  glUniform4f(ambiantLightLoc,ambiantLight.x,ambiantLight.y,ambiantLight.z,1.0f);
-  glUniform2f(lightWindowResoLoc, BBOP_WINDOW_RESOLUTION.x, BBOP_WINDOW_RESOLUTION.y);
-  glUniform2f(lightWindowSizeLoc, BBOP_WINDOW_SIZE.x, BBOP_WINDOW_SIZE.y);
+  glUniform4f(lightRenderUniforms[BBOP_UNIFORM_ADDR_AMBIANT_LIGHT],ambiantLight.x,ambiantLight.y,ambiantLight.z,1.0f);
+  glUniform2f(lightRenderUniforms[BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION], BBOP_WINDOW_RESOLUTION.x, BBOP_WINDOW_RESOLUTION.y);
+  glUniform2f(lightRenderUniforms[BBOP_UNIFORM_ADDR_WINDOW_SIZE], BBOP_WINDOW_SIZE.x, BBOP_WINDOW_SIZE.y);
 
   //definition de la projection de la scene (utile pour la lumière)
   glm::mat4 projectionCam;
   if (sceneCamera != nullptr){
     projectionCam = glm::ortho(sceneCamera->camX.x, sceneCamera->camX.y, sceneCamera->camY.y, sceneCamera->camY.x, -1.0f, 1.0f);
-    glUniform1f(lightCamScaleLoc, sceneCamera->getScale());
+    glUniform1f(lightRenderUniforms[BBOP_UNIFORM_ADDR_CAM_SCALE], sceneCamera->getScale());
   }else{
     projectionCam = glm::ortho(0.0f, static_cast<float>(BBOP_WINDOW_RESOLUTION.x), static_cast<float>(BBOP_WINDOW_RESOLUTION.y), 0.0f, -1.0f, 1.0f);
-    glUniform1f(lightCamScaleLoc, 1.f);
+    glUniform1f(lightRenderUniforms[BBOP_UNIFORM_ADDR_CAM_SCALE], 1.f);
   }
-  glUniformMatrix4fv(lightProjectionCamLoc, 1, GL_FALSE, glm::value_ptr(projectionCam));
+  glUniformMatrix4fv(lightRenderUniforms[BBOP_UNIFORM_ADDR_PROJECTION_CAM], 1, GL_FALSE, glm::value_ptr(projectionCam));
   
   //projection pour afficher la texture du framebuffer
   glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(BBOP_WINDOW_RESOLUTION.x), static_cast<float>(BBOP_WINDOW_RESOLUTION.y), 0.0f, -1.0f, 1.0f);
-  glUniformMatrix4fv(lightProjectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+  glUniformMatrix4fv(lightRenderUniforms[BBOP_UNIFORM_ADDR_PROJECTION], 1, GL_FALSE, glm::value_ptr(projection));
 
   //transfert des lumières
-  glUniform1i(nLightLoc, lightsVec.size());
+  glUniform1i(lightRenderUniforms[BBOP_UNIFORM_ADDR_LIGHTS_N], lightsVec.size());
   glBindBufferBase(GL_UNIFORM_BUFFER, 0, lightsUBO);
   glBufferSubData(GL_UNIFORM_BUFFER, 0, lightsVec.size() * sizeof(UniformLight), &lightsVec[0]);
   lightsVec.clear();
 
   frameBufferSprite.setSize(BBOP_WINDOW_RESOLUTION.x, BBOP_WINDOW_RESOLUTION.y);
 
+  // Bind the textures to texture units
+  glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, textureColorBuffer);
+  glActiveTexture(GL_TEXTURE1);
+  glBindTexture(GL_TEXTURE_2D, textureNormalMapBuffer);
+
+  // Set texture uniforms in the shader
+  glUniform1i(lightRenderUniforms[BBOP_UNIFORM_ADDR_TEXTURE], 0);
+  glUniform1i(lightRenderUniforms[BBOP_UNIFORM_ADDR_NORMAL_MAP], 1);
+
   DrawFrameBuffer(frameBufferSprite);
 
   //cleaning the frame buffer 

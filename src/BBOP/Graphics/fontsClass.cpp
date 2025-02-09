@@ -197,11 +197,11 @@ void TexteBox::buildTexteBox()
   size.y = sizeY;
 }
 
-void TexteBox::Draw(GLint renderModeLoc) const
+void TexteBox::Draw(GLint *renderUniforms) const
 {
   for (unsigned int i = 0; i < sizeTexte; i++){
     glBindTexture(GL_TEXTURE_2D, texteFont->charL[static_cast<unsigned char>(texte[i])].TextureID);
-    glyphList[i].Draw(renderModeLoc);
+    glyphList[i].Draw(renderUniforms);
   }
 }
 

@@ -40,8 +40,29 @@
 enum BBOP_SHADER_MODE_ENUM:int {
   BBOP_SHADER_MODE_TEXTURE=0,
   BBOP_SHADER_MODE_COLOR=1,
-  BBOP_SHADER_MODE_MIX=2
+  BBOP_SHADER_MODE_MIX=2,
+  BBOP_SHADER_MODE_TEXTURE_NMAP=3,
+  BBOP_SHADER_MODE_MIX_NMAP=4
 };
+
+/**
+ * @brief Détermine la place de l'adresse d'une valeur uniform dans le tableau d'adresse d'uniform du shader par default
+ */
+#define BBOP_UNIFORM_ADDR_RENDER_MODE 0
+#define BBOP_UNIFORM_ADDR_TEXTURE 1
+#define BBOP_UNIFORM_ADDR_NORMAL_MAP 2
+#define BBOP_UNIFORM_ADDR_PROJECTION 3 
+#define BBOP_UNIFORM_ADDR_PROJECTION_CAM 4 
+#define BBOP_UNIFORM_ADDR_WINDOW_SIZE 5
+#define BBOP_UNIFORM_ADDR_WINDOW_RESOLUTION 6 
+#define BBOP_UNIFORM_ADDR_CAM_SCALE 7
+#define BBOP_UNIFORM_ADDR_AMBIANT_LIGHT 8
+#define BBOP_UNIFORM_ADDR_LIGHTS_N 9
+
+/**
+ * @brief Nombre d'uniform a envoyer au shader
+ */
+#define BBOP_UNIFORM_N 10
 
 /**
  * @brief Variable global qui stoke la taille de la fenêtre.
@@ -79,7 +100,7 @@ public:
    *
    * @see Scene.Draw(BbopDrawable)
    */
-  virtual void Draw(GLint renderModeLoc) const = 0;
+  virtual void Draw(GLint* renderUniforms) const = 0;
 
 };
 

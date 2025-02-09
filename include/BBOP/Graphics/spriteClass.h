@@ -71,7 +71,7 @@ public:
    */
   Sprite& operator=(const Sprite& other);
 
-  void Draw(GLint renderModeLoc) const override;
+  void Draw(GLint* renderUniforms) const override;
 
   /**
   * @brief Change la texture du sprite
@@ -82,8 +82,26 @@ public:
 
   /**
    * @brief renvoie un pointeur vers la texture du sprite 
+   *
+   * @return spriteTexture pointeur vers la Texture du sprite
    */
-  Texture& getTexture();
+  Texture* getTexture();
+
+  /**
+   * @brief Change la texture de la normal map du sprite 
+   *
+   * @details le Sprite utilise automatiquement sa normal map lors du rendue dès que le pointer vers celle ci est non null
+   *
+   * @param[in] nNormalMap Texture de normal map
+   */
+  void setNormalMap(const Texture &nNormalMap);
+
+  /**
+   * @brief renvoie la normal map du sprite 
+   *
+   * @return spriteNormalMap pointeur vers la Texture de la normal map
+   */
+  Texture* getNormalMap();
 
   /**
   * @brief Renvoie si oui ou non le filtre de couleur est activé 
@@ -130,7 +148,7 @@ protected:
 class NoTextureSprite : public Sprite
 {
 public:
-  void Draw(GLint renderModeLoc) const override;
+  void Draw(GLint* renderUniforms) const override;
   void DrawAsFrameBuffer() const;
 };
 

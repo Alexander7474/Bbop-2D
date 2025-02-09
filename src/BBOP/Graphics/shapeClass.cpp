@@ -281,9 +281,9 @@ void RectangleShape::buildVAO()
   shapeEBO.Unbind();
 }
 
-void RectangleShape::Draw(GLint renderModeLoc) const
+void RectangleShape::Draw(GLint* renderUniforms) const
 {
-  glUniform1i(renderModeLoc, BBOP_SHADER_MODE_COLOR);
+  glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_COLOR);
   shapeVAO.Bind();  
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }
@@ -501,9 +501,9 @@ void ConvexShape::updateVBOAlpha()
   shapeVBO.update(vertices, sizeof(GLfloat)*6*nPoint);
 }
 
-void ConvexShape::Draw(GLint renderModeLoc) const
+void ConvexShape::Draw(GLint* renderUniforms) const
 {
-  glUniform1i(renderModeLoc, BBOP_SHADER_MODE_COLOR);
+  glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_COLOR);
   shapeVAO.Bind();  
   glDrawElements(GL_TRIANGLES, 3*(nPoint-1), GL_UNSIGNED_INT, 0);
 }

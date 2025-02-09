@@ -24,6 +24,7 @@ Sprite::Sprite(Texture nTexture, Vector2f nPos, Vector3i nRGB, Vector2f nOrigin,
   origin = nOrigin;
   rotation = nRotation;
   alpha = nAlpha;
+  spriteNormalMap = nullptr;
   // Build du vao
   //construtiopn du VAO en fontion de la position du sprite, de  sa taille et de la taille de la fenetre
   buildVAO();
@@ -46,6 +47,7 @@ Sprite::Sprite()
     spriteTexture(nullptr),
     isRGBFilter(false)
 {
+  spriteNormalMap = nullptr;
   size.x = 50.0f; size.y = 50.0f;
   buildVAO();
 }
@@ -55,6 +57,13 @@ Sprite::Sprite(const Sprite& other)
     spriteTexture(new Texture(*other.spriteTexture)),
     isRGBFilter(other.isRGBFilter)
 {
+  //copy de la normal map si non null 
+  if(other.spriteNormalMap != nullptr){
+    spriteNormalMap = new Texture(*other.spriteNormalMap);
+  }else{
+    spriteNormalMap = nullptr;
+  }
+
   //init une forme vierge
   shapeVBO.init(vertices, sizeof(vertices), GL_DYNAMIC_DRAW);
   shapeEBO.init(indices, sizeof(indices));
@@ -76,6 +85,13 @@ Sprite& Sprite::operator=(const Sprite& other)
     if (spriteTexture != nullptr){
       delete spriteTexture;
       spriteTexture = new Texture(*other.spriteTexture);
+      //copy de la normal map si non null 
+      if(spriteNormalMap != nullptr){
+        delete spriteNormalMap;
+        if(other.spriteNormalMap != nullptr){
+          spriteNormalMap = new Texture(*other.spriteNormalMap);
+        }
+      }
     }
   }
   return *this;
@@ -83,9 +99,13 @@ Sprite& Sprite::operator=(const Sprite& other)
 
 Sprite::~Sprite()
 {
-  delete spriteTexture;
+  if(spriteTexture != nullptr){
+    delete spriteTexture;
+  }
+  if(spriteNormalMap != nullptr){
+    delete spriteNormalMap;
+  }
 }
-
 void Sprite::buildVAO()
 {
   //initialisation des vertices et des indices a 0.0f avant de build le vao
@@ -182,17 +202,45 @@ void Sprite::updateVBOAlpha()
   shapeVBO.update(vertices, sizeof(vertices));
 }
 
-void Sprite::Draw(GLint renderModeLoc) const 
+void Sprite::Draw(GLint* renderUniforms) const 
 {
-  if (!isRGBFilter)
-    glUniform1i(renderModeLoc, BBOP_SHADER_MODE_TEXTURE);
-  else
-    glUniform1i(renderModeLoc, BBOP_SHADER_MODE_MIX);
+  if (!isRGBFilter){
+    if(spriteNormalMap != nullptr){
+      glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_TEXTURE_NMAP);
+
+      glActiveTexture(GL_TEXTURE1);
+      spriteNormalMap->Bind();
+    }else{
+      glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_TEXTURE);
+    }
+  }else{
+    if(spriteNormalMap != nullptr){
+      glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_MIX_NMAP);
+
+      glActiveTexture(GL_TEXTURE1);
+      spriteNormalMap->Bind();
+    }else{
+      glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_MIX);
+    }
+  }
+
+  //bind texture and vao
+  glActiveTexture(GL_TEXTURE0);
   spriteTexture->Bind();
   shapeVAO.Bind();  
+
+  //après avoir bind on dit au shader quelle sampler prend quelle texture 
+  glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_TEXTURE], 0);
+  glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_NORMAL_MAP], 1);
+  
+  //draw
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+  //unbind all data
   shapeVAO.Unbind();
   spriteTexture->Unbind();
+  if(spriteNormalMap != nullptr)
+    spriteNormalMap->Unbind();
 }
 
 void Sprite::setTexture(const Texture &nTexture)
@@ -201,9 +249,21 @@ void Sprite::setTexture(const Texture &nTexture)
   spriteTexture = new Texture(nTexture);
 }
 
-Texture& Sprite::getTexture()
+Texture* Sprite::getTexture()
 {
-  return *spriteTexture;
+  return spriteTexture;
+}
+
+
+void Sprite::setNormalMap(const Texture &nNormalMap)
+{
+  delete spriteNormalMap;
+  spriteNormalMap = new Texture(nNormalMap);
+}
+
+Texture* Sprite::getNormalMap()
+{
+  return spriteNormalMap;
 }
 
 void Sprite::setRGBFilterState(bool etat)
@@ -249,12 +309,12 @@ void Sprite::flipHorizontally()
   updateVBO();
 }
 
-void NoTextureSprite::Draw(GLint renderModeLoc) const 
+void NoTextureSprite::Draw(GLint* renderUniforms) const 
 {
   if (!isRGBFilter)
-    glUniform1i(renderModeLoc, BBOP_SHADER_MODE_TEXTURE);
+    glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_TEXTURE);
   else
-    glUniform1i(renderModeLoc, BBOP_SHADER_MODE_MIX);
+    glUniform1i(renderUniforms[BBOP_UNIFORM_ADDR_RENDER_MODE], BBOP_SHADER_MODE_MIX);
   shapeVAO.Bind();  
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }

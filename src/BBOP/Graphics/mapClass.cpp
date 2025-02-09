@@ -246,7 +246,8 @@ vector<Vector2f>& Map::getSpawnPoints()
 Map::~Map()
 {
   for(Sprite & tile : tiles){
-    tile.getTexture().Delete();
+    if(tile.getTexture() != nullptr)
+      tile.getTexture()->Delete();
   }
 
   for(AnimatedSprite &sprite : animated_sprites){

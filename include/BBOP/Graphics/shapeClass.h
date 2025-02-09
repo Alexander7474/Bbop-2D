@@ -249,7 +249,7 @@ public:
   RectangleShape(Vector2f nSize, Vector2f nPos, Vector3i nRGB, Vector2f nOrigin);
   RectangleShape(Vector2f nSize, Vector2f nPos, Vector3i nRGB, Vector2f nOrigin, float nRotation, float nAlpha);
   
-  void Draw(GLint renderModeLoc) const override;
+  void Draw(GLint* renderUniforms) const override;
 private:
   GLfloat vertices[24];
   GLuint indices[6];
@@ -297,7 +297,7 @@ public:
    */
   void initConvex(int nnPoint, Vector2f* nlistPoint);
 
-  void Draw(GLint renderModeLoc) const override;
+  void Draw(GLint* renderUniforms) const override;
 private:
   GLfloat* vertices;
   GLuint* indices;

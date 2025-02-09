@@ -131,7 +131,7 @@ public:
   *
   * @param[in] renderModeLoc GPU MEM addr du mode de rendue
   */
-  void Draw(GLint renderModeLoc) const override;
+  void Draw(GLint *renderUniforms) const override;
 
   /**
    * @brief renvoie la taille de la boite de texte 
