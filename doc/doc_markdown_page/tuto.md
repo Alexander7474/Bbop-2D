@@ -231,9 +231,48 @@ if(sprite1.getCollisionBox().check(sprite2.getCollisionBox()))
 }
 ```
 
-## Light
+## Lumop
 
-todo
+Bbop2D intègre une gestion de la lumière (Lumop) \n
+
+Les reflets de la lumière dans la scène sont calculer lors d'une deuxième passe de rendue sur le frame buffer de la scene avec un shader personnalié. \n
+
+### Light 
+
+La class Light est un simple lumière à 360°. \n
+Elle possède les getters et setters pour changer tous ces attributs. \n
+
+Exemple: \n 
+```
+//créer un light 
+Light light(Vector2f(x,y), intensité, Vector3i(R,G,B), atténuation_constante, atténuation_linéaire, atténuation_quadratique);
+
+//dans la boucle d'affichage 
+scene.addLight(light);
+```
+
+La light va venir émettre de la lumière en plus de l'éclaire ambiant de la scene, cela permet un éclairage dynamique, personnalisé et plus détaillé. \n 
+
+### Light directionnel
+
+La light possède deux attribut pour la diriger. \n 
+
+```
+float openAngle; // angle d'ouverture de la lumière 
+float rotationAngle; // angle de rotation de la lumière 
+```
+
+### Normal Map
+
+Lumop intégre la gestion de normal map sur les Sprite. \n 
+Une normal map permet un éclairage dynamique d'une texture pour donner l'impression de relief. \n
+
+Un Sprite peut se voire attribué une Texture pour représenter sa normal Map. \n 
+```
+sprite.setNormalMap(const Texturea& normalMap); // alloue dynamiquement un nouvelle espace mem vers la texture opengl
+```
+
+La scene créé un deuxième frame buffer qui contient les normals maps à utiliser lors du rendue final de la lumière. \n
 
 ## Map
 
@@ -241,10 +280,19 @@ todo
 
 ## Math 
 
-Bbop contient sa propre gestion des vecteurs.
+Bbop contient sa propre gestion des vecteurs.\n
 
-Tous les transfert e point ou de couleur se font à l'origine par le passage d'un vecteur. Toute les méthode n'intégre pas un passage a plusieur paramètre pour faire passer un vecteur.
+Tous les transfert e point ou de couleur se font à l'origine par le passage d'un vecteur. Toute les méthode n'intégre pas un passage a plusieur paramètre pour faire passer un vecteur.\n
 
 ## Texture
 
-todo
+La class Texture permet la creation et l'utilisation simplifé de texture openGL. \n
+Elle est utilisé par Sprite. \n
+
+Exemple: \n
+```
+Texture texture("chemin/vers/la/texture");
+
+texture.Bind(); //bind de la texture dans le shader opengl 
+// après avoir bind manuellement une texture, on peut par exemple utiliser un NoTextureSprite 
+```

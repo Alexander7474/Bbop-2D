@@ -25,7 +25,7 @@
  *
  * @todo Créer une class DirectionnalLight pour différentier certaine lumière 
  * @todo Ajouter la gestion d'une shadowMap pour empêcher le passage de la lumière 
- * @todo Ajouter la gestion d'une lightMap sur Texture pour gérer l'éclairage des textures
+ * @todo utiliser un point à éclairé pour déterminer la rotation d'une lumière directionnelle
  */
 class Light
 {
