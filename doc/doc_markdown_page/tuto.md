@@ -97,6 +97,19 @@ Toutes les Shape hérites de BbopDrawable, qui est la class mère de tous les ob
 Le rectangle est la forme la plus simple de la librairie et possède les attributs suivant. \n 
 Tous les attributs de la Shape sont utilisés de manière trivial ! \n
 
+Exemple simple de pour créer un rectangle bleu de 100px par 100px \n
+```
+//création du rectangle 
+RectangleShape rect;
+rect.setSize(100.f,100.f);
+rect.setColor(0,0,255);
+
+//affichage dans la boucle principale avec la scene 
+scene.Draw(rect);
+```
+
+!!! AVANT TOUS AFFICHAGE IL FAUT SAVOIR UTILISER LA CLASS Scene !!! \n
+
 ### Forme Convex / ConvexShape
 
 todo
@@ -119,7 +132,7 @@ Texture *spriteTexture;
 sprite.setTexture(Texture nTexture); // !!! l'objet passé en paramètre n'est pas un pointeur !!!
 ```
 
-Une des grosse différente avec le RectangleShape est que le Sprite gère ```Vector3i Color``` comme un filtre de couleur sur la texture. \n 
+Une des grosse différence avec le RectangleShape est que le Sprite gère ```Vector3i Color``` comme un filtre de couleur sur la texture. \n 
 Ce filtre peut-être activé avec getter et setter. 
 ```
 sprite.setRGBFilterState(bool etat);
@@ -175,7 +188,16 @@ La methode  ```render()``` supprime le vecteur de lumière de la scene, il ne fa
 
 ## Camera
 
-todo
+La camera permet de regarder a des endroit précis dans la Scene.
+
+Elle utilise une position et une scale qui détermine là ou elle regarde et le zoom de celle ci.
+
+Exemple 
+```
+Camera cam;
+cam.setPosition(100.f,100.f); // centre de la camera placé en x:100 y:100 
+cam.setScale(0.8);
+```
 
 ## Collision
 
