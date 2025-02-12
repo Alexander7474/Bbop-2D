@@ -15,7 +15,24 @@ class AnimatedSprite : public Sprite
 {
 public: 
   AnimatedSprite();
+
+  /**
+   * @brief COntructeur du sprite animé
+   *
+   * @param[in] _animated_sprite_sheet Chemin d'accés vers le spritesheet 
+   * @param[in] _size Vecteur de la taille de la sprite sheet, x: nombre de ligne, y: nombre de colonne
+   * @param[in] _frame_t temps entre chaque frame
+   */
   AnimatedSprite(std::string _animated_sprite_sheet, Vector2i _size, float _frame_t);
+
+  /**
+   * @brief COntructeur du sprite animé
+   *
+   * @param[in] _animated_sprite_sheet Chemin d'accés vers le spritesheet 
+   * @param[in] _size Vecteur de la taille de la sprite sheet, x: nombre de ligne, y: nombre de colonne
+   * @param[in] _frame_t temps entre chaque frame
+   * @param[in] _dead_frame frame morte, si le sprite sheet n'est pas complet
+   */
   AnimatedSprite(std::string _animated_sprite_sheet, Vector2i _size, float _frame_t, int _dead_frame);
 
   /**

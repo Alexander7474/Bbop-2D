@@ -141,7 +141,17 @@ sprite.getRGBFilterState() const;
 
 #### Sprite animé
 
-todo
+La class AnimatedSprite permet de créer un sprite avec une sprite sheet. \n 
+Elle va animé ce Sprite automatiquement en fonction de la durée entre chaque frame. \n
+
+Exemple: \n 
+```
+AnimatedSprite anim("chemin/vers/spritesheet", Vector2i(ligne,colonne), tps_entre_chaque_frame, frame_morte);
+
+anim.update(); //mise a jour de l'anim dans la boucle principale
+
+scene.Draw(anim); //affichage du sprite
+```
 
 ## Scene 
 
@@ -188,20 +198,38 @@ La methode  ```render()``` supprime le vecteur de lumière de la scene, il ne fa
 
 ## Camera
 
-La camera permet de regarder a des endroit précis dans la Scene.
+La camera permet de regarder a des endroit précis dans la Scene. \n
 
-Elle utilise une position et une scale qui détermine là ou elle regarde et le zoom de celle ci.
+Elle utilise une position et une scale qui détermine là ou elle regarde et le zoom de celle ci. \n
 
-Exemple 
+Exemple \n
 ```
 Camera cam;
 cam.setPosition(100.f,100.f); // centre de la camera placé en x:100 y:100 
-cam.setScale(0.8);
+cam.setScale(0.8); //scale de cam réduit donc elle zoom
 ```
 
 ## Collision
 
-todo
+Toute les shapes possède une instance de CollisionBox qui suit automatiquement les dimensions de la shape.\n
+!!! Attenetion, la boîte de collision est rectangulaire, elle n'est donc pas représentative des Shape autre que RectangleShape et Sprite. \n 
+Il, n'y à pas encore de gestion des collision circulaire,triangulaire et convex, il faut donc l'implémenter vous même (faite un fork svppp) !!! \n
+
+On peut annuler ce suivi avec ce setter: \n 
+```
+shape.setAutoUpdateCollisionBox(bool etat);
+```
+
+On peut récupérer la CollisionBox d'une Shape pour s'en servir dans la gestion des collision: \n 
+```
+shape.getCollisionBox(); // recup de la collision box
+
+// test de la collision en deux sprite 
+if(sprite1.getCollisionBox().check(sprite2.getCollisionBox()))
+{
+  //do something
+}
+```
 
 ## Light
 
@@ -213,7 +241,9 @@ todo
 
 ## Math 
 
-todo 
+Bbop contient sa propre gestion des vecteurs.
+
+Tous les transfert e point ou de couleur se font à l'origine par le passage d'un vecteur. Toute les méthode n'intégre pas un passage a plusieur paramètre pour faire passer un vecteur.
 
 ## Texture
 
