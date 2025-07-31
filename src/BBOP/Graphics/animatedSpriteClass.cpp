@@ -11,16 +11,20 @@ AnimatedSprite::AnimatedSprite()
 {}
 
 AnimatedSprite::AnimatedSprite(std::string _animated_sprite_sheet, Vector2i _size, float _frame_t)
-  : AnimatedSprite(_animated_sprite_sheet, _size, _frame_t, 0)
+  : AnimatedSprite(_animated_sprite_sheet, _size, _frame_t, 0, true)
 {}
 
 AnimatedSprite::AnimatedSprite(std::string _animated_sprite_sheet, Vector2i _size, float _frame_t, int _dead_frame)
+  : AnimatedSprite(_animated_sprite_sheet, _size, _frame_t, _dead_frame, true)
+{}
+
+AnimatedSprite::AnimatedSprite(std::string _animated_sprite_sheet, Vector2i _size, float _frame_t, int _dead_frame, bool _random_start)
   : Sprite()
 {
   animated_sprite_texture = bbopLoadSpriteSheet(_animated_sprite_sheet.c_str(), _size.y, _size.x);
   frame_t = _frame_t;
   n_frame = _size.x * _size.y - _dead_frame;
-  frame_cpt = rand() % n_frame;
+  frame_cpt = _random_start ? rand() % n_frame : 0;
   total_t = n_frame * frame_t;
   anim_start = glfwGetTime();
   last_frame_t = glfwGetTime();
