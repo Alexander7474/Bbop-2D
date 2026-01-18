@@ -21,7 +21,7 @@ La librairie permet de créer des jeux vidéos 2D ou des applications de bureau.
 ### ![Static Badge](https://img.shields.io/badge/Debian-Packages-grey?style=for-the-badge&logo=debian&labelColor=D70A53)
 
 ```
-sudo apt-get install libglew-dev libglfw3-dev libfreetype6-dev 
+sudo apt-get install libglew-dev libfreetype6-dev 
 ```
 
 ### ![Static Badge](https://img.shields.io/badge/Arch_Linux-Packages-grey?style=for-the-badge&logo=arch-linux&logoColor=fff&labelColor=1793D1) 
@@ -29,8 +29,11 @@ sudo apt-get install libglew-dev libglfw3-dev libfreetype6-dev
 (I use arch btw)
 
 ```
-sudo pacman -S glew glfw freetype2 glm
+sudo pacman -S glew freetype2
 ```
+
+
++ Installer GLM, GLFW3 et LDTKLoader.
 
 ## Compiler et installer bbop
 
