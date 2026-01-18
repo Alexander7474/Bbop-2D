@@ -11,12 +11,12 @@ La librairie permet de créer des jeux vidéos 2D ou des applications de bureau.
 
 [![Installation](https://img.shields.io/badge/Installation-lightgreen?style=for-the-badge)](#installation)   
 [![Static Badge](https://img.shields.io/badge/Documentation-lightblue?style=for-the-badge)](https://alexander7474.github.io/bbop-web-docs/)   
-[![Static Badge](https://img.shields.io/badge/Exemple_code-lightyellow?style=for-the-badge)](https://alexander7474.github.io/bbop-web-docs/)   
+[![Static Badge](https://img.shields.io/badge/Exemple-lightyellow?style=for-the-badge)](#exemple)   
 [![Static Badge](https://img.shields.io/badge/Report_Bug-red?style=for-the-badge&logoColor=red)](#report-bug)   
 
 # Installation  
 
-## Librairies externes nécessaires
+## Librairies externes
 
 ### ![Static Badge](https://img.shields.io/badge/Debian-Packages-grey?style=for-the-badge&logo=debian&labelColor=D70A53)
 
@@ -41,7 +41,7 @@ cd Bbop-Library
 make && sudo make install
 ```
 
-# Main exemple
+# Exemple
 
 ```
 int main()
