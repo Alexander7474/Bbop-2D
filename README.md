@@ -26,8 +26,6 @@ sudo apt-get install libglew-dev libfreetype6-dev
 
 ### ![Static Badge](https://img.shields.io/badge/Arch_Linux-Packages-grey?style=for-the-badge&logo=arch-linux&logoColor=fff&labelColor=1793D1) 
 
-(I use arch btw)
-
 ```
 sudo pacman -S glew freetype2
 ```
