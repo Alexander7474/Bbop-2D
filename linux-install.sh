@@ -212,7 +212,7 @@ echo -e "${Yellow}Installing LDtkLoader${Color_Off}"
 
 #installation de ldtkloader
 install_ldtk_loader=0
-if [[ -d "/usr/local/include/LDtkLoader" ]] || [[ -f "/usr/local/lib/libLDtkLoader.a" ]]
+if [[ -d "/usr/local/include/LDtkLoader" ]] || [[ -f "/usr/local/lib/libLDtkLoader.a" ]]
 then
   read -p "LDtkLoader is already installed, do you want to update ?[y,N]: " response
   if [ "$response" != "y" ]
@@ -248,7 +248,7 @@ echo -e "${Yellow}Installing BBOP${Color_Off}"
 
 #verification de l'installation de BBOP
 install_bbop=0
-if [[ -d "/usr/local/include/BBOP" ]] || [[ -f "/usr/local/lib/libbbop.a" ]]
+if [[ -d "/usr/local/include/BBOP" ]] || [[ -f "/usr/local/lib/libbbop.a" ]]
 then
   read -p "BBOP is already installed, do you want to update ?[y,N]: " response
   if [ "$response" != "y" ]
@@ -259,12 +259,8 @@ fi
 
 if [[ $install_bbop -eq 0 ]]
 then 
-  git clone https://github.com/Alexander7474/Bbop-Library.git 
-  cd Bbop-Library
   make
   sudo make install 
-  cd ../ 
-  sudo rm -r Bbop-Library
   echo -e "${Green}BBOP install done !"
 fi
 
