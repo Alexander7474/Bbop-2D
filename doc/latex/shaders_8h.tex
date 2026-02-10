@@ -1,0 +1,63 @@
+\doxysection{include/\+BBOP/\+Graphics/shaders.h File Reference}
+\hypertarget{shaders_8h}{}\label{shaders_8h}\index{include/BBOP/Graphics/shaders.h@{include/BBOP/Graphics/shaders.h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shaders_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8h_aa4e3821fb3d25cef0fcd8bd89a1666e8}{default\+Fragment}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8h_affe7023f9b3452bdc25366a3fb1da4c3}{default\+Vertex}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8h_a873949ba752f018a0283ce1e6aff68fe}{light\+Fragment}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8h_a65dcdee07ae0d313523ef0a800faa5d1}{light\+Vertex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{shaders_8h_aa4e3821fb3d25cef0fcd8bd89a1666e8}\label{shaders_8h_aa4e3821fb3d25cef0fcd8bd89a1666e8} 
+\index{shaders.h@{shaders.h}!defaultFragment@{defaultFragment}}
+\index{defaultFragment@{defaultFragment}!shaders.h@{shaders.h}}
+\doxysubsubsection{\texorpdfstring{defaultFragment}{defaultFragment}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} default\+Fragment\hspace{0.3cm}{\ttfamily [extern]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000010}{Todo}}]Utiliser des matrices de model, de view et de projection pour le vertex shaders\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000011}{Todo}}]1 -\/\texorpdfstring{$>$}{>} Mettre les shaders dans des fichier .glsl 
+
+2 -\/\texorpdfstring{$>$}{>} Faire des ubershader configurable pour optimiser les transfert de données (quantité) et la vitesse de calcule 
+
+3 -\/\texorpdfstring{$>$}{>} utilisé des matrice de tranformation, view et model pour éviter les calcule côté cpu 
+
+4 -\/\texorpdfstring{$>$}{>} faire un framebuffer pour calculer l\textquotesingle{}éclairage en une fois 
+
+5 -\/\texorpdfstring{$>$}{>} ajout de shadow map 
+
+6 -\/\texorpdfstring{$>$}{>} ajout de normal/light map \end{DoxyRefDesc}
+\Hypertarget{shaders_8h_affe7023f9b3452bdc25366a3fb1da4c3}\label{shaders_8h_affe7023f9b3452bdc25366a3fb1da4c3} 
+\index{shaders.h@{shaders.h}!defaultVertex@{defaultVertex}}
+\index{defaultVertex@{defaultVertex}!shaders.h@{shaders.h}}
+\doxysubsubsection{\texorpdfstring{defaultVertex}{defaultVertex}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} default\+Vertex\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shaders_8h_a873949ba752f018a0283ce1e6aff68fe}\label{shaders_8h_a873949ba752f018a0283ce1e6aff68fe} 
+\index{shaders.h@{shaders.h}!lightFragment@{lightFragment}}
+\index{lightFragment@{lightFragment}!shaders.h@{shaders.h}}
+\doxysubsubsection{\texorpdfstring{lightFragment}{lightFragment}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} light\+Fragment\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shaders_8h_a65dcdee07ae0d313523ef0a800faa5d1}\label{shaders_8h_a65dcdee07ae0d313523ef0a800faa5d1} 
+\index{shaders.h@{shaders.h}!lightVertex@{lightVertex}}
+\index{lightVertex@{lightVertex}!shaders.h@{shaders.h}}
+\doxysubsubsection{\texorpdfstring{lightVertex}{lightVertex}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} light\+Vertex\hspace{0.3cm}{\ttfamily [extern]}}
+

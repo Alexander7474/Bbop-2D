@@ -1,0 +1,376 @@
+\doxysection{Scene Class Reference}
+\hypertarget{classScene}{}\label{classScene}\index{Scene@{Scene}}
+
+
+Gère la scene et affiche des \doxylink{classBbopDrawable}{Bbop\+Drawable}.  
+
+
+
+
+{\ttfamily \#include $<$scene\+Class.\+h$>$}
+
+
+
+Collaboration diagram for Scene\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défault de \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classScene_a05f4829799d40e4fb5ceee1a4ee3b983}{Scene}} (float n\+Ambiant\+Light\+Value, \mbox{\hyperlink{classVector3i}{Vector3i}} n\+Ambiant\+Light\+Color)
+\begin{DoxyCompactList}\small\item\em Constructeur de \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classScene_a3b8cec2e32546713915f8c6303c951f1}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()
+\item 
+void \mbox{\hyperlink{classScene_ab006725913220d544544131e81b4f59d}{Use}} ()
+\begin{DoxyCompactList}\small\item\em Charge les valeur de la scene dans le shader de celle ci. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a7148467de487cd0cb787fc84c5e8b75d}{use\+Camera}} (\mbox{\hyperlink{classCamera}{Camera}} \texorpdfstring{$\ast$}{*}cam\+Addr)
+\begin{DoxyCompactList}\small\item\em Utilise une camera pour Draw avec la scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a9a90b1ea7b5904b53445fbaadbfe6f9f}{set\+Ambiant\+Light\+Value}} (float n\+Ambiant\+Light\+Value)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}intensité de la lumière ambiante de \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classScene_a1fa7cc93e28be137f6155a7d6b2b2402}{get\+Ambiant\+Light\+Value}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}intensité de la lumière ambiante de \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a1d8b8687167783ae52e33f69f053e3bd}{set\+Ambiant\+Light\+Color}} (const \mbox{\hyperlink{classVector3i}{Vector3i}} \&n\+Ambiant\+Light\+Color)
+\begin{DoxyCompactList}\small\item\em Change la couleur de la lumière ambiante de \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classVector3i}{Vector3i}} \& \mbox{\hyperlink{classScene_ab5128cc4211b19612557c84f021de576}{get\+Ambiant\+Light\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la couleur de la lumière ambiante de \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a09b1a0e0628434ef0c78ed3094f67c14}{add\+Light}} (\mbox{\hyperlink{classLight}{Light}} \&l)
+\begin{DoxyCompactList}\small\item\em Ajoute un point de lumière dans la \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_af943707e7fdfd9c1c90bb6fa3acecb35}{Draw}} (const \mbox{\hyperlink{classBbopDrawable}{Bbop\+Drawable}} \&spr) const
+\begin{DoxyCompactList}\small\item\em Permet de dessiner sur la fenêtre GFLW initialisée dans bbop\+Int() avec l\textquotesingle{}environement de la \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a565645896e7a503887dc28d1697787cf}{Draw\+Frame\+Buffer}} (const \mbox{\hyperlink{classNoTextureSprite}{No\+Texture\+Sprite}} \&spr) const
+\begin{DoxyCompactList}\small\item\em Dessine le frame buffer de la scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a4ddf2d16f371ee9533b3faf1dd5ddfb1}{render}} ()
+\begin{DoxyCompactList}\small\item\em Permet de render le framebuffer de la scene en calculant sont éclairage final. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShader}{Shader}} \mbox{\hyperlink{classScene_af101946fb27c192b5d7e97524c955dec}{scene\+Shader}}
+\item 
+\mbox{\hyperlink{classShader}{Shader}} \mbox{\hyperlink{classScene_a85ab55c74c7192eb68837455e6718529}{scene\+Light\+Shader}}
+\item 
+float \mbox{\hyperlink{classScene_aaab72be37887585ce61da164145e11a4}{ambiant\+Light\+Value}}
+\item 
+\mbox{\hyperlink{classVector3i}{Vector3i}} \mbox{\hyperlink{classScene_aa72063f1862b8e05eddbf7bd67e6527a}{ambiant\+Light\+Color}}
+\item 
+GLint \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classScene_a674e10a9ff31902f9da9c11235309245}{render\+Uniforms}}
+\item 
+GLint \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classScene_a2cbcc90c1b5529d62d47caf8a2d71404}{light\+Render\+Uniforms}}
+\item 
+GLuint \mbox{\hyperlink{classScene_ac524d844f425bd061ff1eb9d8a81493e}{lights\+UBO}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structUniformLight}{Uniform\+Light}} $>$ \mbox{\hyperlink{classScene_a634d23536e50086507a181d6e2fcad70}{lights\+Vec}}
+\item 
+\mbox{\hyperlink{classVector3f}{Vector3f}} \mbox{\hyperlink{classScene_a594ebdf65075e9dac26304672778d193}{ambiant\+Light}}
+\item 
+\mbox{\hyperlink{classCamera}{Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classScene_a97ab4eb9c4c64413e89c47df149ee84a}{scene\+Camera}}
+\item 
+unsigned int \mbox{\hyperlink{classScene_acb73294142b8eb4d8fd834876096e772}{frame\+Buffer}}
+\item 
+unsigned int \mbox{\hyperlink{classScene_ae3741fbaac3b1ee9780180ec3610f556}{texture\+Color\+Buffer}}
+\item 
+unsigned int \mbox{\hyperlink{classScene_a16e845f6cb3f9c5535285ffda10fcfc9}{texture\+Normal\+Map\+Buffer}}
+\item 
+\mbox{\hyperlink{classNoTextureSprite}{No\+Texture\+Sprite}} \mbox{\hyperlink{classScene_af18b743d89ca7c505b994136c861adfa}{frame\+Buffer\+Sprite}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gère la scene et affiche des \doxylink{classBbopDrawable}{Bbop\+Drawable}. 
+
+Tous les paramètre d\textquotesingle{}affichage sont gèré par \doxylink{classScene}{Scene} comme la lumières ambiante, la camera ou encore les points de lumièrender\+Mode\+Loc. La \doxylink{classScene}{Scene} gère donc l\textquotesingle{}environement de vos \doxylink{classBbopDrawable}{Bbop\+Drawable}
+
+La class \doxylink{classScene}{Scene} gère les shaders d\textquotesingle{}affichage \begin{DoxySeeAlso}{See also}
+\doxylink{classBbopDrawable}{Bbop\+Drawable}
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+Cette class est obligatoire pour afficher des éléments 
+\end{DoxyAttention}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classScene_ad10176d75a9cc0da56626f682d083507}\label{classScene_ad10176d75a9cc0da56626f682d083507} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défault de \doxylink{classScene}{Scene}. 
+
+La scene par défault est éclairé par une lumière blanche d\textquotesingle{}intensité 1.\+0 \Hypertarget{classScene_a05f4829799d40e4fb5ceee1a4ee3b983}\label{classScene_a05f4829799d40e4fb5ceee1a4ee3b983} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{float}]{n\+Ambiant\+Light\+Value,  }\item[{\mbox{\hyperlink{classVector3i}{Vector3i}}}]{n\+Ambiant\+Light\+Color }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \doxylink{classScene}{Scene}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Ambiant\+Light\+Value} & Intensité de la lumière ambiante \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Ambiant\+Light\+Color} & Couleur de la lumière ambiante \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classScene_a3b8cec2e32546713915f8c6303c951f1}\label{classScene_a3b8cec2e32546713915f8c6303c951f1} 
+\index{Scene@{Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily Scene\+::\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classScene_a09b1a0e0628434ef0c78ed3094f67c14}\label{classScene_a09b1a0e0628434ef0c78ed3094f67c14} 
+\index{Scene@{Scene}!addLight@{addLight}}
+\index{addLight@{addLight}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{addLight()}{addLight()}}
+{\footnotesize\ttfamily void Scene\+::add\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLight}{Light}} \&}]{l }\end{DoxyParamCaption})}
+
+
+
+Ajoute un point de lumière dans la \doxylink{classScene}{Scene}. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classLight}{Light}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em l} & point de lumière\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+La list de \doxylink{classLight}{Light} de \doxylink{classScene}{Scene} est reset à chaque usage de \doxylink{classScene_ab006725913220d544544131e81b4f59d}{Use()}, il est donc nécessaire d\textquotesingle{}ajouter vos point de lumière avant de spécifier la scene à utilser dans votre rendue de frame 
+\end{DoxyAttention}
+\Hypertarget{classScene_af943707e7fdfd9c1c90bb6fa3acecb35}\label{classScene_af943707e7fdfd9c1c90bb6fa3acecb35} 
+\index{Scene@{Scene}!Draw@{Draw}}
+\index{Draw@{Draw}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Scene\+::\+Draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBbopDrawable}{Bbop\+Drawable}} \&}]{spr }\end{DoxyParamCaption}) const}
+
+
+
+Permet de dessiner sur la fenêtre GFLW initialisée dans bbop\+Int() avec l\textquotesingle{}environement de la \doxylink{classScene}{Scene}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em spr} & Objet à dessiner \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classScene_a565645896e7a503887dc28d1697787cf}\label{classScene_a565645896e7a503887dc28d1697787cf} 
+\index{Scene@{Scene}!DrawFrameBuffer@{DrawFrameBuffer}}
+\index{DrawFrameBuffer@{DrawFrameBuffer}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{DrawFrameBuffer()}{DrawFrameBuffer()}}
+{\footnotesize\ttfamily void Scene\+::\+Draw\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classNoTextureSprite}{No\+Texture\+Sprite}} \&}]{spr }\end{DoxyParamCaption}) const}
+
+
+
+Dessine le frame buffer de la scene. 
+
+\Hypertarget{classScene_ab5128cc4211b19612557c84f021de576}\label{classScene_ab5128cc4211b19612557c84f021de576} 
+\index{Scene@{Scene}!getAmbiantLightColor@{getAmbiantLightColor}}
+\index{getAmbiantLightColor@{getAmbiantLightColor}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{getAmbiantLightColor()}{getAmbiantLightColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVector3i}{Vector3i}} \& Scene\+::get\+Ambiant\+Light\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie la couleur de la lumière ambiante de \doxylink{classScene}{Scene}. 
+
+\begin{DoxyReturn}{Returns}
+ambiant\+Light\+Color Couleur de la lumière ambiante 
+\end{DoxyReturn}
+\Hypertarget{classScene_a1fa7cc93e28be137f6155a7d6b2b2402}\label{classScene_a1fa7cc93e28be137f6155a7d6b2b2402} 
+\index{Scene@{Scene}!getAmbiantLightValue@{getAmbiantLightValue}}
+\index{getAmbiantLightValue@{getAmbiantLightValue}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{getAmbiantLightValue()}{getAmbiantLightValue()}}
+{\footnotesize\ttfamily float Scene\+::get\+Ambiant\+Light\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie l\textquotesingle{}intensité de la lumière ambiante de \doxylink{classScene}{Scene}. 
+
+\begin{DoxyReturn}{Returns}
+ambiant\+Light\+Value Intensité de la lumière ambiante 
+\end{DoxyReturn}
+\Hypertarget{classScene_a4ddf2d16f371ee9533b3faf1dd5ddfb1}\label{classScene_a4ddf2d16f371ee9533b3faf1dd5ddfb1} 
+\index{Scene@{Scene}!render@{render}}
+\index{render@{render}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Scene\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet de render le framebuffer de la scene en calculant sont éclairage final. 
+
+Clear le vecteur de lumière \Hypertarget{classScene_a1d8b8687167783ae52e33f69f053e3bd}\label{classScene_a1d8b8687167783ae52e33f69f053e3bd} 
+\index{Scene@{Scene}!setAmbiantLightColor@{setAmbiantLightColor}}
+\index{setAmbiantLightColor@{setAmbiantLightColor}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{setAmbiantLightColor()}{setAmbiantLightColor()}}
+{\footnotesize\ttfamily void Scene\+::set\+Ambiant\+Light\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3i}{Vector3i}} \&}]{n\+Ambiant\+Light\+Color }\end{DoxyParamCaption})}
+
+
+
+Change la couleur de la lumière ambiante de \doxylink{classScene}{Scene}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Ambiant\+Light\+Color} & Couleur de la lumière ambiante \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classScene_a9a90b1ea7b5904b53445fbaadbfe6f9f}\label{classScene_a9a90b1ea7b5904b53445fbaadbfe6f9f} 
+\index{Scene@{Scene}!setAmbiantLightValue@{setAmbiantLightValue}}
+\index{setAmbiantLightValue@{setAmbiantLightValue}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{setAmbiantLightValue()}{setAmbiantLightValue()}}
+{\footnotesize\ttfamily void Scene\+::set\+Ambiant\+Light\+Value (\begin{DoxyParamCaption}\item[{float}]{n\+Ambiant\+Light\+Value }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}intensité de la lumière ambiante de \doxylink{classScene}{Scene}. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCamera}{Camera}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Ambiant\+Light\+Value} & Intensité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classScene_ab006725913220d544544131e81b4f59d}\label{classScene_ab006725913220d544544131e81b4f59d} 
+\index{Scene@{Scene}!Use@{Use}}
+\index{Use@{Use}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Use()}{Use()}}
+{\footnotesize\ttfamily void Scene\+::\+Use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Charge les valeur de la scene dans le shader de celle ci. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em window} & Fenêtre GLFW utilisée par votre programme et initialisée avec \doxylink{bbopFunc_8h_a697650ee78695079a1f5549465584e43}{bbop\+Init()}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Cette méthode est à utiliser à l\textquotesingle{}initialisation de votre programme et avant chaque changement de scene si la scene doit changer 
+\end{DoxyAttention}
+\Hypertarget{classScene_a7148467de487cd0cb787fc84c5e8b75d}\label{classScene_a7148467de487cd0cb787fc84c5e8b75d} 
+\index{Scene@{Scene}!useCamera@{useCamera}}
+\index{useCamera@{useCamera}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{useCamera()}{useCamera()}}
+{\footnotesize\ttfamily void Scene\+::use\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCamera}{Camera}} \texorpdfstring{$\ast$}{*}}]{cam\+Addr }\end{DoxyParamCaption})}
+
+
+
+Utilise une camera pour Draw avec la scene. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cam\+Addr} & Addresse de la camera à utiliser ou pointeur ves celle ci, nullptr pour la cam par défault\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Cette méthode utilise le prisme de la camera passé en paramètre pour tous les prochains \doxylink{classScene_af943707e7fdfd9c1c90bb6fa3acecb35}{Draw()}, pour revenir à la camera par défault il faut l\textquotesingle{}utilser avec nullptr comme cam\+Addr 
+\end{DoxyAttention}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classScene_a594ebdf65075e9dac26304672778d193}\label{classScene_a594ebdf65075e9dac26304672778d193} 
+\index{Scene@{Scene}!ambiantLight@{ambiantLight}}
+\index{ambiantLight@{ambiantLight}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{ambiantLight}{ambiantLight}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3f}{Vector3f}} Scene\+::ambiant\+Light\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_aa72063f1862b8e05eddbf7bd67e6527a}\label{classScene_aa72063f1862b8e05eddbf7bd67e6527a} 
+\index{Scene@{Scene}!ambiantLightColor@{ambiantLightColor}}
+\index{ambiantLightColor@{ambiantLightColor}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{ambiantLightColor}{ambiantLightColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3i}{Vector3i}} Scene\+::ambiant\+Light\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_aaab72be37887585ce61da164145e11a4}\label{classScene_aaab72be37887585ce61da164145e11a4} 
+\index{Scene@{Scene}!ambiantLightValue@{ambiantLightValue}}
+\index{ambiantLightValue@{ambiantLightValue}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{ambiantLightValue}{ambiantLightValue}}
+{\footnotesize\ttfamily float Scene\+::ambiant\+Light\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_acb73294142b8eb4d8fd834876096e772}\label{classScene_acb73294142b8eb4d8fd834876096e772} 
+\index{Scene@{Scene}!frameBuffer@{frameBuffer}}
+\index{frameBuffer@{frameBuffer}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{frameBuffer}{frameBuffer}}
+{\footnotesize\ttfamily unsigned int Scene\+::frame\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_af18b743d89ca7c505b994136c861adfa}\label{classScene_af18b743d89ca7c505b994136c861adfa} 
+\index{Scene@{Scene}!frameBufferSprite@{frameBufferSprite}}
+\index{frameBufferSprite@{frameBufferSprite}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{frameBufferSprite}{frameBufferSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNoTextureSprite}{No\+Texture\+Sprite}} Scene\+::frame\+Buffer\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_a2cbcc90c1b5529d62d47caf8a2d71404}\label{classScene_a2cbcc90c1b5529d62d47caf8a2d71404} 
+\index{Scene@{Scene}!lightRenderUniforms@{lightRenderUniforms}}
+\index{lightRenderUniforms@{lightRenderUniforms}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{lightRenderUniforms}{lightRenderUniforms}}
+{\footnotesize\ttfamily GLint\texorpdfstring{$\ast$}{*} Scene\+::light\+Render\+Uniforms\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_ac524d844f425bd061ff1eb9d8a81493e}\label{classScene_ac524d844f425bd061ff1eb9d8a81493e} 
+\index{Scene@{Scene}!lightsUBO@{lightsUBO}}
+\index{lightsUBO@{lightsUBO}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{lightsUBO}{lightsUBO}}
+{\footnotesize\ttfamily GLuint Scene\+::lights\+UBO\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_a634d23536e50086507a181d6e2fcad70}\label{classScene_a634d23536e50086507a181d6e2fcad70} 
+\index{Scene@{Scene}!lightsVec@{lightsVec}}
+\index{lightsVec@{lightsVec}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{lightsVec}{lightsVec}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structUniformLight}{Uniform\+Light}}$>$ Scene\+::lights\+Vec\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_a674e10a9ff31902f9da9c11235309245}\label{classScene_a674e10a9ff31902f9da9c11235309245} 
+\index{Scene@{Scene}!renderUniforms@{renderUniforms}}
+\index{renderUniforms@{renderUniforms}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{renderUniforms}{renderUniforms}}
+{\footnotesize\ttfamily GLint\texorpdfstring{$\ast$}{*} Scene\+::render\+Uniforms\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_a97ab4eb9c4c64413e89c47df149ee84a}\label{classScene_a97ab4eb9c4c64413e89c47df149ee84a} 
+\index{Scene@{Scene}!sceneCamera@{sceneCamera}}
+\index{sceneCamera@{sceneCamera}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{sceneCamera}{sceneCamera}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCamera}{Camera}}\texorpdfstring{$\ast$}{*} Scene\+::scene\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_a85ab55c74c7192eb68837455e6718529}\label{classScene_a85ab55c74c7192eb68837455e6718529} 
+\index{Scene@{Scene}!sceneLightShader@{sceneLightShader}}
+\index{sceneLightShader@{sceneLightShader}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{sceneLightShader}{sceneLightShader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classShader}{Shader}} Scene\+::scene\+Light\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_af101946fb27c192b5d7e97524c955dec}\label{classScene_af101946fb27c192b5d7e97524c955dec} 
+\index{Scene@{Scene}!sceneShader@{sceneShader}}
+\index{sceneShader@{sceneShader}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{sceneShader}{sceneShader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classShader}{Shader}} Scene\+::scene\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_ae3741fbaac3b1ee9780180ec3610f556}\label{classScene_ae3741fbaac3b1ee9780180ec3610f556} 
+\index{Scene@{Scene}!textureColorBuffer@{textureColorBuffer}}
+\index{textureColorBuffer@{textureColorBuffer}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{textureColorBuffer}{textureColorBuffer}}
+{\footnotesize\ttfamily unsigned int Scene\+::texture\+Color\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classScene_a16e845f6cb3f9c5535285ffda10fcfc9}\label{classScene_a16e845f6cb3f9c5535285ffda10fcfc9} 
+\index{Scene@{Scene}!textureNormalMapBuffer@{textureNormalMapBuffer}}
+\index{textureNormalMapBuffer@{textureNormalMapBuffer}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{textureNormalMapBuffer}{textureNormalMapBuffer}}
+{\footnotesize\ttfamily unsigned int Scene\+::texture\+Normal\+Map\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+BBOP/\+Graphics/\mbox{\hyperlink{sceneClass_8h}{scene\+Class.\+h}}\item 
+src/\+BBOP/\+Graphics/\mbox{\hyperlink{sceneClass_8cpp}{scene\+Class.\+cpp}}\end{DoxyCompactItemize}

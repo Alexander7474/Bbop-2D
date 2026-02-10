@@ -1,0 +1,87 @@
+\chapter{Bbop-\/2D}
+\hypertarget{md_README}{}\label{md_README}\index{Bbop-\/2D@{Bbop-\/2D}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+   
+
+Bbop-\/2D is a graphics library based on \href{https://www.opengl.org/}{\texttt{ Open\+GL}}, specifically designed for {\bfseries{2D game development}}. ~\newline
+ It stands out with its support for {\bfseries{lighting and normal maps}}, enabling the creation of visually rich and immersive environments, even in a 2D context.
+
+Installation ~\newline
+ Features ~\newline
+ \href{https://alexander7474.github.io/bbop-web-docs/}{\texttt{ Documentation}} ~\newline
+ \href{https://github.com/Alexander7474/Bbop-Library/issues}{\texttt{ Report Issue}} ~\newline
+ \mbox{[}Contribute\mbox{]}(contribute) ~\newline
+\hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsection{\texorpdfstring{External Libraries}{External Libraries}}\label{md_README_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ libglew-\/dev\ libfreetype6-\/dev\ }
+
+\end{DoxyCode}
+
+
+Install \href{https://github.com/g-truc/glm}{\texttt{ GLM}}, \href{https://github.com/glfw/glfw}{\texttt{ GLFW}}, and \href{https://github.com/Madour/LDtkLoader}{\texttt{ LDTKLoader}}.\hypertarget{md_README_autotoc_md3}{}\doxysubsection{\texorpdfstring{Install Bbop}{Install Bbop}}\label{md_README_autotoc_md3}
+Bbop-\/2D require at least a C++17 compiler. Older complier will not work due to GLM.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/Alexander7474/Bbop-\/Library.git}
+\DoxyCodeLine{cd\ Bbop-\/Library}
+\DoxyCodeLine{make\ \&\&\ sudo\ make\ install}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{Simple loop example}{Simple loop example}}\label{md_README_autotoc_md4}
+This is a basic loop with the mandatory functions you need to use the library.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int\ main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ GLFWwindow\ *\ window;}
+\DoxyCodeLine{\ \ \ \ bbopInit(1920,1080,"{}window\ name"{},window);}
+\DoxyCodeLine{\ \ \ \ while\ (!glfwWindowShouldClose(window))}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ bbopCleanWindow(window,Vector3i(0,0,0),1.0f));}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ ///////////////}
+\DoxyCodeLine{\ \ \ \ \ \ //\ your\ code}
+\DoxyCodeLine{\ \ \ \ \ \ ///////////////}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ bbopErrorCheck();}
+\DoxyCodeLine{\ \ \ \ \ \ glfwSwapBuffer(window);}
+\DoxyCodeLine{\ \ \ \ \ \ glfwPollEvents();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ glfwDestroyWindow(window);}
+\DoxyCodeLine{\ \ \ \ glfwTerminate();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md5}{}\doxysection{\texorpdfstring{Features}{Features}}\label{md_README_autotoc_md5}
+A non-\/exhaustive list of features
+
+
+\begin{DoxyItemize}
+\item Sprite
+\item Geametric Shape (Rectangle, Circle, Convex, Triangle...)
+\item Basic collision
+\item Light and Normal\+Map for light reflexion
+\item Camera
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md6}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{md_README_autotoc_md6}
+We welcome contributions! If you want to help improve Bbop-\/2D, feel free to submit a \href{https://github.com/Alexander7474/Bbop-2D/pulls}{\texttt{ pull request}}. ~\newline
+
+
+Please make sure to {\bfseries{follow the project’s coding style}}. You can easily format your code using\+: ~\newline
+
+
+
+\begin{DoxyItemize}
+\item The {\ttfamily format\+\_\+code.\+sh} script in the root of the repository. ~\newline
+
+\item Or directly {\ttfamily clang-\/format} command with {\ttfamily .clang-\/format} file in te root of the repository. ~\newline
+
+\end{DoxyItemize}
+
+Following the style helps keep the code clean and consistent for everyone. 

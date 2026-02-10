@@ -1,0 +1,424 @@
+\doxysection{Collision\+Box Class Reference}
+\hypertarget{classCollisionBox}{}\label{classCollisionBox}\index{CollisionBox@{CollisionBox}}
+
+
+gère une boîte de collision  
+
+
+
+
+{\ttfamily \#include $<$collision\+Box\+Class.\+h$>$}
+
+
+
+Inheritance diagram for Collision\+Box\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classCollisionBox__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Collision\+Box\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classCollisionBox__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCollisionBox_a4a974d5d5f2a99fb5db93e0829c7098d}{Collision\+Box}} (\mbox{\hyperlink{classVector2f}{Vector2f}} n\+Pos, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Origin, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Size, float n\+Rotation)
+\begin{DoxyCompactList}\small\item\em Constructeur de la boîte de collision. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCollisionBox_ae66cbbc8c929997db4a37f1cd14c5dc8}{Collision\+Box}} (const \mbox{\hyperlink{classGeometric}{Geometric}} \&to\+\_\+follow)
+\begin{DoxyCompactList}\small\item\em Constructeur de la boîte de collision à partir d\textquotesingle{}une \doxylink{classGeometric}{Geometric}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCollisionBox_a11e887724dd21a42caa87411018de342}{Collision\+Box}} ()
+\begin{DoxyCompactList}\small\item\em constructeur par défault de la boîte de collision \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCollisionBox_a74639fe7c6a7105af10ab7ce59a1ffd2}{check}} (const \mbox{\hyperlink{classCollisionBox}{Collision\+Box}} \&other\+Box) const
+\begin{DoxyCompactList}\small\item\em Detecte si la boîte est en collision avec une autre. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCollisionBox_a7e4a1c23eb0513f0d10d83d9ffc6679d}{check\+With\+Rotation}} (const \mbox{\hyperlink{classCollisionBox}{Collision\+Box}} \&other\+Box) const
+\begin{DoxyCompactList}\small\item\em Detecte si la boîte est en collision en prenant en compte la rotaion des deux boîtes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classCollisionBox_a8c9274a9771030514d87af2ef68bf88e}{get\+OffsetX}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}offset X de la boîte. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classCollisionBox_a77f54b62be806b1a986a57478c38a6a1}{get\+OffsetY}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}offset Y de la boîte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollisionBox_a51c49847af58d00d433c63359d6a3928}{set\+OffsetX}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&off\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}offsetX. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollisionBox_adc9a90fa6a3aba5f6e302953eefff05b}{set\+OffsetX}} (float x\+\_\+, float y\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}offsetX. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollisionBox_a09e890b2c99bd6da7500eb214c1a3f2b}{set\+OffsetY}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&off\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}offsetY. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollisionBox_a20173d7b2e31d8fa417d6fd0406f583d}{set\+OffsetY}} (float x\+\_\+, float y\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}offsetY. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollisionBox_ad9cc9886e37e4268366846287094cd07}{follow}} (const \mbox{\hyperlink{classGeometric}{Geometric}} \&to\+\_\+follow)
+\begin{DoxyCompactList}\small\item\em Copy les caractèristique d\textquotesingle{}un objet \doxylink{classGeometric}{Geometric} pour utiliser la boîte de collision comme la sienne. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCollisionBox_a69e2bbb7afd5a3d2c8dcae8fcf407b8f}{get\+Top}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la position y de la limite haute de la boite. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCollisionBox_ad1988ce5c0496512b83bc31c4c03d765}{get\+Bottom}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la position y de la limite basse de la boite. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCollisionBox_ac46113d09cf1308431fc699de0bf39ce}{get\+Left}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la position x de la limite gauche de la boite. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCollisionBox_ab58c9ae6bf88bc82ec6d36ecc5cb6969}{get\+Right}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la position x de la limite droite de la boite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollisionBox_a8d0c01685c90a45c54f03a77b8232d3d}{flip\+Horizontally}} ()
+\begin{DoxyCompactList}\small\item\em renverse la boîte de collision horizontallement \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollisionBox_aee9026f7977f98c07ae905e68e0beb11}{flip\+Vertically}} ()
+\begin{DoxyCompactList}\small\item\em renverse la boîte de collision verticallement ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGeometric}{Geometric}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGeometric_aefce0e819f3027bdb457cadd97c36feb}{Geometric}} (\mbox{\hyperlink{classVector2f}{Vector2f}} n\+Pos, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Origin, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Size, float n\+Rotation)
+\item 
+\mbox{\hyperlink{classGeometric_ab0b0fa4ae9960792d353f2103fdf0f94}{Geometric}} (const \mbox{\hyperlink{classGeometric}{Geometric}} \&other)
+\item 
+\mbox{\hyperlink{classGeometric_a741e184fee4d9abdeb2f565870eba117}{Geometric}} ()
+\item 
+void \mbox{\hyperlink{classGeometric_adabfdba31abfe4bc3261ddba5780b30b}{set\+Position}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&n\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classGeometric_a5459f6fe26a932ddb96e58ce27e02bea}{set\+Position}} (float x\+\_\+, float y\+\_\+)
+\item 
+const \mbox{\hyperlink{classVector2f}{Vector2f}} \& \mbox{\hyperlink{classGeometric_ae6773c23bc49c577a746eceba0d61ae9}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{classGeometric_a6b61d7c0fa963bc1dc505c9870064bc9}{set\+Size}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&n\+Size)
+\item 
+virtual void \mbox{\hyperlink{classGeometric_a3349ad4b53502ef34045cd9918edf874}{set\+Size}} (float x\+\_\+, float y\+\_\+)
+\item 
+const \mbox{\hyperlink{classVector2f}{Vector2f}} \& \mbox{\hyperlink{classGeometric_a3fff20466217773ba98812edec671fd6}{get\+Size}} () const
+\item 
+void \mbox{\hyperlink{classGeometric_abbca7318025469c0f10e213091fc172b}{set\+Origin}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&n\+Origin)
+\item 
+virtual void \mbox{\hyperlink{classGeometric_a781821c6563ce5f9aebf09c265318fe6}{set\+Origin}} (float x\+\_\+, float y\+\_\+)
+\item 
+const \mbox{\hyperlink{classVector2f}{Vector2f}} \& \mbox{\hyperlink{classGeometric_a7f5fabeb15df60997cd99a0b6133d7fc}{get\+Origin}} () const
+\item 
+virtual void \mbox{\hyperlink{classGeometric_aa2fabdf5c95688011676905b81bf154a}{set\+Rotation}} (float n\+Rotation)
+\item 
+const float \mbox{\hyperlink{classGeometric_a526ff2b9c1e4bc1738b0ba80a4a45dea}{get\+Rotation}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classCollisionBox_a56ffc1531d3248bcd2935ec957bcddf6}{offsetX}}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classCollisionBox_a592183b7486d63b3d85a727b4bbc7b6f}{offsetY}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGeometric}{Geometric}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classGeometric_a14611c9ff07c9c8d5ebbb1f41f126717}{pos}}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classGeometric_a1f8404d4bcf821ab4f238c955f3cf0bf}{origin}}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classGeometric_aa66a8a8cb49a9b1bb20d6fc5e8426e56}{size}}
+\item 
+float \mbox{\hyperlink{classGeometric_ac04c6ad67f220fa6fe1adbd49dad3891}{rotation}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+gère une boîte de collision 
+
+\begin{DoxyNote}{Note}
+Cette class est utilisé par défault pour gèrer les collision des \doxylink{classShape}{Shape} 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCollisionBox_a4a974d5d5f2a99fb5db93e0829c7098d}\label{classCollisionBox_a4a974d5d5f2a99fb5db93e0829c7098d} 
+\index{CollisionBox@{CollisionBox}!CollisionBox@{CollisionBox}}
+\index{CollisionBox@{CollisionBox}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{CollisionBox()}{CollisionBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Collision\+Box\+::\+Collision\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Pos,  }\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Origin,  }\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Size,  }\item[{float}]{n\+Rotation }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la boîte de collision. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Pos} & position de la boîte \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Origin} & origin de la boîte \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Size} & Dimension de la boîte \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Rotation} & angle de rotation de la boîte \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCollisionBox_ae66cbbc8c929997db4a37f1cd14c5dc8}\label{classCollisionBox_ae66cbbc8c929997db4a37f1cd14c5dc8} 
+\index{CollisionBox@{CollisionBox}!CollisionBox@{CollisionBox}}
+\index{CollisionBox@{CollisionBox}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{CollisionBox()}{CollisionBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Collision\+Box\+::\+Collision\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGeometric}{Geometric}} \&}]{to\+\_\+follow }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la boîte de collision à partir d\textquotesingle{}une \doxylink{classGeometric}{Geometric}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em to\+\_\+follow} & \doxylink{classGeometric}{Geometric} à copier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCollisionBox_a11e887724dd21a42caa87411018de342}\label{classCollisionBox_a11e887724dd21a42caa87411018de342} 
+\index{CollisionBox@{CollisionBox}!CollisionBox@{CollisionBox}}
+\index{CollisionBox@{CollisionBox}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{CollisionBox()}{CollisionBox()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Collision\+Box\+::\+Collision\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructeur par défault de la boîte de collision 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCollisionBox_a74639fe7c6a7105af10ab7ce59a1ffd2}\label{classCollisionBox_a74639fe7c6a7105af10ab7ce59a1ffd2} 
+\index{CollisionBox@{CollisionBox}!check@{check}}
+\index{check@{check}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool Collision\+Box\+::check (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCollisionBox}{Collision\+Box}} \&}]{other\+Box }\end{DoxyParamCaption}) const}
+
+
+
+Detecte si la boîte est en collision avec une autre. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other\+Box} & Boîte à comparer avec la boîte qui appele la méthode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true si la boîte est en collision avec other\+Box et false si non
+\end{DoxyReturn}
+@attenion Cette méthode ne prend pas en compte la roation des deux boîte pour des raisons de performances \Hypertarget{classCollisionBox_a7e4a1c23eb0513f0d10d83d9ffc6679d}\label{classCollisionBox_a7e4a1c23eb0513f0d10d83d9ffc6679d} 
+\index{CollisionBox@{CollisionBox}!checkWithRotation@{checkWithRotation}}
+\index{checkWithRotation@{checkWithRotation}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{checkWithRotation()}{checkWithRotation()}}
+{\footnotesize\ttfamily bool Collision\+Box\+::check\+With\+Rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCollisionBox}{Collision\+Box}} \&}]{other\+Box }\end{DoxyParamCaption}) const}
+
+
+
+Detecte si la boîte est en collision en prenant en compte la rotaion des deux boîtes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other\+Box} & Boîte à comparer avec la boîte qui appele la méthode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true si la boîte est en collision avec other\+Box et false si non
+\end{DoxyReturn}
+@attenion Cette méthode prend en compte la rotation et est donc plus gourmand en ressource, à utiliser seulement si nécessaire \Hypertarget{classCollisionBox_a8d0c01685c90a45c54f03a77b8232d3d}\label{classCollisionBox_a8d0c01685c90a45c54f03a77b8232d3d} 
+\index{CollisionBox@{CollisionBox}!flipHorizontally@{flipHorizontally}}
+\index{flipHorizontally@{flipHorizontally}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{flipHorizontally()}{flipHorizontally()}}
+{\footnotesize\ttfamily void Collision\+Box\+::flip\+Horizontally (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+renverse la boîte de collision horizontallement 
+
+\Hypertarget{classCollisionBox_aee9026f7977f98c07ae905e68e0beb11}\label{classCollisionBox_aee9026f7977f98c07ae905e68e0beb11} 
+\index{CollisionBox@{CollisionBox}!flipVertically@{flipVertically}}
+\index{flipVertically@{flipVertically}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{flipVertically()}{flipVertically()}}
+{\footnotesize\ttfamily void Collision\+Box\+::flip\+Vertically (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+renverse la boîte de collision verticallement ~\newline
+ 
+
+\Hypertarget{classCollisionBox_ad9cc9886e37e4268366846287094cd07}\label{classCollisionBox_ad9cc9886e37e4268366846287094cd07} 
+\index{CollisionBox@{CollisionBox}!follow@{follow}}
+\index{follow@{follow}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{follow()}{follow()}}
+{\footnotesize\ttfamily void Collision\+Box\+::follow (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGeometric}{Geometric}} \&}]{to\+\_\+follow }\end{DoxyParamCaption})}
+
+
+
+Copy les caractèristique d\textquotesingle{}un objet \doxylink{classGeometric}{Geometric} pour utiliser la boîte de collision comme la sienne. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em to\+\_\+follow} & \doxylink{classGeometric}{Geometric} à copier/suivre \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCollisionBox_ad1988ce5c0496512b83bc31c4c03d765}\label{classCollisionBox_ad1988ce5c0496512b83bc31c4c03d765} 
+\index{CollisionBox@{CollisionBox}!getBottom@{getBottom}}
+\index{getBottom@{getBottom}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{getBottom()}{getBottom()}}
+{\footnotesize\ttfamily float Collision\+Box\+::get\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la position y de la limite basse de la boite. 
+
+\begin{DoxyReturn}{Returns}
+bottom 
+\end{DoxyReturn}
+\Hypertarget{classCollisionBox_ac46113d09cf1308431fc699de0bf39ce}\label{classCollisionBox_ac46113d09cf1308431fc699de0bf39ce} 
+\index{CollisionBox@{CollisionBox}!getLeft@{getLeft}}
+\index{getLeft@{getLeft}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{getLeft()}{getLeft()}}
+{\footnotesize\ttfamily float Collision\+Box\+::get\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la position x de la limite gauche de la boite. 
+
+\begin{DoxyReturn}{Returns}
+left 
+\end{DoxyReturn}
+\Hypertarget{classCollisionBox_a8c9274a9771030514d87af2ef68bf88e}\label{classCollisionBox_a8c9274a9771030514d87af2ef68bf88e} 
+\index{CollisionBox@{CollisionBox}!getOffsetX@{getOffsetX}}
+\index{getOffsetX@{getOffsetX}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{getOffsetX()}{getOffsetX()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2f}{Vector2f}} Collision\+Box\+::get\+OffsetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie l\textquotesingle{}offset X de la boîte. 
+
+l\textquotesingle{}offset X représente le rétrécicement horizontale de la boîte de collision par rapport à sa Geomtric/\+Shape
+
+X.\+x-\/\texorpdfstring{$>$}{>}gauche X.\+y-\/\texorpdfstring{$>$}{>}droite \Hypertarget{classCollisionBox_a77f54b62be806b1a986a57478c38a6a1}\label{classCollisionBox_a77f54b62be806b1a986a57478c38a6a1} 
+\index{CollisionBox@{CollisionBox}!getOffsetY@{getOffsetY}}
+\index{getOffsetY@{getOffsetY}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{getOffsetY()}{getOffsetY()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2f}{Vector2f}} Collision\+Box\+::get\+OffsetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie l\textquotesingle{}offset Y de la boîte. 
+
+L\textquotesingle{}offset Y représente le rétrécicement vertical de la boîte de collision par rapport à sa Geomtric/\+Shape
+
+Y.\+x-\/\texorpdfstring{$>$}{>}haut X.\+y-\/\texorpdfstring{$>$}{>}bas \Hypertarget{classCollisionBox_ab58c9ae6bf88bc82ec6d36ecc5cb6969}\label{classCollisionBox_ab58c9ae6bf88bc82ec6d36ecc5cb6969} 
+\index{CollisionBox@{CollisionBox}!getRight@{getRight}}
+\index{getRight@{getRight}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{getRight()}{getRight()}}
+{\footnotesize\ttfamily float Collision\+Box\+::get\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la position x de la limite droite de la boite. 
+
+\begin{DoxyReturn}{Returns}
+right 
+\end{DoxyReturn}
+\Hypertarget{classCollisionBox_a69e2bbb7afd5a3d2c8dcae8fcf407b8f}\label{classCollisionBox_a69e2bbb7afd5a3d2c8dcae8fcf407b8f} 
+\index{CollisionBox@{CollisionBox}!getTop@{getTop}}
+\index{getTop@{getTop}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{getTop()}{getTop()}}
+{\footnotesize\ttfamily float Collision\+Box\+::get\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la position y de la limite haute de la boite. 
+
+\begin{DoxyReturn}{Returns}
+top 
+\end{DoxyReturn}
+\Hypertarget{classCollisionBox_a51c49847af58d00d433c63359d6a3928}\label{classCollisionBox_a51c49847af58d00d433c63359d6a3928} 
+\index{CollisionBox@{CollisionBox}!setOffsetX@{setOffsetX}}
+\index{setOffsetX@{setOffsetX}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{setOffsetX()}{setOffsetX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Collision\+Box\+::set\+OffsetX (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector2f}{Vector2f}} \&}]{off\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}offsetX. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em off\+\_\+} & offsetX\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCollisionBox_a8c9274a9771030514d87af2ef68bf88e}{get\+Offset\+X()} 
+\end{DoxySeeAlso}
+\Hypertarget{classCollisionBox_adc9a90fa6a3aba5f6e302953eefff05b}\label{classCollisionBox_adc9a90fa6a3aba5f6e302953eefff05b} 
+\index{CollisionBox@{CollisionBox}!setOffsetX@{setOffsetX}}
+\index{setOffsetX@{setOffsetX}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{setOffsetX()}{setOffsetX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Collision\+Box\+::set\+OffsetX (\begin{DoxyParamCaption}\item[{float}]{x\+\_\+,  }\item[{float}]{y\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}offsetX. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x\+\_\+} & offset\+X.\+x \\
+\hline
+\mbox{\texttt{ in}}  & {\em y\+\_\+} & offset\+X.\+y\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCollisionBox_a8c9274a9771030514d87af2ef68bf88e}{get\+Offset\+X()} 
+\end{DoxySeeAlso}
+\Hypertarget{classCollisionBox_a09e890b2c99bd6da7500eb214c1a3f2b}\label{classCollisionBox_a09e890b2c99bd6da7500eb214c1a3f2b} 
+\index{CollisionBox@{CollisionBox}!setOffsetY@{setOffsetY}}
+\index{setOffsetY@{setOffsetY}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{setOffsetY()}{setOffsetY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Collision\+Box\+::set\+OffsetY (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector2f}{Vector2f}} \&}]{off\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}offsetY. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em off\+\_\+} & offsetX\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCollisionBox_a77f54b62be806b1a986a57478c38a6a1}{get\+Offset\+Y()} 
+\end{DoxySeeAlso}
+\Hypertarget{classCollisionBox_a20173d7b2e31d8fa417d6fd0406f583d}\label{classCollisionBox_a20173d7b2e31d8fa417d6fd0406f583d} 
+\index{CollisionBox@{CollisionBox}!setOffsetY@{setOffsetY}}
+\index{setOffsetY@{setOffsetY}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{setOffsetY()}{setOffsetY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Collision\+Box\+::set\+OffsetY (\begin{DoxyParamCaption}\item[{float}]{x\+\_\+,  }\item[{float}]{y\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}offsetY. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x\+\_\+} & offset\+Y.\+x \\
+\hline
+\mbox{\texttt{ in}}  & {\em y\+\_\+} & offset\+Y.\+y\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCollisionBox_a77f54b62be806b1a986a57478c38a6a1}{get\+Offset\+Y()} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCollisionBox_a56ffc1531d3248bcd2935ec957bcddf6}\label{classCollisionBox_a56ffc1531d3248bcd2935ec957bcddf6} 
+\index{CollisionBox@{CollisionBox}!offsetX@{offsetX}}
+\index{offsetX@{offsetX}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{offsetX}{offsetX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2f}{Vector2f}} Collision\+Box\+::offsetX\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCollisionBox_a592183b7486d63b3d85a727b4bbc7b6f}\label{classCollisionBox_a592183b7486d63b3d85a727b4bbc7b6f} 
+\index{CollisionBox@{CollisionBox}!offsetY@{offsetY}}
+\index{offsetY@{offsetY}!CollisionBox@{CollisionBox}}
+\doxysubsubsection{\texorpdfstring{offsetY}{offsetY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2f}{Vector2f}} Collision\+Box\+::offsetY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+BBOP/\+Graphics/\mbox{\hyperlink{collisionBoxClass_8h}{collision\+Box\+Class.\+h}}\item 
+src/\+BBOP/\+Graphics/\mbox{\hyperlink{collisionBoxClass_8cpp}{collision\+Box\+Class.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\chapter{Todo List}
+\hypertarget{todo}{}\label{todo}\index{Todo List@{Todo List}}
+
+\begin{DoxyRefList}
+\item[Class \doxylink{classAnimatedSprite}{Animated\+Sprite} ]\label{todo__todo000001}%
+\Hypertarget{todo__todo000001}%
+Ajouter une class State\+Sprite qui gère un sprite et qui l\textquotesingle{}anime en fonction d\textquotesingle{}une énumération d\textquotesingle{}état de ce \doxylink{classSprite}{Sprite}  
+\item[Member \doxylink{bbopFunc_8cpp_adb58533b6c571ff05497756cc224b28a}{bbop\+Debug\+Collision\+Box} (const \doxylink{classCollisionBox}{Collision\+Box} \&box, \doxylink{classScene}{Scene} \&scene)]\label{todo__todo000003}%
+\Hypertarget{todo__todo000003}%
+Optimiser cette méthode terriblement lente  
+\item[Member \doxylink{bbopFunc_8cpp_a697650ee78695079a1f5549465584e43}{bbop\+Init} (int windowX, int windowY, const char \texorpdfstring{$\ast$}{*}window\+Name, GLFWwindow \texorpdfstring{$\ast$}{*}\&window)]\label{todo__todo000002}%
+\Hypertarget{todo__todo000002}%
+Ajouter le paramétrage du uber\+Shader  
+\item[Class \doxylink{classCamera}{Camera} ]\label{todo__todo000005}%
+\Hypertarget{todo__todo000005}%
+Ajouter des méthode d\textquotesingle{}effet sur la caméra comme le trenblement ou des filtre de couleur  
+\item[Member \doxylink{shaders_8cpp_aa4e3821fb3d25cef0fcd8bd89a1666e8}{default\+Fragment} ]\label{todo__todo000010}%
+\Hypertarget{todo__todo000010}%
+Utiliser des matrices de model, de view et de projection pour le vertex shaders
+
+\label{todo__todo000011}%
+\Hypertarget{todo__todo000011}%
+1 -\/\texorpdfstring{$>$}{>} Mettre les shaders dans des fichier .glsl 
+
+
+
+2 -\/\texorpdfstring{$>$}{>} Faire des ubershader configurable pour optimiser les transfert de données (quantité) et la vitesse de calcule 
+
+
+
+3 -\/\texorpdfstring{$>$}{>} utilisé des matrice de tranformation, view et model pour éviter les calcule côté cpu 
+
+
+
+4 -\/\texorpdfstring{$>$}{>} faire un framebuffer pour calculer l\textquotesingle{}éclairage en une fois 
+
+
+
+5 -\/\texorpdfstring{$>$}{>} ajout de shadow map 
+
+
+
+6 -\/\texorpdfstring{$>$}{>} ajout de normal/light map  
+\item[Class \doxylink{classFont}{Font} ]\label{todo__todo000006}%
+\Hypertarget{todo__todo000006}%
+créer un Constructeur par défaukt avec une police system  
+\item[Member \doxylink{classFont_a41a7dca42ac0df85a27163dc9ace9de3}{Font\+::Font} (int glyph\+Size, const char \texorpdfstring{$\ast$}{*}ttf\+Path)]\label{todo__todo000007}%
+\Hypertarget{todo__todo000007}%
+Arranger la class pour utiliser tous les caractères de la police  
+\item[Class \doxylink{classGeometric}{Geometric} ]\label{todo__todo000008}%
+\Hypertarget{todo__todo000008}%
+ajouter a shape  
+\item[Struct \doxylink{structImage}{Image} ]\label{todo__todo000013}%
+\Hypertarget{todo__todo000013}%
+Faire de cette struct une class pour ajouter ddes méthode de moification des Images  
+\item[Class \doxylink{classLight}{Light} ]\label{todo__todo000009}%
+\Hypertarget{todo__todo000009}%
+Créer une class Directionnal\+Light pour différentier certaine lumière 
+
+
+
+Ajouter la gestion d\textquotesingle{}une shadow\+Map pour empêcher le passage de la lumière 
+
+
+
+utiliser un point à éclairé pour déterminer la rotation d\textquotesingle{}une lumière directionnelle  
+\item[Class \doxylink{classShape}{Shape} ]\label{todo__todo000012}%
+\Hypertarget{todo__todo000012}%
+Optimiser les constructeurs des \doxylink{classShape}{Shape} 
+
+
+
+Gérer l\textquotesingle{}héritage de \doxylink{classGeometric}{Geometric} sur \doxylink{classShape}{Shape}  
+\item[Class \doxylink{classTexture}{Texture} ]\label{todo__todo000014}%
+\Hypertarget{todo__todo000014}%
+Vérifier la possibilité de gérer plusieur format d\textquotesingle{}image comme jpg, jpeg, ou gif ext...  
+\item[Class \doxylink{classVector2}{Vector2\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}} ]\label{todo__todo000004}%
+\Hypertarget{todo__todo000004}%
+Gérer les constructeur par copy d\textquotesingle{}une bonne manière 
+\end{DoxyRefList}

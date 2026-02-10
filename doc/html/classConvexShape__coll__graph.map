@@ -1,0 +1,28 @@
+<map id="ConvexShape" name="ConvexShape">
+<area shape="rect" id="Node000001" title="Gère une convex." alt="" coords="564,481,675,507"/>
+<area shape="rect" id="Node000002" href="$classShape.html" title="Class parente de toutes les formes géométriques(RectangleShape, ConvexShape, CircleShape,..." alt="" coords="341,407,404,432"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,431,581,479,580,484,417,436"/>
+<area shape="rect" id="Node000003" href="$classBbopDrawable.html" title="Class Parent de tous ce qui peut être dessiné par une Scene." alt="" coords="261,319,378,344"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="336,355,368,405,363,408,332,357"/>
+<area shape="rect" id="Node000004" href="$classVAO.html" title=" " alt="" coords="5,319,55,344"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="48,354,62,368,79,380,130,395,202,405,341,414,341,420,202,410,129,400,77,385,59,373,44,357"/>
+<area shape="rect" id="Node000005" href="$classVBO.html" title=" " alt="" coords="106,319,157,344"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="146,354,157,369,171,380,214,400,260,411,304,416,341,417,341,422,304,421,259,416,213,405,169,385,153,372,142,357"/>
+<area shape="rect" id="Node000006" href="$classEBO.html" title=" " alt="" coords="187,319,236,344"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="233,352,269,380,306,397,342,408,341,414,304,402,266,385,229,356"/>
+<area shape="rect" id="Node000007" href="$classVector2f.html" title=" " alt="" coords="480,80,556,105"/>
+<area shape="poly" id="edge14_Node000001_Node000007" title=" " alt="" coords="570,100,646,116,730,140,767,155,797,171,818,190,826,210,826,421,822,433,810,445,773,463,724,477,676,487,675,482,723,472,771,458,807,440,817,431,821,420,821,211,814,193,794,176,765,160,728,145,645,121,569,105"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="500,118,491,131,450,210,417,291,378,407,373,406,412,289,445,208,486,128,496,115"/>
+<area shape="rect" id="Node000011" href="$classCollisionBox.html" title="gère une boîte de collision" alt="" coords="453,319,556,344"/>
+<area shape="poly" id="edge13_Node000011_Node000007" title=" " alt="" coords="512,119,500,156,491,198,490,232,493,266,504,318,499,319,488,267,484,232,486,197,495,155,506,118"/>
+<area shape="rect" id="Node000012" href="$classGeometric.html" title="gère un objet avec de propriété géométrique" alt="" coords="551,199,642,225"/>
+<area shape="poly" id="edge12_Node000012_Node000007" title=" " alt="" coords="536,115,591,198,587,201,531,118"/>
+<area shape="rect" id="Node000008" href="$classVector2.html" title=" " alt="" coords="453,5,583,31"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="521,45,521,80,515,80,515,45"/>
+<area shape="rect" id="Node000009" href="$classVector3i.html" title=" " alt="" coords="667,319,742,344"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="671,353,632,370,588,385,488,407,404,418,404,413,487,402,587,380,630,365,669,348"/>
+<area shape="rect" id="Node000010" href="$classVector3.html" title=" " alt="" coords="667,199,785,225"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="724,239,709,319,704,318,719,238"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="480,354,435,385,395,409,393,404,433,380,477,350"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="581,237,516,320,512,317,577,234"/>
+</map>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['w_0',['w',['../classVector4.html#a83daff43fa2b88b4e76474f4b9a45276',1,'Vector4']]],
-  ['width_1',['width',['../structImage.html#ab8d12f635013c04159cd4d3d972bac88',1,'Image']]]
+  ['z_0',['z',['../classVector3.html#ab3e7f5401dd6e951978bfa746809f74f',1,'Vector3::z'],['../classVector4.html#a5a7a1452d661e0b24e4b04c4dbff8ae7',1,'Vector4::z']]]
 ];

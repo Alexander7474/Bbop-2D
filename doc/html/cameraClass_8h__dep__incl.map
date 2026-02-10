@@ -1,0 +1,32 @@
+<map id="include/BBOP/Graphics/cameraClass.h" name="include/BBOP/Graphics/cameraClass.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="499,5,669,45"/>
+<area shape="rect" id="Node000002" href="$Graphics_8h.html" title=" " alt="" coords="294,269,477,295"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="632,50,682,85,728,127,744,151,753,175,752,199,739,223,727,231,704,239,638,252,477,274,477,269,637,247,703,233,724,226,735,220,747,198,748,176,739,153,724,131,678,89,629,55"/>
+<area shape="rect" id="Node000008" href="$mapClass_8h.html" title=" " alt="" coords="39,181,209,221"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="486,46,399,67,310,96,222,140,152,183,150,179,220,135,308,91,398,61,485,41"/>
+<area shape="rect" id="Node000009" href="$sceneClass_8h.html" title=" " alt="" coords="321,93,492,133"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="534,54,447,96,444,91,532,49"/>
+<area shape="rect" id="Node000013" href="$cameraClass_8cpp.html" title=" " alt="" coords="800,93,995,133"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="667,46,829,91,828,96,665,52"/>
+<area shape="rect" id="Node000003" href="$benchmark_8h.html" title=" " alt="" coords="267,343,463,383"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,309,373,343,368,342,376,307"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="488,350,571,375"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="420,299,509,347,507,352,417,304"/>
+<area shape="rect" id="Node000006" href="$animatedSpriteClass_8cpp.html" title=" " alt="" coords="595,343,803,383"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="445,295,624,340,623,345,443,301"/>
+<area shape="rect" id="Node000007" href="$mapClass_8cpp.html" title=" " alt="" coords="5,350,243,375"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="335,301,163,353,161,347,334,296"/>
+<area shape="rect" id="Node000004" href="$benchmark_8cpp.html" title=" " alt="" coords="281,431,449,471"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="368,397,368,430,363,430,363,397"/>
+<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="201,223,348,267,346,272,199,228"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="127,235,127,350,121,350,121,235"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="323,141,296,159,274,183,268,201,274,220,287,236,304,249,341,267,339,272,301,253,283,240,270,223,262,201,270,180,292,155,321,137"/>
+<area shape="poly" id="edge15_Node000009_Node000008" title=" " alt="" coords="332,140,187,184,185,179,331,135"/>
+<area shape="rect" id="Node000010" href="$bbopFunc_8h.html" title=" " alt="" coords="555,181,725,221"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="472,136,590,179,588,184,470,141"/>
+<area shape="rect" id="Node000012" href="$sceneClass_8cpp.html" title=" " alt="" coords="283,189,530,214"/>
+<area shape="poly" id="edge16_Node000009_Node000012" title=" " alt="" coords="409,147,409,188,404,188,404,147"/>
+<area shape="poly" id="edge13_Node000010_Node000002" title=" " alt="" coords="567,228,423,272,422,267,565,223"/>
+<area shape="rect" id="Node000011" href="$bbopFunc_8cpp.html" title=" " alt="" coords="523,269,757,295"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="643,235,643,269,637,269,637,235"/>
+</map>

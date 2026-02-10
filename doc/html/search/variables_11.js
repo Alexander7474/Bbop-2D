@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y_0',['y',['../classVector2.html#a6cfed8355591aa269f4dba43bd806ef9',1,'Vector2::y'],['../classVector3.html#a561df88b28e106e337a25bb86554a569',1,'Vector3::y'],['../classVector4.html#aad001ba27515dc2dcb921e9c83596520',1,'Vector4::y']]]
+  ['w_0',['w',['../classVector4.html#a83daff43fa2b88b4e76474f4b9a45276',1,'Vector4']]],
+  ['width_1',['width',['../structImage.html#ab8d12f635013c04159cd4d3d972bac88',1,'Image::width'],['../classTexture.html#a06a0246cb31343557c3441c5733349cd',1,'Texture::width']]]
 ];

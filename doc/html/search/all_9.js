@@ -1,21 +1,15 @@
 var searchData=
 [
-  ['f0f0f0_20alt_20macos_0',['F0F0F0 alt macOS',['../md_README.html#autotoc_md27',1,'&lt;img src=&quot;https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0&quot; alt=&quot;macOS&quot;/&gt;'],['../md_README.html#autotoc_md30',1,'&lt;img src=&quot;https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0&quot; alt=&quot;macOS&quot;/&gt;']]],
-  ['f0f0f0_20labelcolor_20black_20alt_20static_20badge_1',['&lt;img src=&quot;https://img.shields.io/badge/mac_os-Packages-grey?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0&amp;labelColor=black&quot; alt=&quot;Static Badge&quot;/&gt;',['../md_README.html#autotoc_md23',1,'']]],
-  ['fast_5frand_2',['fast_rand',['../main_8cpp.html#a42b4ee712e7ff06dd0a15400a8ae281c',1,'main.cpp']]],
-  ['fcc624_20style_20for_20the_20badge_20logo_20linux_20logocolor_20black_20alt_20linux_3',['FCC624 style for the badge logo linux logoColor black alt Linux',['../md_README.html#autotoc_md26',1,'&lt;img src=&quot;https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black&quot; alt=&quot;Linux&quot;/&gt;'],['../md_README.html#autotoc_md29',1,'&lt;img src=&quot;https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black&quot; alt=&quot;Linux&quot;/&gt;']]],
-  ['fff_20labelcolor_201793d1_20alt_20static_20badge_4',['&lt;img src=&quot;https://img.shields.io/badge/Arch_Linux-Packages-grey?style=for-the-badge&amp;logo=arch-linux&amp;logoColor=fff&amp;labelColor=1793D1&quot; alt=&quot;Static Badge&quot;/&gt;',['../md_README.html#autotoc_md22',1,'']]],
-  ['fliphorizontally_5',['flipHorizontally',['../classCollisionBox.html#a8d0c01685c90a45c54f03a77b8232d3d',1,'CollisionBox::flipHorizontally()'],['../classSprite.html#aa604258c288860ef9e9604cc9d932fec',1,'Sprite::flipHorizontally()']]],
-  ['flipvertically_6',['flipVertically',['../classCollisionBox.html#aee9026f7977f98c07ae905e68e0beb11',1,'CollisionBox::flipVertically()'],['../classSprite.html#abe1f24ce55e6b541fcd3f43e8147b2a7',1,'Sprite::flipVertically()']]],
-  ['follow_7',['follow',['../classCollisionBox.html#ad9cc9886e37e4268366846287094cd07',1,'CollisionBox']]],
-  ['font_8',['Font',['../classFont.html',1,'Font'],['../classFont.html#a41a7dca42ac0df85a27163dc9ace9de3',1,'Font::Font()']]],
-  ['fontsclass_2ecpp_9',['fontsClass.cpp',['../fontsClass_8cpp.html',1,'']]],
-  ['fontsclass_2eh_10',['fontsClass.h',['../fontsClass_8h.html',1,'']]],
-  ['for_20the_20badge_20logo_20arch_20linux_20logocolor_20fff_20labelcolor_201793d1_20alt_20static_20badge_11',['&lt;img src=&quot;https://img.shields.io/badge/Arch_Linux-Packages-grey?style=for-the-badge&amp;logo=arch-linux&amp;logoColor=fff&amp;labelColor=1793D1&quot; alt=&quot;Static Badge&quot;/&gt;',['../md_README.html#autotoc_md22',1,'']]],
-  ['for_20the_20badge_20logo_20debian_20labelcolor_20d70a53_20alt_20static_20badge_12',['&lt;img src=&quot;https://img.shields.io/badge/Debian-Packages-grey?style=for-the-badge&amp;logo=debian&amp;labelColor=D70A53&quot; alt=&quot;Static Badge&quot;/&gt;',['../md_README.html#autotoc_md21',1,'']]],
-  ['for_20the_20badge_20logo_20linux_20logocolor_20black_20alt_20linux_13',['for the badge logo linux logoColor black alt Linux',['../md_README.html#autotoc_md26',1,'&lt;img src=&quot;https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black&quot; alt=&quot;Linux&quot;/&gt;'],['../md_README.html#autotoc_md29',1,'&lt;img src=&quot;https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black&quot; alt=&quot;Linux&quot;/&gt;']]],
-  ['for_20the_20badge_20logo_20macos_20logocolor_20f0f0f0_20alt_20macos_14',['for the badge logo macos logoColor F0F0F0 alt macOS',['../md_README.html#autotoc_md27',1,'&lt;img src=&quot;https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0&quot; alt=&quot;macOS&quot;/&gt;'],['../md_README.html#autotoc_md30',1,'&lt;img src=&quot;https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0&quot; alt=&quot;macOS&quot;/&gt;']]],
-  ['for_20the_20badge_20logo_20macos_20logocolor_20f0f0f0_20labelcolor_20black_20alt_20static_20badge_15',['&lt;img src=&quot;https://img.shields.io/badge/mac_os-Packages-grey?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0&amp;labelColor=black&quot; alt=&quot;Static Badge&quot;/&gt;',['../md_README.html#autotoc_md23',1,'']]],
-  ['forme_20convex_20convexshape_16',['Forme Convex / ConvexShape',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md5',1,'']]],
-  ['forme_20géométrique_20shape_17',['Forme géométrique / Shape',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md3',1,'']]]
+  ['id_0',['id',['../classEBO.html#a1bac67da73823718810604a69d428b45',1,'EBO::ID'],['../classShader.html#a7be2afcbd5ba5873a04536a2b4b5e576',1,'Shader::ID'],['../classTexture.html#ab36997a503d4ee65aac557b857a1db8e',1,'Texture::ID'],['../classVAO.html#af44e785c29f3c7b10d9de3ce23b64dc1',1,'VAO::ID'],['../classVBO.html#a1d86ebe24b5cd05143e4318d5a73aa45',1,'VBO::ID']]],
+  ['image_1',['Image',['../structImage.html',1,'']]],
+  ['indices_2',['indices',['../classRectangleShape.html#a307e222b30d7c1b7c873806d46b47321',1,'RectangleShape::indices'],['../classConvexShape.html#aeea91d4a3bffa62eb027e37979fc380f',1,'ConvexShape::indices'],['../classSprite.html#a02928ae567a2c404d015f12105ca7be0',1,'Sprite::indices']]],
+  ['info_3',['Info',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md1',1,'']]],
+  ['init_4',['init',['../classVBO.html#a28a780dc5e4aaa1fefcd67e454e17429',1,'VBO::init()'],['../classEBO.html#adc756c12ea84947dbedc65c06f52eaf9',1,'EBO::init()']]],
+  ['initconvex_5',['initConvex',['../classConvexShape.html#a453050d756ba196d902b48257364a7a4',1,'ConvexShape']]],
+  ['initshape_6',['initShape',['../classShape.html#a5616a680b154c1460a7fc0fb0b2ab1d2',1,'Shape']]],
+  ['install_20bbop_7',['Install Bbop',['../index.html#autotoc_md23',1,'']]],
+  ['installation_8',['Installation',['../index.html#autotoc_md21',1,'']]],
+  ['intensity_9',['intensity',['../classLight.html#a1071eaa556f4bb2a9345fdfba7e6f220',1,'Light::intensity'],['../structUniformLight.html#ae5da93c48a841f9022fdf21a88e69be5',1,'UniformLight::intensity']]],
+  ['isincamview_10',['isincamview',['../classCamera.html#a46ef91b662041d7d5cf0a4280259a1d7',1,'Camera::isInCamView(Shape &amp;obj)'],['../classCamera.html#a043c162e8ee7db433202ceed6d12d25f',1,'Camera::isInCamView(CollisionBox &amp;obj)']]],
+  ['isrgbfilter_11',['isRGBFilter',['../classSprite.html#a5fbebfdd07cac349aeff218d5eb45f7f',1,'Sprite']]]
 ];

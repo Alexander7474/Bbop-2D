@@ -1,0 +1,133 @@
+\doxysection{src/\+BBOP/\+Graphics/texture\+Class.cpp File Reference}
+\hypertarget{textureClass_8cpp}{}\label{textureClass_8cpp}\index{src/BBOP/Graphics/textureClass.cpp@{src/BBOP/Graphics/textureClass.cpp}}
+{\ttfamily \#include "{}../../../include/\+BBOP/\+Graphics/texture\+Class.\+h"{}}\newline
+{\ttfamily \#include "{}../../../include/\+BBOP/\+Graphics/bbop\+Global.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stb/stb\+\_\+image.\+h$>$}\newline
+Include dependency graph for texture\+Class.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{textureClass_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{textureClass_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structImage}{Image}} \mbox{\hyperlink{textureClass_8cpp_ad9978f53a1bdc02cc2e451629f844a7b}{bbop\+Load\+Image}} (const char \texorpdfstring{$\ast$}{*}filename, int nr\+Channels)
+\begin{DoxyCompactList}\small\item\em Load une image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structImage}{Image}} \mbox{\hyperlink{textureClass_8cpp_ab67e3b20d3067ccf575543258f6b554b}{bbop\+CCut\+Image}} (const \mbox{\hyperlink{structImage}{Image}} \&to\+CC, int x, int y, int width, int height)
+\begin{DoxyCompactList}\small\item\em Copy et coupe une image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structImage}{Image}} \mbox{\hyperlink{textureClass_8cpp_a91e008684a8ee4e1a2ea8b41bb8cf0d3}{bbop\+Load\+Partial\+Image}} (const char \texorpdfstring{$\ast$}{*}filename, int nr\+Channels, int x, int y, int width, int height)
+\begin{DoxyCompactList}\small\item\em Charge de manière partiel une image. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classTexture}{Texture}} $>$ \mbox{\hyperlink{textureClass_8cpp_a9c2c0d8fde5a6d4b81bb1e8fa5c76172}{bbop\+Load\+Sprite\+Sheet}} (const char \texorpdfstring{$\ast$}{*}sprite\+Sheet\+Path, int rows, int columns)
+\begin{DoxyCompactList}\small\item\em Charge une sprite sheet dans un vector de \doxylink{classTexture}{Texture}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{textureClass_8cpp_a782c15cd6dfae910dd14acf66e378e77}{bbop\+Free\+Image}} (\mbox{\hyperlink{structImage}{Image}} \&image)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{textureClass_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\label{textureClass_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\index{textureClass.cpp@{textureClass.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!textureClass.cpp@{textureClass.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{textureClass_8cpp_ab67e3b20d3067ccf575543258f6b554b}\label{textureClass_8cpp_ab67e3b20d3067ccf575543258f6b554b} 
+\index{textureClass.cpp@{textureClass.cpp}!bbopCCutImage@{bbopCCutImage}}
+\index{bbopCCutImage@{bbopCCutImage}!textureClass.cpp@{textureClass.cpp}}
+\doxysubsubsection{\texorpdfstring{bbopCCutImage()}{bbopCCutImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structImage}{Image}} bbop\+CCut\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structImage}{Image}} \&}]{to\+CC,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Copy et coupe une image. 
+
+\Hypertarget{textureClass_8cpp_a782c15cd6dfae910dd14acf66e378e77}\label{textureClass_8cpp_a782c15cd6dfae910dd14acf66e378e77} 
+\index{textureClass.cpp@{textureClass.cpp}!bbopFreeImage@{bbopFreeImage}}
+\index{bbopFreeImage@{bbopFreeImage}!textureClass.cpp@{textureClass.cpp}}
+\doxysubsubsection{\texorpdfstring{bbopFreeImage()}{bbopFreeImage()}}
+{\footnotesize\ttfamily void bbop\+Free\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structImage}{Image}} \&}]{image }\end{DoxyParamCaption})}
+
+Vide le tablea ude données d\textquotesingle{}une \doxylink{structImage}{Image}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em image} & image à vider \\
+\hline
+\end{DoxyParams}
+\Hypertarget{textureClass_8cpp_ad9978f53a1bdc02cc2e451629f844a7b}\label{textureClass_8cpp_ad9978f53a1bdc02cc2e451629f844a7b} 
+\index{textureClass.cpp@{textureClass.cpp}!bbopLoadImage@{bbopLoadImage}}
+\index{bbopLoadImage@{bbopLoadImage}!textureClass.cpp@{textureClass.cpp}}
+\doxysubsubsection{\texorpdfstring{bbopLoadImage()}{bbopLoadImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structImage}{Image}} bbop\+Load\+Image (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{nr\+Channels }\end{DoxyParamCaption})}
+
+
+
+Load une image. 
+
+\Hypertarget{textureClass_8cpp_a91e008684a8ee4e1a2ea8b41bb8cf0d3}\label{textureClass_8cpp_a91e008684a8ee4e1a2ea8b41bb8cf0d3} 
+\index{textureClass.cpp@{textureClass.cpp}!bbopLoadPartialImage@{bbopLoadPartialImage}}
+\index{bbopLoadPartialImage@{bbopLoadPartialImage}!textureClass.cpp@{textureClass.cpp}}
+\doxysubsubsection{\texorpdfstring{bbopLoadPartialImage()}{bbopLoadPartialImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structImage}{Image}} bbop\+Load\+Partial\+Image (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{nr\+Channels,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Charge de manière partiel une image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & Chemin d\textquotesingle{}acès vers l\textquotesingle{}image \\
+\hline
+\mbox{\texttt{ in}}  & {\em nr\+Channels} & Nombre de canaux de couleurs de l\textquotesingle{}image \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & Point x de départ du chargement \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Poitn y de départ du chargement \\
+\hline
+\mbox{\texttt{ in}}  & {\em Nombre} & de pixel(s) de large à chargé \\
+\hline
+\mbox{\texttt{ in}}  & {\em Nombre} & de pixel(s) de haut à chargé \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structImage}{Image} image chargé prête à être utilsé
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classTexture}{Texture} \doxylink{structImage}{Image} 
+\end{DoxySeeAlso}
+\Hypertarget{textureClass_8cpp_a9c2c0d8fde5a6d4b81bb1e8fa5c76172}\label{textureClass_8cpp_a9c2c0d8fde5a6d4b81bb1e8fa5c76172} 
+\index{textureClass.cpp@{textureClass.cpp}!bbopLoadSpriteSheet@{bbopLoadSpriteSheet}}
+\index{bbopLoadSpriteSheet@{bbopLoadSpriteSheet}!textureClass.cpp@{textureClass.cpp}}
+\doxysubsubsection{\texorpdfstring{bbopLoadSpriteSheet()}{bbopLoadSpriteSheet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classTexture}{Texture}} $>$ bbop\+Load\+Sprite\+Sheet (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{sprite\+Sheet\+Path,  }\item[{int}]{rows,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+
+
+Charge une sprite sheet dans un vector de \doxylink{classTexture}{Texture}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rows} & Nombre de lignes \\
+\hline
+\mbox{\texttt{ in}}  & {\em columns} & Nombre de colonnes \\
+\hline
+\mbox{\texttt{ in}}  & {\em sprite\+Sheet\+Path} & Chemin d\textquotesingle{}accès vers la sprite sheet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Texture$>$ Vector de texture avec les sprites chargé de droite à gauche
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+À utiliser pour faire des animations plus facilement 
+\end{DoxyNote}

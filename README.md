@@ -11,7 +11,7 @@ It stands out with its support for **lighting and normal maps**, enabling the cr
 [Features](#features)  
 [Documentation](https://alexander7474.github.io/bbop-web-docs/)   
 [Report Issue](https://github.com/Alexander7474/Bbop-Library/issues)  
-[Contribute](contribute)  
+[Contribute](#contribute)  
 
 ## Installation  
 
@@ -66,8 +66,8 @@ int main()
 A non-exhaustive list of features
 
 - Sprite
-- Geametric Shape (Rectangle, Circle, Convex, Triangle...)
-- Basic collision
+- Geometric Shape (Rectangle, Circle, Convex, Triangle...)
+- Basic CollisionBox
 - Light and NormalMap for light reflexion
 - Camera
 

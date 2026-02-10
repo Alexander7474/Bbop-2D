@@ -1,0 +1,9 @@
+<map id="ConvexShape" name="ConvexShape">
+<area shape="rect" id="Node000001" title="Gère une convex." alt="" coords="9,152,119,177"/>
+<area shape="rect" id="Node000004" href="$classCircleShape.html" title="Gère un cercle." alt="" coords="15,225,113,251"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="67,191,67,225,61,225,61,191"/>
+<area shape="rect" id="Node000002" href="$classShape.html" title="Class parente de toutes les formes géométriques(RectangleShape, ConvexShape, CircleShape,..." alt="" coords="33,79,95,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,118,67,152,61,152,61,118"/>
+<area shape="rect" id="Node000003" href="$classBbopDrawable.html" title="Class Parent de tous ce qui peut être dessiné par une Scene." alt="" coords="5,5,123,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,44,67,79,61,79,61,44"/>
+</map>

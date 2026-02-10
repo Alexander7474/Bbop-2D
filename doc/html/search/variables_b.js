@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['rd_0',['rd',['../benchmark_8cpp.html#a5e7d225ba5a0794a0473ca8ddc08aaa3',1,'benchmark.cpp']]],
-  ['rectlist_1',['rectList',['../benchmark_8cpp.html#a6514ddf37475763f3a56bb4772532848',1,'benchmark.cpp']]],
-  ['rgb_2',['RGB',['../classShape.html#a7e043155fe1272d8beccc9031e80860f',1,'Shape']]],
-  ['rotation_3',['rotation',['../classGeometric.html#ac04c6ad67f220fa6fe1adbd49dad3891',1,'Geometric::rotation'],['../classShape.html#ae74cb8b7d1fabcc37421ac58a681d521',1,'Shape::rotation']]],
-  ['rotationangle_4',['rotationAngle',['../structUniformLight.html#ac0a17a80f0fb5a3f0504e451bdffb960',1,'UniformLight']]]
+  ['pos_0',['pos',['../classCamera.html#a5950ff5c9e35926412a41bafdaf0d6b8',1,'Camera::pos'],['../classTexteBox.html#a3dfe5a67d65fd5234d03d2566f59a604',1,'TexteBox::pos'],['../classGeometric.html#a14611c9ff07c9c8d5ebbb1f41f126717',1,'Geometric::pos'],['../classLight.html#a3d86481e04abd43950f34a876968f2ca',1,'Light::pos'],['../structUniformLight.html#abc68d67ac63ce6bef418eb8512f0fee5',1,'UniformLight::pos'],['../classShape.html#ab65e13cd350073f848241ae3060acb20',1,'Shape::pos']]]
 ];

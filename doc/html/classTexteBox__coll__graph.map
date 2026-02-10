@@ -1,0 +1,41 @@
+<map id="TexteBox" name="TexteBox">
+<area shape="rect" id="Node000001" title="Stock du texte pour le draw dans la fenêtre." alt="" coords="147,701,229,727"/>
+<area shape="rect" id="Node000002" href="$classBbopDrawable.html" title="Class Parent de tous ce qui peut être dessiné par une Scene." alt="" coords="100,319,217,344"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,356,184,394,191,438,191,627,191,701,185,701,185,627,185,438,179,395,167,358"/>
+<area shape="rect" id="Node000011" href="$classShape.html" title="Class parente de toutes les formes géométriques(RectangleShape, ConvexShape, CircleShape,..." alt="" coords="345,427,407,452"/>
+<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="185,350,241,391,295,413,345,428,344,433,294,418,239,396,182,355"/>
+<area shape="rect" id="Node000003" href="$classFont.html" title="Stock une police de caractère." alt="" coords="48,368,99,393"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="80,407,87,499,87,627,93,652,110,671,132,687,156,699,153,704,129,692,106,675,88,654,81,628,81,499,74,407"/>
+<area shape="rect" id="Node000004" href="$structCharacter.html" title="Stock un caractère." alt="" coords="88,199,173,225"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="122,239,91,319,78,368,73,367,85,318,117,237"/>
+<area shape="rect" id="Node000005" href="$classVector2f.html" title=" " alt="" coords="217,80,293,105"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="203,99,142,107,78,126,50,140,28,159,13,182,8,211,8,627,12,648,22,664,37,678,57,688,102,702,147,708,146,714,101,707,55,693,34,682,18,668,7,649,3,628,3,210,8,180,24,155,47,136,76,121,141,102,202,93"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="212,113,184,131,156,167,138,201,133,198,151,164,181,127,209,109"/>
+<area shape="poly" id="edge16_Node000011_Node000005" title=" " alt="" coords="253,119,246,174,246,246,250,284,259,322,273,359,293,392,317,413,345,427,343,431,314,417,289,395,268,361,254,324,245,285,241,246,241,173,247,119"/>
+<area shape="rect" id="Node000015" href="$classCollisionBox.html" title="gère une boîte de collision" alt="" coords="293,319,395,344"/>
+<area shape="poly" id="edge21_Node000015_Node000005" title=" " alt="" coords="307,102,333,112,358,127,374,143,384,158,397,197,399,233,388,268,372,298,356,320,351,317,367,295,383,266,393,232,392,198,380,160,370,146,354,131,331,117,305,107"/>
+<area shape="rect" id="Node000016" href="$classGeometric.html" title="gère un objet avec de propriété géométrique" alt="" coords="292,199,383,225"/>
+<area shape="poly" id="edge20_Node000016_Node000005" title=" " alt="" coords="273,115,331,198,327,201,269,118"/>
+<area shape="rect" id="Node000006" href="$classVector2.html" title=" " alt="" coords="189,5,320,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="257,45,257,80,252,80,252,45"/>
+<area shape="rect" id="Node000007" href="$classVector3i.html" title=" " alt="" coords="749,319,824,344"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="799,356,810,394,816,438,816,628,810,640,795,650,742,667,666,681,574,692,380,707,230,714,229,709,379,702,574,687,665,676,741,662,793,645,806,636,811,627,811,438,805,395,794,358"/>
+<area shape="poly" id="edge17_Node000011_Node000007" title=" " alt="" coords="770,356,746,378,716,396,673,410,635,416,601,417,569,414,503,409,464,411,421,420,397,429,395,424,419,415,464,406,503,404,570,409,602,411,635,411,672,405,714,391,743,374,766,352"/>
+<area shape="rect" id="Node000008" href="$classVector3.html" title=" " alt="" coords="727,199,846,225"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="789,239,789,318,784,318,784,239"/>
+<area shape="rect" id="Node000009" href="$classNoTextureSprite.html" title=" " alt="" coords="306,613,433,639"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="334,647,214,703,212,699,331,642"/>
+<area shape="rect" id="Node000010" href="$classSprite.html" title="Gère un Sprite (Rectangle avec une Texture)" alt="" coords="346,539,406,564"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="376,578,373,613,368,613,371,578"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="379,466,379,538,373,538,373,466"/>
+<area shape="rect" id="Node000012" href="$classVAO.html" title=" " alt="" coords="430,319,479,344"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="448,358,427,395,394,428,390,425,423,392,443,355"/>
+<area shape="rect" id="Node000013" href="$classVBO.html" title=" " alt="" coords="531,319,581,344"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="548,358,535,378,518,395,493,408,470,412,448,414,421,420,399,429,397,424,419,415,447,408,470,407,491,403,514,391,531,375,543,355"/>
+<area shape="rect" id="Node000014" href="$classEBO.html" title=" " alt="" coords="634,319,683,344"/>
+<area shape="poly" id="edge15_Node000011_Node000014" title=" " alt="" coords="650,358,636,378,616,396,589,409,565,415,521,416,475,412,450,414,421,420,398,429,396,424,419,415,449,409,475,407,521,410,564,410,587,404,613,391,632,375,645,355"/>
+<area shape="poly" id="edge18_Node000011_Node000015" title=" " alt="" coords="314,354,302,369,299,381,302,392,321,412,346,426,343,430,318,416,298,395,293,381,298,367,309,351"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="341,238,346,318,341,319,336,239"/>
+<area shape="rect" id="Node000017" href="$classTexture.html" title="Contient une texture qui peut être utilisé dans un sprite." alt="" coords="431,427,502,452"/>
+<area shape="poly" id="edge22_Node000010_Node000017" title=" " alt="" coords="450,465,388,540,384,537,446,461"/>
+</map>
