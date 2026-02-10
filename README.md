@@ -9,8 +9,8 @@ It stands out with its support for **lighting and normal maps**, enabling the cr
 
 [Installation](#installation)   
 [Features](#features)  
-[Documentation](https://alexander7474.github.io/bbop-web-docs/)
-[Tutorials](https://alexander7474.github.io/bbop-web-docs/md_doc_2doc__markdown__page_2tuto.html)
+[Documentation](https://alexander7474.github.io/bbop-web-docs/)  
+[Tutorials](https://alexander7474.github.io/bbop-web-docs/md_doc_2doc__markdown__page_2tuto.html)  
 [Report Issue](https://github.com/Alexander7474/Bbop-Library/issues)  
 [Contribute](#contribute)  
 
