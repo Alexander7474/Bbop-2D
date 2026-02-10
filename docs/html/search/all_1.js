@@ -7,7 +7,7 @@ var searchData=
   ['ambiantlight_4',['ambiantLight',['../classScene.html#a594ebdf65075e9dac26304672778d193',1,'Scene']]],
   ['ambiantlightcolor_5',['ambiantLightColor',['../classScene.html#aa72063f1862b8e05eddbf7bd67e6527a',1,'Scene']]],
   ['ambiantlightvalue_6',['ambiantLightValue',['../classScene.html#aaab72be37887585ce61da164145e11a4',1,'Scene']]],
-  ['animé_7',['Sprite animé',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md9',1,'']]],
+  ['animé_7',['Sprite animé',['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md9',1,'']]],
   ['anim_5fstart_8',['anim_start',['../classAnimatedSprite.html#ae44277dda8ff2a25a0aa42ca3fb3767d',1,'AnimatedSprite']]],
   ['animated_5fsprite_5ftexture_9',['animated_sprite_texture',['../classAnimatedSprite.html#a67e297a98cf6067069ffed10f1f08653',1,'AnimatedSprite']]],
   ['animated_5fsprites_10',['animated_sprites',['../classMap.html#af7e8a10ef51b54e7480feec3a2445727',1,'Map']]],

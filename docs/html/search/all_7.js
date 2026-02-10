@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['géométrique_20shape_0',['Forme géométrique / Shape',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md3',1,'']]],
+  ['géométrique_20shape_0',['Forme géométrique / Shape',['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md3',1,'']]],
   ['game_1',['Game',['../classMap.html#aa2fab026580d6f14280c2ffb8063a314',1,'Map']]],
   ['gen_2',['gen',['../benchmark_8cpp.html#a88673bfe22d2495f0c312abf54618eee',1,'benchmark.cpp']]],
   ['geometric_3',['geometric',['../classGeometric.html',1,'Geometric'],['../classGeometric.html#a741e184fee4d9abdeb2f565870eba117',1,'Geometric::Geometric()'],['../classGeometric.html#ab0b0fa4ae9960792d353f2103fdf0f94',1,'Geometric::Geometric(const Geometric &amp;other)'],['../classGeometric.html#aefce0e819f3027bdb457cadd97c36feb',1,'Geometric::Geometric(Vector2f nPos, Vector2f nOrigin, Vector2f nSize, float nRotation)']]],

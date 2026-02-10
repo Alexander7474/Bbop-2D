@@ -2,10 +2,10 @@ var searchData=
 [
   ['last_5fframe_5ft_0',['last_frame_t',['../classAnimatedSprite.html#ac52736764abcaca6cae3e927b818ad3b',1,'AnimatedSprite']]],
   ['lasttime_1',['lastTime',['../benchmark_8cpp.html#a9648c4b3c5e8528ebc2745f7cb76ff62',1,'benchmark.cpp']]],
-  ['les_20triangles_2',['Et les triangles ?',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md7',1,'']]],
+  ['les_20triangles_2',['Et les triangles ?',['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md7',1,'']]],
   ['libraries_3',['External Libraries',['../index.html#autotoc_md22',1,'']]],
-  ['light_4',['light',['../classLight.html#aa7ca93de13c3d0ff60c26328b79dd008',1,'Light::Light(Vector2f nPos, float nIntensity, Vector3i nRGB, float nConstantAttenuation, float nLinearAttenuation, float nQuadraticAttenuation)'],['../classLight.html#aeb5df09a25a32f19fdffa761268ba24f',1,'Light::Light()'],['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md14',1,'Light'],['../classLight.html',1,'Light']]],
-  ['light_20directionnel_5',['Light directionnel',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md15',1,'']]],
+  ['light_4',['light',['../classLight.html#aa7ca93de13c3d0ff60c26328b79dd008',1,'Light::Light(Vector2f nPos, float nIntensity, Vector3i nRGB, float nConstantAttenuation, float nLinearAttenuation, float nQuadraticAttenuation)'],['../classLight.html#aeb5df09a25a32f19fdffa761268ba24f',1,'Light::Light()'],['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md14',1,'Light'],['../classLight.html',1,'Light']]],
+  ['light_20directionnel_5',['Light directionnel',['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md15',1,'']]],
   ['lightclass_2ecpp_6',['lightClass.cpp',['../lightClass_8cpp.html',1,'']]],
   ['lightclass_2eh_7',['lightClass.h',['../lightClass_8h.html',1,'']]],
   ['lightfragment_8',['lightfragment',['../shaders_8h.html#a873949ba752f018a0283ce1e6aff68fe',1,'lightFragment:&#160;shaders.cpp'],['../shaders_8cpp.html#a873949ba752f018a0283ce1e6aff68fe',1,'lightFragment:&#160;shaders.cpp']]],
@@ -21,5 +21,5 @@ var searchData=
   ['loadfonttexture_18',['loadfonttexture',['../fontsClass_8h.html#a0d43f15c662f8087b2e2d017d3557dbf',1,'loadFontTexture(const char *fontPath, int fontSize, Character *charList, int numTextures):&#160;fontsClass.cpp'],['../fontsClass_8cpp.html#a0d43f15c662f8087b2e2d017d3557dbf',1,'loadFontTexture(const char *fontPath, int fontSize, Character *charList, int numTextures):&#160;fontsClass.cpp']]],
   ['logs_19',['logs',['../bbopGlobal_8h.html#a05ea7bea4c3d99689174e9ee3f7c0b96',1,'LOGS:&#160;bbopGlobal.cpp'],['../bbopGlobal_8cpp.html#a05ea7bea4c3d99689174e9ee3f7c0b96',1,'LOGS:&#160;bbopGlobal.cpp']]],
   ['loop_20example_20',['Simple loop example',['../index.html#autotoc_md24',1,'']]],
-  ['lumop_21',['Lumop',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md13',1,'']]]
+  ['lumop_21',['Lumop',['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md13',1,'']]]
 ];

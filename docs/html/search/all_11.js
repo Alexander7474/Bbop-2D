@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scale_0',['scale',['../classCamera.html#a50152f7c8f2ce7601dd6086c90b3a65c',1,'Camera']]],
-  ['scene_1',['scene',['../classScene.html',1,'Scene'],['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md10',1,'Scene'],['../classScene.html#a05f4829799d40e4fb5ceee1a4ee3b983',1,'Scene::Scene(float nAmbiantLightValue, Vector3i nAmbiantLightColor)'],['../classScene.html#ad10176d75a9cc0da56626f682d083507',1,'Scene::Scene()']]],
+  ['scene_1',['scene',['../classScene.html',1,'Scene'],['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md10',1,'Scene'],['../classScene.html#a05f4829799d40e4fb5ceee1a4ee3b983',1,'Scene::Scene(float nAmbiantLightValue, Vector3i nAmbiantLightColor)'],['../classScene.html#ad10176d75a9cc0da56626f682d083507',1,'Scene::Scene()']]],
   ['scenecamera_2',['sceneCamera',['../classScene.html#a97ab4eb9c4c64413e89c47df149ee84a',1,'Scene']]],
   ['sceneclass_2ecpp_3',['sceneClass.cpp',['../sceneClass_8cpp.html',1,'']]],
   ['sceneclass_2eh_4',['sceneClass.h',['../sceneClass_8h.html',1,'']]],
@@ -38,7 +38,7 @@ var searchData=
   ['shaderclass_2eh_35',['shaderClass.h',['../shaderClass_8h.html',1,'']]],
   ['shaders_2ecpp_36',['shaders.cpp',['../shaders_8cpp.html',1,'']]],
   ['shaders_2eh_37',['shaders.h',['../shaders_8h.html',1,'']]],
-  ['shape_38',['shape',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md3',1,'Forme géométrique / Shape'],['../classShape.html',1,'Shape'],['../classShape.html#a4226dfc8b139b36d995b583b8e940681',1,'Shape::Shape(GLfloat *vertices, GLsizeiptr verticesSize, GLuint *indices, GLsizeiptr indicesSize)'],['../classShape.html#aaa8d87171e65e0d8ba3c5459978992a7',1,'Shape::Shape()'],['../classShape.html#af929eaa4d0cbd6b2fe2e9026796b9cae',1,'Shape::Shape(const Shape &amp;other)']]],
+  ['shape_38',['shape',['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md3',1,'Forme géométrique / Shape'],['../classShape.html',1,'Shape'],['../classShape.html#a4226dfc8b139b36d995b583b8e940681',1,'Shape::Shape(GLfloat *vertices, GLsizeiptr verticesSize, GLuint *indices, GLsizeiptr indicesSize)'],['../classShape.html#aaa8d87171e65e0d8ba3c5459978992a7',1,'Shape::Shape()'],['../classShape.html#af929eaa4d0cbd6b2fe2e9026796b9cae',1,'Shape::Shape(const Shape &amp;other)']]],
   ['shapeclass_2ecpp_39',['shapeClass.cpp',['../shapeClass_8cpp.html',1,'']]],
   ['shapeclass_2eh_40',['shapeClass.h',['../shapeClass_8h.html',1,'']]],
   ['shapecollisionbox_41',['shapeCollisionBox',['../classShape.html#aaf5c1c1790f51aeb4118cc35f9810612',1,'Shape']]],
@@ -49,8 +49,8 @@ var searchData=
   ['size_46',['size',['../classTexteBox.html#a320717a11becc14c534bfb6cfeaed2c1',1,'TexteBox::size'],['../classGeometric.html#aa66a8a8cb49a9b1bb20d6fc5e8426e56',1,'Geometric::size'],['../classShape.html#a7cc16b005cf1ab49f4bdba5465459024',1,'Shape::size'],['../structCharacter.html#a2ff8a3775715dcc09414ee0ff164665c',1,'Character::size']]],
   ['sizetexte_47',['sizeTexte',['../classTexteBox.html#a9d5e43e68dd79f89c3b14a558fbe014c',1,'TexteBox']]],
   ['spawn_5fpoints_48',['spawn_points',['../classMap.html#a1f3e0248f6a673392eee68a316463b25',1,'Map']]],
-  ['sprite_49',['sprite',['../classSprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite::Sprite()'],['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md8',1,'Sprite'],['../classSprite.html',1,'Sprite'],['../classSprite.html#ac17f0e18a22c84234a659b1c0bbb69de',1,'Sprite::Sprite(const Sprite &amp;other)'],['../classSprite.html#a04e0654722b7bc77f1be8a9eb8ebb086',1,'Sprite::Sprite(Texture nTexture)'],['../classSprite.html#a75252863eb402c985ba36eda01039b82',1,'Sprite::Sprite(Texture nTexture, Vector2f nPos)'],['../classSprite.html#a2fe886a0cf4b887163cc8138b09574fc',1,'Sprite::Sprite(Texture nTexture, Vector2f nPos, Vector3i nRGB, Vector2f nOrigin)'],['../classSprite.html#a720f36fae066815cb8131606602b6095',1,'Sprite::Sprite(Texture nTexture, Vector2f nPos, Vector3i nRGB, Vector2f nOrigin, float nRotation, float nAlpha)']]],
-  ['sprite_20animé_50',['Sprite animé',['../md_doc_2doc__markdown__page_2tuto.html#autotoc_md9',1,'']]],
+  ['sprite_49',['sprite',['../classSprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite::Sprite()'],['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md8',1,'Sprite'],['../classSprite.html',1,'Sprite'],['../classSprite.html#ac17f0e18a22c84234a659b1c0bbb69de',1,'Sprite::Sprite(const Sprite &amp;other)'],['../classSprite.html#a04e0654722b7bc77f1be8a9eb8ebb086',1,'Sprite::Sprite(Texture nTexture)'],['../classSprite.html#a75252863eb402c985ba36eda01039b82',1,'Sprite::Sprite(Texture nTexture, Vector2f nPos)'],['../classSprite.html#a2fe886a0cf4b887163cc8138b09574fc',1,'Sprite::Sprite(Texture nTexture, Vector2f nPos, Vector3i nRGB, Vector2f nOrigin)'],['../classSprite.html#a720f36fae066815cb8131606602b6095',1,'Sprite::Sprite(Texture nTexture, Vector2f nPos, Vector3i nRGB, Vector2f nOrigin, float nRotation, float nAlpha)']]],
+  ['sprite_20animé_50',['Sprite animé',['../md_docs_2doc__markdown__page_2tuto.html#autotoc_md9',1,'']]],
   ['spriteclass_2ecpp_51',['spriteClass.cpp',['../spriteClass_8cpp.html',1,'']]],
   ['spriteclass_2eh_52',['spriteClass.h',['../spriteClass_8h.html',1,'']]],
   ['spritelist_53',['spriteList',['../benchmark_8cpp.html#a59759505a2718fdccd0e4f76876d63da',1,'benchmark.cpp']]],
