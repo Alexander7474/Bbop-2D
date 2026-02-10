@@ -15,7 +15,7 @@
 
 using namespace std;
 
-Shader::Shader(const char* vertexSource, const char* fragmentSource)
+Shader::Shader(const char *vertexSource, const char *fragmentSource)
 {
 	// creation du vertexShader et recup de la reference
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -24,28 +24,28 @@ Shader::Shader(const char* vertexSource, const char* fragmentSource)
 	// Compile
 	glCompileShader(vertexShader);
 
-  int success;
-  char infoLog[512];
-  glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+	int success;
+	char infoLog[512];
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
 
-  if(!success)
-  {
-    glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-    std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-  }
+	if (!success) {
+		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+		std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n"
+			  << infoLog << std::endl;
+	}
 
 	// meme chose avec le fragment shader
 	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
 	glCompileShader(fragmentShader);
 
-  glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
 
-  if(!success)
-  {
-    glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-    std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-  }
+	if (!success) {
+		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+		std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n"
+			  << infoLog << std::endl;
+	}
 
 	// Creation shader programme
 	ID = glCreateProgram();
@@ -59,22 +59,13 @@ Shader::Shader(const char* vertexSource, const char* fragmentSource)
 	glDeleteShader(fragmentShader);
 }
 
-GLint Shader::getUniformLoc(const GLchar* varName) const
+GLint Shader::getUniformLoc(const GLchar *varName) const
 {
-  return glGetUniformLocation(ID, varName);
+	return glGetUniformLocation(ID, varName);
 }
 
-GLuint Shader::getID() const
-{
-  return ID;
-}
+GLuint Shader::getID() const { return ID; }
 
-void Shader::Activate() const
-{
-	glUseProgram(ID);
-}
+void Shader::Activate() const { glUseProgram(ID); }
 
-void Shader::Delete()
-{
-	glDeleteProgram(ID);
-}
+void Shader::Delete() { glDeleteProgram(ID); }

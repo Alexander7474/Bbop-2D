@@ -13,7 +13,7 @@
 
 #include "../../../include/BBOP/Graphics/shaders.h"
 
-const char* defaultVertex = R"glsl(
+const char *defaultVertex = R"glsl(
 #version 330 core
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec4 aColor;
@@ -32,7 +32,7 @@ void main()
 } 
 )glsl";
 
-const char* defaultFragment = R"glsl(
+const char *defaultFragment = R"glsl(
 #version 330 core
 // pixel de sortie du frag
 layout(location = 0) out vec4 FragColor;
@@ -88,10 +88,9 @@ void main()
 
 )glsl";
 
-
 //LIGHT SHADER GLSL------------------------------------------------------------------------------------------------------------------------------------------------------
 
-const char* lightVertex = R"glsl(
+const char *lightVertex = R"glsl(
 #version 330 core
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec4 aColor;
@@ -110,7 +109,7 @@ void main()
 } 
 )glsl";
 
-const char* lightFragment = R"glsl(
+const char *lightFragment = R"glsl(
 #version 330 core
 // pixel de sortie du frag
 out vec4 FragColor;
@@ -235,4 +234,3 @@ void main()
 }
 
 )glsl";
-

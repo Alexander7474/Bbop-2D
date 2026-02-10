@@ -14,97 +14,56 @@
 #include "../../../include/BBOP/Graphics/lightClass.h"
 #include <cmath>
 
-Light::Light(Vector2f nPos, float nIntensity, Vector3i nRGB, float nConstantAttenuation,float nLinearAttenuation, float nQuadraticAttenuation)
-  : pos(nPos),
-    RGB(nRGB),
-    intensity(nIntensity),
-    constantAttenuation(nConstantAttenuation),
-    linearAttenuation(nLinearAttenuation),
-    quadraticAttenuation(nQuadraticAttenuation),
-    openAngle(M_PI),
-    rotationAngle(0.f)
-{}
+Light::Light(Vector2f nPos, float nIntensity, Vector3i nRGB,
+	float nConstantAttenuation, float nLinearAttenuation,
+	float nQuadraticAttenuation)
+    : pos(nPos), RGB(nRGB), intensity(nIntensity),
+      constantAttenuation(nConstantAttenuation),
+      linearAttenuation(nLinearAttenuation),
+      quadraticAttenuation(nQuadraticAttenuation), openAngle(M_PI),
+      rotationAngle(0.f)
+{
+}
 
 Light::Light()
-  : Light(Vector2f(0.f,0.f), 0.2, Vector3i(255,255,255),0.2f,0.2f,0.2f)
-{}
-
-Vector2f Light::getPosistion()
+    : Light(Vector2f(0.f, 0.f), 0.2, Vector3i(255, 255, 255), 0.2f, 0.2f, 0.2f)
 {
-  return pos;
 }
 
-void Light::setPosition(Vector2f nPos)
-{
-  pos = nPos;
-}
+Vector2f Light::getPosistion() { return pos; }
 
-Vector3i Light::getColor()
-{
-  return RGB;
-}
+void Light::setPosition(Vector2f nPos) { pos = nPos; }
 
-void Light::setColor(Vector3i nRGB)
-{
-  RGB = nRGB;
-}
+Vector3i Light::getColor() { return RGB; }
 
-float Light::getIntensity()
-{
-  return intensity;
-}
+void Light::setColor(Vector3i nRGB) { RGB = nRGB; }
 
-void Light::setIntensity(float nIntensity)
-{
-  intensity = nIntensity;
-}
+float Light::getIntensity() { return intensity; }
 
-float Light::getLinear()
-{
-  return linearAttenuation;
-}
+void Light::setIntensity(float nIntensity) { intensity = nIntensity; }
 
-void Light::setLinear(float nLinear)
-{
-  linearAttenuation = nLinear;
-}
+float Light::getLinear() { return linearAttenuation; }
 
-float Light::getConstant()
-{
-  return constantAttenuation;
-}
+void Light::setLinear(float nLinear) { linearAttenuation = nLinear; }
 
-void Light::setConstant(float nConstant)
-{
-  constantAttenuation = nConstant;
-}
+float Light::getConstant() { return constantAttenuation; }
 
-float Light::getQuadratic()
-{
-  return quadraticAttenuation;
-}
+void Light::setConstant(float nConstant) { constantAttenuation = nConstant; }
+
+float Light::getQuadratic() { return quadraticAttenuation; }
 
 void Light::setQuadratic(float nQuadratic)
 {
-  quadraticAttenuation = nQuadratic;
+	quadraticAttenuation = nQuadratic;
 }
 
-float Light::getOpenAngle()
-{
-  return openAngle;
-}
+float Light::getOpenAngle() { return openAngle; }
 
-void Light::setOpenAngle(float nOpenAngle)
-{
-  openAngle = nOpenAngle;
-}
+void Light::setOpenAngle(float nOpenAngle) { openAngle = nOpenAngle; }
 
-float Light::getRotationAngle()
-{
-  return rotationAngle;
-}
+float Light::getRotationAngle() { return rotationAngle; }
 
 void Light::setRotationAngle(float nRotationAngle)
 {
-  rotationAngle = nRotationAngle;
+	rotationAngle = nRotationAngle;
 }

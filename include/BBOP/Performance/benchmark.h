@@ -21,6 +21,6 @@
 
 using namespace std;
 
-bool bbopBenchMark(GLFWwindow*&, Scene& sceneToUse);
+bool bbopBenchMark(GLFWwindow *&, Scene &sceneToUse);
 
 #endif // ! BENCHMARK_H
