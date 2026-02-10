@@ -1,0 +1,11 @@
+<map id="Light" name="Light">
+<area shape="rect" id="Node000001" title="Gère un point de lumière en fonction de son Intensité, sa couleur et son attenuation." alt="" coords="106,168,161,193"/>
+<area shape="rect" id="Node000002" href="$classVector2f.html" title=" " alt="" coords="46,80,122,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,116,129,166,124,169,95,119"/>
+<area shape="rect" id="Node000003" href="$classVector2.html" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="78,44,84,79,79,80,73,45"/>
+<area shape="rect" id="Node000004" href="$classVector3i.html" title=" " alt="" coords="171,80,245,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,118,146,169,142,166,187,114"/>
+<area shape="rect" id="Node000005" href="$classVector3.html" title=" " alt="" coords="161,5,279,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="218,45,213,80,207,79,213,44"/>
+</map>

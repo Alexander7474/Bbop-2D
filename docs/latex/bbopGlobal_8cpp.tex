@@ -1,0 +1,71 @@
+\doxysection{src/\+BBOP/\+Graphics/bbop\+Global.cpp File Reference}
+\hypertarget{bbopGlobal_8cpp}{}\label{bbopGlobal_8cpp}\index{src/BBOP/Graphics/bbopGlobal.cpp@{src/BBOP/Graphics/bbopGlobal.cpp}}
+{\ttfamily \#include "{}../../../include/\+BBOP/\+Graphics/bbop\+Global.\+h"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for bbop\+Global.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bbopGlobal_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{bbopGlobal_8cpp_a51e92097cf8bd16c7a6c7ca50415b208}{bbop\+Get\+File\+Data}} (const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Récupère les données d\textquotesingle{}un fichier et les renvoie sous forme de string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector2i}{Vector2i}} \mbox{\hyperlink{bbopGlobal_8cpp_a72ec0cece9cd8dc6ac3ec89f411a0e6c}{BBOP\+\_\+\+WINDOW\+\_\+\+SIZE}} (0, 0)
+\item 
+\mbox{\hyperlink{classVector2i}{Vector2i}} \mbox{\hyperlink{bbopGlobal_8cpp_a4488113ba5f94eeaab76fb934da5e6ca}{BBOP\+\_\+\+WINDOW\+\_\+\+RESOLUTION}} (0, 0)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{bbopGlobal_8cpp_a05ea7bea4c3d99689174e9ee3f7c0b96}{LOGS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bbopGlobal_8cpp_a51e92097cf8bd16c7a6c7ca50415b208}\label{bbopGlobal_8cpp_a51e92097cf8bd16c7a6c7ca50415b208} 
+\index{bbopGlobal.cpp@{bbopGlobal.cpp}!bbopGetFileData@{bbopGetFileData}}
+\index{bbopGetFileData@{bbopGetFileData}!bbopGlobal.cpp@{bbopGlobal.cpp}}
+\doxysubsubsection{\texorpdfstring{bbopGetFileData()}{bbopGetFileData()}}
+{\footnotesize\ttfamily string bbop\+Get\+File\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Récupère les données d\textquotesingle{}un fichier et les renvoie sous forme de string. 
+
+Cette fonction est seulement utilisé par la class \doxylink{classShader}{Shader}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & Chemin d\textquotesingle{}accès vers le fichier à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Contenu du fichier. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{bbopGlobal_8cpp_a4488113ba5f94eeaab76fb934da5e6ca}\label{bbopGlobal_8cpp_a4488113ba5f94eeaab76fb934da5e6ca} 
+\index{bbopGlobal.cpp@{bbopGlobal.cpp}!BBOP\_WINDOW\_RESOLUTION@{BBOP\_WINDOW\_RESOLUTION}}
+\index{BBOP\_WINDOW\_RESOLUTION@{BBOP\_WINDOW\_RESOLUTION}!bbopGlobal.cpp@{bbopGlobal.cpp}}
+\doxysubsubsection{\texorpdfstring{BBOP\_WINDOW\_RESOLUTION}{BBOP\_WINDOW\_RESOLUTION}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2i}{Vector2i}} BBOP\+\_\+\+WINDOW\+\_\+\+RESOLUTION(0, 0) (\begin{DoxyParamCaption}\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bbopGlobal_8cpp_a72ec0cece9cd8dc6ac3ec89f411a0e6c}\label{bbopGlobal_8cpp_a72ec0cece9cd8dc6ac3ec89f411a0e6c} 
+\index{bbopGlobal.cpp@{bbopGlobal.cpp}!BBOP\_WINDOW\_SIZE@{BBOP\_WINDOW\_SIZE}}
+\index{BBOP\_WINDOW\_SIZE@{BBOP\_WINDOW\_SIZE}!bbopGlobal.cpp@{bbopGlobal.cpp}}
+\doxysubsubsection{\texorpdfstring{BBOP\_WINDOW\_SIZE}{BBOP\_WINDOW\_SIZE}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2i}{Vector2i}} BBOP\+\_\+\+WINDOW\+\_\+\+SIZE(0, 0) (\begin{DoxyParamCaption}\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bbopGlobal_8cpp_a05ea7bea4c3d99689174e9ee3f7c0b96}\label{bbopGlobal_8cpp_a05ea7bea4c3d99689174e9ee3f7c0b96} 
+\index{bbopGlobal.cpp@{bbopGlobal.cpp}!LOGS@{LOGS}}
+\index{LOGS@{LOGS}!bbopGlobal.cpp@{bbopGlobal.cpp}}
+\doxysubsubsection{\texorpdfstring{LOGS}{LOGS}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ LOGS}
+
+@stock les logs de la libs 

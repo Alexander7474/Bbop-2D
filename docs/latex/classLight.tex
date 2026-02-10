@@ -1,0 +1,401 @@
+\doxysection{Light Class Reference}
+\hypertarget{classLight}{}\label{classLight}\index{Light@{Light}}
+
+
+Gère un point de lumière en fonction de son Intensité, sa couleur et son attenuation.  
+
+
+
+
+{\ttfamily \#include $<$light\+Class.\+h$>$}
+
+
+
+Collaboration diagram for Light\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classLight__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLight_aa7ca93de13c3d0ff60c26328b79dd008}{Light}} (\mbox{\hyperlink{classVector2f}{Vector2f}} n\+Pos, float n\+Intensity, \mbox{\hyperlink{classVector3i}{Vector3i}} n\+RGB, float n\+Constant\+Attenuation, float n\+Linear\+Attenuation, float n\+Quadratic\+Attenuation)
+\begin{DoxyCompactList}\small\item\em Constructeur de light. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLight_aeb5df09a25a32f19fdffa761268ba24f}{Light}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défault de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3i}{Vector3i}} \mbox{\hyperlink{classLight_a411518c34dd3a944d18f10067de5a449}{get\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la couleur de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_aa194ff3fb8d1af710ac66d86995f48e6}{set\+Color}} (\mbox{\hyperlink{classVector3i}{Vector3i}} n\+RGB)
+\begin{DoxyCompactList}\small\item\em Change la couleur de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classLight_a865a33affa6fd6723bfcc171771183cd}{get\+Posistion}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la position de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_a9ab919af95d2b4a4e9ebd2cf6e61e1d2}{set\+Position}} (\mbox{\hyperlink{classVector2f}{Vector2f}} n\+Pos)
+\begin{DoxyCompactList}\small\item\em Change la position de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classLight_afd1b21b442f3a8e168b6f58ebbb93778}{get\+Intensity}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}Intensité de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_afab9de0e37e7a131142e2631a0420976}{set\+Intensity}} (float n\+Intensity)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}Intensité de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classLight_a2ce9f92eb7b1ecf6c2ec1af1f0e9005a}{get\+Constant}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}attenuation constante de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_ad52dcbee76589880d21b9f9169e1cbb1}{set\+Constant}} (float n\+Constant)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}attenuation constante de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classLight_ae34e98dd8c41d62a7e523442046dd9cc}{get\+Linear}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}attenuation linéaire de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_a174fbcb37fc638d329b9c115094dded6}{set\+Linear}} (float n\+Linear)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}attenuation linéaire de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classLight_a00c361277bfc6806c18126f665f64e74}{get\+Quadratic}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}attenuation quadratique de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_abfac3752d0bbd946fa8bd0cd0503c30c}{set\+Quadratic}} (float n\+Quadratic)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}attenuation quadratique de \doxylink{classLight}{Light}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_ad1d69b33cde618d8e4e7c4ad000f804f}{set\+Open\+Angle}} (float n\+Open\+Angle)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}angle d\textquotesingle{}ouverture de la light \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classLight_aa89b20415b9e4eb3bf6fbf1ee47efced}{get\+Open\+Angle}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}angle d\textquotesingle{}ouverture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLight_ad515c0e61eebb7b38d26f1fda4539cab}{set\+Rotation\+Angle}} (float n\+Rotation\+Angle)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}angle de rotation de la light \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classLight_a66ac101e4e247f8461a80c8be3544c7c}{get\+Rotation\+Angle}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}angle de rotation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classLight_a3d86481e04abd43950f34a876968f2ca}{pos}}
+\item 
+\mbox{\hyperlink{classVector3i}{Vector3i}} \mbox{\hyperlink{classLight_a3a52dbc73ed5081e5716dfc2ef50eb98}{RGB}}
+\item 
+float \mbox{\hyperlink{classLight_a1071eaa556f4bb2a9345fdfba7e6f220}{intensity}}
+\item 
+float \mbox{\hyperlink{classLight_afef6c00a21aa16dc6cc7a7fb1639d2fa}{constant\+Attenuation}}
+\item 
+float \mbox{\hyperlink{classLight_afcb2da592197efae015ae16c1c5bfceb}{linear\+Attenuation}}
+\item 
+float \mbox{\hyperlink{classLight_a0f24dde11cbbd12d0f0309e189f3640c}{quadratic\+Attenuation}}
+\item 
+float \mbox{\hyperlink{classLight_a6091b301d7a5dcab48c6764f4804a3a5}{open\+Angle}}
+\item 
+float \mbox{\hyperlink{classLight_a2cc5a41ddec21b99e492e21b3da62451}{rotation\+Angle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gère un point de lumière en fonction de son Intensité, sa couleur et son attenuation. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000009}{Todo}}]Créer une class Directionnal\+Light pour différentier certaine lumière 
+
+Ajouter la gestion d\textquotesingle{}une shadow\+Map pour empêcher le passage de la lumière 
+
+utiliser un point à éclairé pour déterminer la rotation d\textquotesingle{}une lumière directionnelle \end{DoxyRefDesc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLight_aa7ca93de13c3d0ff60c26328b79dd008}\label{classLight_aa7ca93de13c3d0ff60c26328b79dd008} 
+\index{Light@{Light}!Light@{Light}}
+\index{Light@{Light}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{Light()}{Light()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Light\+::\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Pos,  }\item[{float}]{n\+Intensity,  }\item[{\mbox{\hyperlink{classVector3i}{Vector3i}}}]{n\+RGB,  }\item[{float}]{n\+Constant\+Attenuation,  }\item[{float}]{n\+Linear\+Attenuation,  }\item[{float}]{n\+Quadratic\+Attenuation }\end{DoxyParamCaption})}
+
+
+
+Constructeur de light. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Pos} & Position \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Intensity} & Intensité \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+RGB} & couleur \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Constant\+Attenuation} & attenuation constante \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Linear\+Attenuation} & attenuation linéaire \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Quadratic\+Attenuation} & attenuation quadratique \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLight_aeb5df09a25a32f19fdffa761268ba24f}\label{classLight_aeb5df09a25a32f19fdffa761268ba24f} 
+\index{Light@{Light}!Light@{Light}}
+\index{Light@{Light}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{Light()}{Light()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Light\+::\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défault de \doxylink{classLight}{Light}. 
+
+Lumière blanche avec 0.\+2 d\textquotesingle{}intensité et 0.\+2 pour toute les attenuation 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLight_a411518c34dd3a944d18f10067de5a449}\label{classLight_a411518c34dd3a944d18f10067de5a449} 
+\index{Light@{Light}!getColor@{getColor}}
+\index{getColor@{getColor}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3i}{Vector3i}} Light\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la couleur de \doxylink{classLight}{Light}. 
+
+\begin{DoxyReturn}{Returns}
+RGB 
+\end{DoxyReturn}
+\Hypertarget{classLight_a2ce9f92eb7b1ecf6c2ec1af1f0e9005a}\label{classLight_a2ce9f92eb7b1ecf6c2ec1af1f0e9005a} 
+\index{Light@{Light}!getConstant@{getConstant}}
+\index{getConstant@{getConstant}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getConstant()}{getConstant()}}
+{\footnotesize\ttfamily float Light\+::get\+Constant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}attenuation constante de \doxylink{classLight}{Light}. 
+
+\begin{DoxyReturn}{Returns}
+constant\+Attenuation 
+\end{DoxyReturn}
+\Hypertarget{classLight_afd1b21b442f3a8e168b6f58ebbb93778}\label{classLight_afd1b21b442f3a8e168b6f58ebbb93778} 
+\index{Light@{Light}!getIntensity@{getIntensity}}
+\index{getIntensity@{getIntensity}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getIntensity()}{getIntensity()}}
+{\footnotesize\ttfamily float Light\+::get\+Intensity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}Intensité de \doxylink{classLight}{Light}. 
+
+\begin{DoxyReturn}{Returns}
+intensity 
+\end{DoxyReturn}
+\Hypertarget{classLight_ae34e98dd8c41d62a7e523442046dd9cc}\label{classLight_ae34e98dd8c41d62a7e523442046dd9cc} 
+\index{Light@{Light}!getLinear@{getLinear}}
+\index{getLinear@{getLinear}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getLinear()}{getLinear()}}
+{\footnotesize\ttfamily float Light\+::get\+Linear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}attenuation linéaire de \doxylink{classLight}{Light}. 
+
+\begin{DoxyReturn}{Returns}
+linear\+Attenuation 
+\end{DoxyReturn}
+\Hypertarget{classLight_aa89b20415b9e4eb3bf6fbf1ee47efced}\label{classLight_aa89b20415b9e4eb3bf6fbf1ee47efced} 
+\index{Light@{Light}!getOpenAngle@{getOpenAngle}}
+\index{getOpenAngle@{getOpenAngle}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getOpenAngle()}{getOpenAngle()}}
+{\footnotesize\ttfamily float Light\+::get\+Open\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}angle d\textquotesingle{}ouverture. 
+
+\begin{DoxyReturn}{Returns}
+open\+Angle 
+\end{DoxyReturn}
+\Hypertarget{classLight_a865a33affa6fd6723bfcc171771183cd}\label{classLight_a865a33affa6fd6723bfcc171771183cd} 
+\index{Light@{Light}!getPosistion@{getPosistion}}
+\index{getPosistion@{getPosistion}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getPosistion()}{getPosistion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2f}{Vector2f}} Light\+::get\+Posistion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la position de \doxylink{classLight}{Light}. 
+
+\begin{DoxyReturn}{Returns}
+pos 
+\end{DoxyReturn}
+\Hypertarget{classLight_a00c361277bfc6806c18126f665f64e74}\label{classLight_a00c361277bfc6806c18126f665f64e74} 
+\index{Light@{Light}!getQuadratic@{getQuadratic}}
+\index{getQuadratic@{getQuadratic}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getQuadratic()}{getQuadratic()}}
+{\footnotesize\ttfamily float Light\+::get\+Quadratic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}attenuation quadratique de \doxylink{classLight}{Light}. 
+
+\begin{DoxyReturn}{Returns}
+quadratic\+Attenuation 
+\end{DoxyReturn}
+\Hypertarget{classLight_a66ac101e4e247f8461a80c8be3544c7c}\label{classLight_a66ac101e4e247f8461a80c8be3544c7c} 
+\index{Light@{Light}!getRotationAngle@{getRotationAngle}}
+\index{getRotationAngle@{getRotationAngle}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getRotationAngle()}{getRotationAngle()}}
+{\footnotesize\ttfamily float Light\+::get\+Rotation\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}angle de rotation. 
+
+\begin{DoxyReturn}{Returns}
+rotation\+Angle 
+\end{DoxyReturn}
+\Hypertarget{classLight_aa194ff3fb8d1af710ac66d86995f48e6}\label{classLight_aa194ff3fb8d1af710ac66d86995f48e6} 
+\index{Light@{Light}!setColor@{setColor}}
+\index{setColor@{setColor}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Light\+::set\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3i}{Vector3i}}}]{n\+RGB }\end{DoxyParamCaption})}
+
+
+
+Change la couleur de \doxylink{classLight}{Light}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+RGB} & Couleur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLight_ad52dcbee76589880d21b9f9169e1cbb1}\label{classLight_ad52dcbee76589880d21b9f9169e1cbb1} 
+\index{Light@{Light}!setConstant@{setConstant}}
+\index{setConstant@{setConstant}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setConstant()}{setConstant()}}
+{\footnotesize\ttfamily void Light\+::set\+Constant (\begin{DoxyParamCaption}\item[{float}]{n\+Constant }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}attenuation constante de \doxylink{classLight}{Light}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Constant} & attenuation constante \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLight_afab9de0e37e7a131142e2631a0420976}\label{classLight_afab9de0e37e7a131142e2631a0420976} 
+\index{Light@{Light}!setIntensity@{setIntensity}}
+\index{setIntensity@{setIntensity}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setIntensity()}{setIntensity()}}
+{\footnotesize\ttfamily void Light\+::set\+Intensity (\begin{DoxyParamCaption}\item[{float}]{n\+Intensity }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}Intensité de \doxylink{classLight}{Light}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Intensity} & Intensité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLight_a174fbcb37fc638d329b9c115094dded6}\label{classLight_a174fbcb37fc638d329b9c115094dded6} 
+\index{Light@{Light}!setLinear@{setLinear}}
+\index{setLinear@{setLinear}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setLinear()}{setLinear()}}
+{\footnotesize\ttfamily void Light\+::set\+Linear (\begin{DoxyParamCaption}\item[{float}]{n\+Linear }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}attenuation linéaire de \doxylink{classLight}{Light}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Linear} & attenuation linéaire \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLight_ad1d69b33cde618d8e4e7c4ad000f804f}\label{classLight_ad1d69b33cde618d8e4e7c4ad000f804f} 
+\index{Light@{Light}!setOpenAngle@{setOpenAngle}}
+\index{setOpenAngle@{setOpenAngle}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setOpenAngle()}{setOpenAngle()}}
+{\footnotesize\ttfamily void Light\+::set\+Open\+Angle (\begin{DoxyParamCaption}\item[{float}]{n\+Open\+Angle }\end{DoxyParamCaption})}
+
+
+
+change l\textquotesingle{}angle d\textquotesingle{}ouverture de la light 
+
+@parm\mbox{[}in\mbox{]} n\+Open\+Angle Nouvelle angle d\textquotesingle{}ouverture \Hypertarget{classLight_a9ab919af95d2b4a4e9ebd2cf6e61e1d2}\label{classLight_a9ab919af95d2b4a4e9ebd2cf6e61e1d2} 
+\index{Light@{Light}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Light\+::set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Pos }\end{DoxyParamCaption})}
+
+
+
+Change la position de \doxylink{classLight}{Light}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Pos} & Position \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLight_abfac3752d0bbd946fa8bd0cd0503c30c}\label{classLight_abfac3752d0bbd946fa8bd0cd0503c30c} 
+\index{Light@{Light}!setQuadratic@{setQuadratic}}
+\index{setQuadratic@{setQuadratic}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setQuadratic()}{setQuadratic()}}
+{\footnotesize\ttfamily void Light\+::set\+Quadratic (\begin{DoxyParamCaption}\item[{float}]{n\+Quadratic }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}attenuation quadratique de \doxylink{classLight}{Light}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Quadratic} & attenuation quadratique \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLight_ad515c0e61eebb7b38d26f1fda4539cab}\label{classLight_ad515c0e61eebb7b38d26f1fda4539cab} 
+\index{Light@{Light}!setRotationAngle@{setRotationAngle}}
+\index{setRotationAngle@{setRotationAngle}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setRotationAngle()}{setRotationAngle()}}
+{\footnotesize\ttfamily void Light\+::set\+Rotation\+Angle (\begin{DoxyParamCaption}\item[{float}]{n\+Rotation\+Angle }\end{DoxyParamCaption})}
+
+
+
+change l\textquotesingle{}angle de rotation de la light 
+
+@parm\mbox{[}in\mbox{]} n\+Rotation\+Angle Nouvelle angle de rotation 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLight_afef6c00a21aa16dc6cc7a7fb1639d2fa}\label{classLight_afef6c00a21aa16dc6cc7a7fb1639d2fa} 
+\index{Light@{Light}!constantAttenuation@{constantAttenuation}}
+\index{constantAttenuation@{constantAttenuation}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{constantAttenuation}{constantAttenuation}}
+{\footnotesize\ttfamily float Light\+::constant\+Attenuation\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLight_a1071eaa556f4bb2a9345fdfba7e6f220}\label{classLight_a1071eaa556f4bb2a9345fdfba7e6f220} 
+\index{Light@{Light}!intensity@{intensity}}
+\index{intensity@{intensity}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{intensity}{intensity}}
+{\footnotesize\ttfamily float Light\+::intensity\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLight_afcb2da592197efae015ae16c1c5bfceb}\label{classLight_afcb2da592197efae015ae16c1c5bfceb} 
+\index{Light@{Light}!linearAttenuation@{linearAttenuation}}
+\index{linearAttenuation@{linearAttenuation}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{linearAttenuation}{linearAttenuation}}
+{\footnotesize\ttfamily float Light\+::linear\+Attenuation\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLight_a6091b301d7a5dcab48c6764f4804a3a5}\label{classLight_a6091b301d7a5dcab48c6764f4804a3a5} 
+\index{Light@{Light}!openAngle@{openAngle}}
+\index{openAngle@{openAngle}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{openAngle}{openAngle}}
+{\footnotesize\ttfamily float Light\+::open\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLight_a3d86481e04abd43950f34a876968f2ca}\label{classLight_a3d86481e04abd43950f34a876968f2ca} 
+\index{Light@{Light}!pos@{pos}}
+\index{pos@{pos}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector2f}{Vector2f}} Light\+::pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLight_a0f24dde11cbbd12d0f0309e189f3640c}\label{classLight_a0f24dde11cbbd12d0f0309e189f3640c} 
+\index{Light@{Light}!quadraticAttenuation@{quadraticAttenuation}}
+\index{quadraticAttenuation@{quadraticAttenuation}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{quadraticAttenuation}{quadraticAttenuation}}
+{\footnotesize\ttfamily float Light\+::quadratic\+Attenuation\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLight_a3a52dbc73ed5081e5716dfc2ef50eb98}\label{classLight_a3a52dbc73ed5081e5716dfc2ef50eb98} 
+\index{Light@{Light}!RGB@{RGB}}
+\index{RGB@{RGB}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{RGB}{RGB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3i}{Vector3i}} Light\+::\+RGB\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLight_a2cc5a41ddec21b99e492e21b3da62451}\label{classLight_a2cc5a41ddec21b99e492e21b3da62451} 
+\index{Light@{Light}!rotationAngle@{rotationAngle}}
+\index{rotationAngle@{rotationAngle}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{rotationAngle}{rotationAngle}}
+{\footnotesize\ttfamily float Light\+::rotation\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+BBOP/\+Graphics/\mbox{\hyperlink{lightClass_8h}{light\+Class.\+h}}\item 
+src/\+BBOP/\+Graphics/\mbox{\hyperlink{lightClass_8cpp}{light\+Class.\+cpp}}\end{DoxyCompactItemize}

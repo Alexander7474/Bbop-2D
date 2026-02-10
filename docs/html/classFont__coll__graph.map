@@ -1,0 +1,9 @@
+<map id="Font" name="Font">
+<area shape="rect" id="Node000001" title="Stock une police de caractère." alt="" coords="45,271,96,296"/>
+<area shape="rect" id="Node000002" href="$structCharacter.html" title="Stock un caractère." alt="" coords="28,183,113,208"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,222,73,270,68,270,68,222"/>
+<area shape="rect" id="Node000003" href="$classVector2f.html" title=" " alt="" coords="33,80,109,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,119,73,183,68,183,68,119"/>
+<area shape="rect" id="Node000004" href="$classVector2.html" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="73,45,73,80,68,80,68,45"/>
+</map>

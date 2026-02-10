@@ -1,0 +1,108 @@
+\doxysection{src/\+BBOP/\+Graphics/shaders.cpp File Reference}
+\hypertarget{shaders_8cpp}{}\label{shaders_8cpp}\index{src/BBOP/Graphics/shaders.cpp@{src/BBOP/Graphics/shaders.cpp}}
+{\ttfamily \#include "{}../../../include/\+BBOP/\+Graphics/shaders.\+h"{}}\newline
+Include dependency graph for shaders.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{shaders_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8cpp_affe7023f9b3452bdc25366a3fb1da4c3}{default\+Vertex}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8cpp_aa4e3821fb3d25cef0fcd8bd89a1666e8}{default\+Fragment}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8cpp_a65dcdee07ae0d313523ef0a800faa5d1}{light\+Vertex}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shaders_8cpp_a873949ba752f018a0283ce1e6aff68fe}{light\+Fragment}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{shaders_8cpp_aa4e3821fb3d25cef0fcd8bd89a1666e8}\label{shaders_8cpp_aa4e3821fb3d25cef0fcd8bd89a1666e8} 
+\index{shaders.cpp@{shaders.cpp}!defaultFragment@{defaultFragment}}
+\index{defaultFragment@{defaultFragment}!shaders.cpp@{shaders.cpp}}
+\doxysubsubsection{\texorpdfstring{defaultFragment}{defaultFragment}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} default\+Fragment}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000010}{Todo}}]Utiliser des matrices de model, de view et de projection pour le vertex shaders\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000011}{Todo}}]1 -\/\texorpdfstring{$>$}{>} Mettre les shaders dans des fichier .glsl 
+
+2 -\/\texorpdfstring{$>$}{>} Faire des ubershader configurable pour optimiser les transfert de données (quantité) et la vitesse de calcule 
+
+3 -\/\texorpdfstring{$>$}{>} utilisé des matrice de tranformation, view et model pour éviter les calcule côté cpu 
+
+4 -\/\texorpdfstring{$>$}{>} faire un framebuffer pour calculer l\textquotesingle{}éclairage en une fois 
+
+5 -\/\texorpdfstring{$>$}{>} ajout de shadow map 
+
+6 -\/\texorpdfstring{$>$}{>} ajout de normal/light map \end{DoxyRefDesc}
+\Hypertarget{shaders_8cpp_affe7023f9b3452bdc25366a3fb1da4c3}\label{shaders_8cpp_affe7023f9b3452bdc25366a3fb1da4c3} 
+\index{shaders.cpp@{shaders.cpp}!defaultVertex@{defaultVertex}}
+\index{defaultVertex@{defaultVertex}!shaders.cpp@{shaders.cpp}}
+\doxysubsubsection{\texorpdfstring{defaultVertex}{defaultVertex}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} default\+Vertex}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ R\textcolor{stringliteral}{"{}glsl(}}
+\DoxyCodeLine{\textcolor{stringliteral}{\#version\ 330\ core}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 0)\ in\ vec2\ aPos;}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 1)\ in\ vec4\ aColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 2)\ in\ vec2\ aTexCoord;}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{uniform\ mat4\ projection;}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{out\ vec4\ outColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{out\ vec2\ TexCoord;}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{void\ main()}}
+\DoxyCodeLine{\textcolor{stringliteral}{\{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ gl\_Position\ =\ projection\ *\ vec4(aPos,\ 0.0,\ 1.0);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ outColor\ =\ aColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ TexCoord\ =\ aTexCoord;}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}\ }}
+\DoxyCodeLine{\textcolor{stringliteral}{)glsl"{}}}
+
+\end{DoxyCode}
+\Hypertarget{shaders_8cpp_a873949ba752f018a0283ce1e6aff68fe}\label{shaders_8cpp_a873949ba752f018a0283ce1e6aff68fe} 
+\index{shaders.cpp@{shaders.cpp}!lightFragment@{lightFragment}}
+\index{lightFragment@{lightFragment}!shaders.cpp@{shaders.cpp}}
+\doxysubsubsection{\texorpdfstring{lightFragment}{lightFragment}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} light\+Fragment}
+
+\Hypertarget{shaders_8cpp_a65dcdee07ae0d313523ef0a800faa5d1}\label{shaders_8cpp_a65dcdee07ae0d313523ef0a800faa5d1} 
+\index{shaders.cpp@{shaders.cpp}!lightVertex@{lightVertex}}
+\index{lightVertex@{lightVertex}!shaders.cpp@{shaders.cpp}}
+\doxysubsubsection{\texorpdfstring{lightVertex}{lightVertex}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} light\+Vertex}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ R\textcolor{stringliteral}{"{}glsl(}}
+\DoxyCodeLine{\textcolor{stringliteral}{\#version\ 330\ core}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 0)\ in\ vec2\ aPos;}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 1)\ in\ vec4\ aColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 2)\ in\ vec2\ aTexCoord;}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{uniform\ mat4\ projection;}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{out\ vec4\ outColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{out\ vec2\ TexCoord;}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{void\ main()}}
+\DoxyCodeLine{\textcolor{stringliteral}{\{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ gl\_Position\ =\ projection\ *\ vec4(aPos,\ 0.0,\ 1.0);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ outColor\ =\ aColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ TexCoord\ =\ aTexCoord;}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}\ }}
+\DoxyCodeLine{\textcolor{stringliteral}{)glsl"{}}}
+
+\end{DoxyCode}

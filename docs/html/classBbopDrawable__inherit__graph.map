@@ -1,0 +1,19 @@
+<map id="BbopDrawable" name="BbopDrawable">
+<area shape="rect" id="Node000001" title="Class Parent de tous ce qui peut être dessiné par une Scene." alt="" coords="193,5,310,31"/>
+<area shape="rect" id="Node000002" href="$classShape.html" title="Class parente de toutes les formes géométriques(RectangleShape, ConvexShape, CircleShape,..." alt="" coords="172,79,235,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,44,213,80,209,77,234,41"/>
+<area shape="rect" id="Node000009" href="$classTexteBox.html" title="Stock du texte pour le draw dans la fenêtre." alt="" coords="259,79,342,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="269,41,295,77,290,80,265,44"/>
+<area shape="rect" id="Node000003" href="$classConvexShape.html" title="Gère une convex." alt="" coords="5,152,116,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,112,85,154,83,149,167,108"/>
+<area shape="rect" id="Node000005" href="$classRectangleShape.html" title="Gère un rectangle/carré" alt="" coords="140,152,267,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="206,118,206,152,201,152,201,118"/>
+<area shape="rect" id="Node000006" href="$classSprite.html" title="Gère un Sprite (Rectangle avec une Texture)" alt="" coords="291,152,351,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="235,109,303,149,300,154,233,113"/>
+<area shape="rect" id="Node000004" href="$classCircleShape.html" title="Gère un cercle." alt="" coords="11,225,110,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="63,191,63,225,58,225,58,191"/>
+<area shape="rect" id="Node000007" href="$classAnimatedSprite.html" title="Gère un Sprite qui joue une aniomation en boucle." alt="" coords="197,225,319,251"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="303,189,270,227,266,223,299,186"/>
+<area shape="rect" id="Node000008" href="$classNoTextureSprite.html" title=" " alt="" coords="344,225,471,251"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="347,184,395,223,391,227,343,188"/>
+</map>

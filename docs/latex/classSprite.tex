@@ -1,0 +1,471 @@
+\doxysection{Sprite Class Reference}
+\hypertarget{classSprite}{}\label{classSprite}\index{Sprite@{Sprite}}
+
+
+Gère un \doxylink{classSprite}{Sprite} (Rectangle avec une \doxylink{classTexture}{Texture})  
+
+
+
+
+{\ttfamily \#include $<$sprite\+Class.\+h$>$}
+
+
+
+Inheritance diagram for Sprite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classSprite__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sprite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSprite__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSprite_a720f36fae066815cb8131606602b6095}{Sprite}} (\mbox{\hyperlink{classTexture}{Texture}} n\+Texture, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Pos, \mbox{\hyperlink{classVector3i}{Vector3i}} n\+RGB, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Origin, float n\+Rotation, float n\+Alpha)
+\item 
+\mbox{\hyperlink{classSprite_a2fe886a0cf4b887163cc8138b09574fc}{Sprite}} (\mbox{\hyperlink{classTexture}{Texture}} n\+Texture, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Pos, \mbox{\hyperlink{classVector3i}{Vector3i}} n\+RGB, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Origin)
+\item 
+\mbox{\hyperlink{classSprite_a75252863eb402c985ba36eda01039b82}{Sprite}} (\mbox{\hyperlink{classTexture}{Texture}} n\+Texture, \mbox{\hyperlink{classVector2f}{Vector2f}} n\+Pos)
+\item 
+\mbox{\hyperlink{classSprite_a04e0654722b7bc77f1be8a9eb8ebb086}{Sprite}} (\mbox{\hyperlink{classTexture}{Texture}} n\+Texture)
+\begin{DoxyCompactList}\small\item\em Constructeur du \doxylink{classSprite}{Sprite}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSprite_a12cba3ac1868418add3c4d95ce87e615}{Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défault de \doxylink{classSprite}{Sprite}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSprite_ac17f0e18a22c84234a659b1c0bbb69de}{Sprite}} (const \mbox{\hyperlink{classSprite}{Sprite}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructeur de srpite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSprite_a8accab430f9d90ae5117b57d67e32b84}{\texorpdfstring{$\sim$}{\string~}\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de sprite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSprite}{Sprite}} \& \mbox{\hyperlink{classSprite_abb3f0673884d42b6b116f0c4d1a47b77}{operator=}} (const \mbox{\hyperlink{classSprite}{Sprite}} \&other)
+\begin{DoxyCompactList}\small\item\em Operateur = de sprite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSprite_a2777509b78584c2dc289387a1951fcbd}{Draw}} (GLint \texorpdfstring{$\ast$}{*}render\+Uniforms) const override
+\begin{DoxyCompactList}\small\item\em Déssine l\textquotesingle{}objet héritant de la class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSprite_a2e579e2e543017ea87acc42e5d7108b0}{set\+Texture}} (const \mbox{\hyperlink{classTexture}{Texture}} \&n\+Texture)
+\begin{DoxyCompactList}\small\item\em Change la texture du sprite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTexture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSprite_a8c2d1f891be61ecb841266d1dbf9f5dc}{get\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em renvoie un pointeur vers la texture du sprite \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSprite_afeffb47a9068348799c1d452e8607ac7}{set\+Normal\+Map}} (const \mbox{\hyperlink{classTexture}{Texture}} \&n\+Normal\+Map)
+\begin{DoxyCompactList}\small\item\em Change la texture de la normal map du sprite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTexture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSprite_abdb7104232133a8c2c3dfa5e3b8b5864}{get\+Normal\+Map}} ()
+\begin{DoxyCompactList}\small\item\em renvoie la normal map du sprite \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSprite_a893f004e6c5e827be939b0e362c97cc9}{get\+RGBFilter\+State}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie si oui ou non le filtre de couleur est activé \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSprite_ab299bab24ce0057164243ec5b8a2bb6b}{set\+RGBFilter\+State}} (bool etat)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}etat du filtre de couleur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSprite_aa604258c288860ef9e9604cc9d932fec}{flip\+Horizontally}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la \doxylink{classTexture}{Texture} horizontallement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSprite_abe1f24ce55e6b541fcd3f43e8147b2a7}{flip\+Vertically}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la \doxylink{classTexture}{Texture} Verticallement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classShape}{Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShape_a4226dfc8b139b36d995b583b8e940681}{Shape}} (GLfloat \texorpdfstring{$\ast$}{*}vertices, GLsizeiptr vertices\+Size, GLuint \texorpdfstring{$\ast$}{*}indices, GLsizeiptr indices\+Size)
+\begin{DoxyCompactList}\small\item\em Constructeur de \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classShape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défault de \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classShape_af929eaa4d0cbd6b2fe2e9026796b9cae}{Shape}} (const \mbox{\hyperlink{classShape}{Shape}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructeur par copie de shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classShape_a935afc9e576015f967d90de56977167d}{\texorpdfstring{$\sim$}{\string~}\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a5616a680b154c1460a7fc0fb0b2ab1d2}{init\+Shape}} (GLfloat \texorpdfstring{$\ast$}{*}vertices, GLsizeiptr vertices\+Size, GLuint \texorpdfstring{$\ast$}{*}indices, GLsizeiptr indices\+Size)
+\begin{DoxyCompactList}\small\item\em Initialise la \doxylink{classShape}{Shape} comme sont constructeur. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classVector2f}{Vector2f}} \& \mbox{\hyperlink{classShape_a7198b7b0d7dedae7914e6af66ee59494}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la Taille du \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_aa3674a30abfb72cdaea47333a20a8e56}{set\+Size}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&n\+Size)
+\begin{DoxyCompactList}\small\item\em Change la taille du \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_af7999a07b0092bbfe670964c8b062c16}{set\+Size}} (float x\+\_\+, float y\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change la taille du \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classVector2f}{Vector2f}} \& \mbox{\hyperlink{classShape_a2b112d8efdfb9dc0ef3b648592eb7fc0}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la position du \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_ab99797be933539ee6f0c7d00ed84fe2f}{set\+Position}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&n\+Pos)
+\begin{DoxyCompactList}\small\item\em Change la position du \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a276dcbeadda78388307bd278cdcbfe55}{set\+Position}} (float x\+\_\+, float y\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change la position de la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classVector2f}{Vector2f}} \& \mbox{\hyperlink{classShape_a73098aea0a59bb7afccddd5ad0a9e66d}{get\+Origin}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}origine de la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a87892a43869e05f2d41b1bcf31004650}{set\+Origin}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&n\+Origin)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}origine de la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a80be491c6375feb48308a2eb9d2f478e}{set\+Origin}} (float x\+\_\+, float y\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}origine de la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classVector3i}{Vector3i}} \& \mbox{\hyperlink{classShape_a5f245f681b777a14d5e503830b9823c8}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la couleur de \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_ab635f4e20db08b309744f97cdf34e8f4}{set\+Color}} (const \mbox{\hyperlink{classVector3i}{Vector3i}} \&n\+RGB)
+\begin{DoxyCompactList}\small\item\em Change la couleur de \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_aff166125c810e91252697261abbb4c60}{set\+Color}} (int x\+\_\+, int y\+\_\+, int z\+\_\+)
+\begin{DoxyCompactList}\small\item\em Change la couleur de \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classShape_ae78719a18cecb5031d4b8cd82632946a}{get\+Alpha}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la transaprence du la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a5dd20df11726c23df7cafb068615a9d6}{set\+Alpha}} (float n\+Alpha)
+\begin{DoxyCompactList}\small\item\em Change la transaprence de la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classShape_af42fdc23b15b0df16053b6df0c9125b1}{get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la rotation de la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a54928fc5424c4d183dd3d65ee072d8a8}{set\+Rotation}} (float n\+Rotation)
+\begin{DoxyCompactList}\small\item\em Change la rotation de la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCollisionBox}{Collision\+Box}} \& \mbox{\hyperlink{classShape_a02b0b19d46630d4c2bd1c627e05cc904}{get\+Collision\+Box}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la boîte de collision de \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a1dca8f2170a6e2c0f1098c4ba22250c0}{set\+Auto\+Update\+Collision}} (bool etat)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}état de l\textquotesingle{}automatisation de la mise a jour de la boîte de collision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a6422e2d9f7dfc2002175d573e39a4533}{move}} (const \mbox{\hyperlink{classVector2f}{Vector2f}} \&vecM)
+\begin{DoxyCompactList}\small\item\em Déplace la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShape_a3a6d420f0799c11546c8d6e13a7d1497}{move}} (float x\+\_\+, float y\+\_\+)
+\begin{DoxyCompactList}\small\item\em Déplace la \doxylink{classShape}{Shape}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSprite_a58ba7f507127d4e81ffe00be7d59c0bc}{build\+VAO}} () override
+\item 
+void \mbox{\hyperlink{classSprite_ab8de3004c927130c36f888ec52712f0a}{update\+VBO}} () override
+\item 
+void \mbox{\hyperlink{classSprite_ab0926ec6fb759d24b1df3eab12f2a70e}{update\+VBORGB}} () override
+\item 
+void \mbox{\hyperlink{classSprite_a43628352a0e151acdb3b68c9be2c9109}{update\+VBOAlpha}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLfloat \mbox{\hyperlink{classSprite_ae3299c5e7dcc6a8eddfebb538f9354a3}{vertices}} \mbox{[}32\mbox{]}
+\item 
+GLuint \mbox{\hyperlink{classSprite_a02928ae567a2c404d015f12105ca7be0}{indices}} \mbox{[}6\mbox{]}
+\item 
+bool \mbox{\hyperlink{classSprite_a5fbebfdd07cac349aeff218d5eb45f7f}{is\+RGBFilter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classShape}{Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVAO}{VAO}} \mbox{\hyperlink{classShape_a4bfe879fe6c53f5f4de1add05418cccf}{shape\+VAO}}
+\item 
+\mbox{\hyperlink{classVBO}{VBO}} \mbox{\hyperlink{classShape_a591551015da251ea1cb02fc30aabb167}{shape\+VBO}}
+\item 
+\mbox{\hyperlink{classEBO}{EBO}} \mbox{\hyperlink{classShape_ac0dcfbea4bf6b58d5e236939187058c6}{shape\+EBO}}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classShape_ab65e13cd350073f848241ae3060acb20}{pos}}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classShape_a7cc16b005cf1ab49f4bdba5465459024}{size}}
+\item 
+\mbox{\hyperlink{classVector2f}{Vector2f}} \mbox{\hyperlink{classShape_ae0409dbc3387fb78e49a1d5378ca2581}{origin}}
+\item 
+\mbox{\hyperlink{classVector3i}{Vector3i}} \mbox{\hyperlink{classShape_a7e043155fe1272d8beccc9031e80860f}{RGB}}
+\item 
+bool \mbox{\hyperlink{classShape_ab3820d4d10ae94fa2ec2013b06c26838}{auto\+Update\+Collision}}
+\item 
+float \mbox{\hyperlink{classShape_ae74cb8b7d1fabcc37421ac58a681d521}{rotation}}
+\item 
+\mbox{\hyperlink{classCollisionBox}{Collision\+Box}} \mbox{\hyperlink{classShape_aaf5c1c1790f51aeb4118cc35f9810612}{shape\+Collision\+Box}}
+\item 
+float \mbox{\hyperlink{classShape_a66a52f9200f362ec1e754c5211e6ba6c}{alpha}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTexture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSprite_a97ec7379cfba1907f068809e6379ab4e}{sprite\+Texture}}
+\item 
+\mbox{\hyperlink{classTexture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSprite_a12b8c342fa7a071938c31488e1de49be}{sprite\+Normal\+Map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gère un \doxylink{classSprite}{Sprite} (Rectangle avec une \doxylink{classTexture}{Texture}) 
+
+\begin{DoxyNote}{Note}
+Hérite de la class \doxylink{classShape}{Shape} pour gérer les infos du rectangle 
+\end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+L\textquotesingle{}attribut RGB du \doxylink{classSprite}{Sprite} sert comme filtre sur la texture quand is\+RGBFilter est true
+\end{DoxyAttention}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classShape}{Shape} \doxylink{classNoTextureSprite}{No\+Texture\+Sprite} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSprite_a720f36fae066815cb8131606602b6095}\label{classSprite_a720f36fae066815cb8131606602b6095} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTexture}{Texture}}}]{n\+Texture,  }\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Pos,  }\item[{\mbox{\hyperlink{classVector3i}{Vector3i}}}]{n\+RGB,  }\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Origin,  }\item[{float}]{n\+Rotation,  }\item[{float}]{n\+Alpha }\end{DoxyParamCaption})}
+
+\Hypertarget{classSprite_a2fe886a0cf4b887163cc8138b09574fc}\label{classSprite_a2fe886a0cf4b887163cc8138b09574fc} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTexture}{Texture}}}]{n\+Texture,  }\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Pos,  }\item[{\mbox{\hyperlink{classVector3i}{Vector3i}}}]{n\+RGB,  }\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Origin }\end{DoxyParamCaption})}
+
+\Hypertarget{classSprite_a75252863eb402c985ba36eda01039b82}\label{classSprite_a75252863eb402c985ba36eda01039b82} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTexture}{Texture}}}]{n\+Texture,  }\item[{\mbox{\hyperlink{classVector2f}{Vector2f}}}]{n\+Pos }\end{DoxyParamCaption})}
+
+\Hypertarget{classSprite_a04e0654722b7bc77f1be8a9eb8ebb086}\label{classSprite_a04e0654722b7bc77f1be8a9eb8ebb086} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTexture}{Texture}}}]{n\+Texture }\end{DoxyParamCaption})}
+
+
+
+Constructeur du \doxylink{classSprite}{Sprite}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Texture} & texture du \doxylink{classSprite}{Sprite} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSprite_a12cba3ac1868418add3c4d95ce87e615}\label{classSprite_a12cba3ac1868418add3c4d95ce87e615} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défault de \doxylink{classSprite}{Sprite}. 
+
+\begin{DoxyNote}{Note}
+Utilsier set\+Texture avant d\textquotesingle{}utiliser le \doxylink{classSprite}{Sprite} 
+\end{DoxyNote}
+\Hypertarget{classSprite_ac17f0e18a22c84234a659b1c0bbb69de}\label{classSprite_ac17f0e18a22c84234a659b1c0bbb69de} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSprite}{Sprite}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Constructeur de srpite. 
+
+\Hypertarget{classSprite_a8accab430f9d90ae5117b57d67e32b84}\label{classSprite_a8accab430f9d90ae5117b57d67e32b84} 
+\index{Sprite@{Sprite}!````~Sprite@{\texorpdfstring{$\sim$}{\string~}Sprite}}
+\index{````~Sprite@{\texorpdfstring{$\sim$}{\string~}Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Sprite()}{\string~Sprite()}}
+{\footnotesize\ttfamily Sprite\+::\texorpdfstring{$\sim$}{\string~}\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de sprite. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSprite_a58ba7f507127d4e81ffe00be7d59c0bc}\label{classSprite_a58ba7f507127d4e81ffe00be7d59c0bc} 
+\index{Sprite@{Sprite}!buildVAO@{buildVAO}}
+\index{buildVAO@{buildVAO}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{buildVAO()}{buildVAO()}}
+{\footnotesize\ttfamily void Sprite\+::build\+VAO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+color change \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+Implements \mbox{\hyperlink{classShape_a77e01d8e6b81372c74c27abb137edb97}{Shape}}.
+
+\Hypertarget{classSprite_a2777509b78584c2dc289387a1951fcbd}\label{classSprite_a2777509b78584c2dc289387a1951fcbd} 
+\index{Sprite@{Sprite}!Draw@{Draw}}
+\index{Draw@{Draw}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Sprite\+::\+Draw (\begin{DoxyParamCaption}\item[{GLint \texorpdfstring{$\ast$}{*}}]{render\+Uniforms }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Déssine l\textquotesingle{}objet héritant de la class. 
+
+Cette méthode est utilisé dans Scene.\+Draw(\+Bbop\+Drawable) qui lui transmet le render\+Mode\+Loc.
+
+\begin{DoxySeeAlso}{See also}
+Scene.\+Draw(\+Bbop\+Drawable) 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBbopDrawable_aa4427000ecfdf949ece85876692b7e09}{Bbop\+Drawable}}.
+
+\Hypertarget{classSprite_aa604258c288860ef9e9604cc9d932fec}\label{classSprite_aa604258c288860ef9e9604cc9d932fec} 
+\index{Sprite@{Sprite}!flipHorizontally@{flipHorizontally}}
+\index{flipHorizontally@{flipHorizontally}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{flipHorizontally()}{flipHorizontally()}}
+{\footnotesize\ttfamily void Sprite\+::flip\+Horizontally (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne la \doxylink{classTexture}{Texture} horizontallement. 
+
+\Hypertarget{classSprite_abe1f24ce55e6b541fcd3f43e8147b2a7}\label{classSprite_abe1f24ce55e6b541fcd3f43e8147b2a7} 
+\index{Sprite@{Sprite}!flipVertically@{flipVertically}}
+\index{flipVertically@{flipVertically}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{flipVertically()}{flipVertically()}}
+{\footnotesize\ttfamily void Sprite\+::flip\+Vertically (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne la \doxylink{classTexture}{Texture} Verticallement. 
+
+\Hypertarget{classSprite_abdb7104232133a8c2c3dfa5e3b8b5864}\label{classSprite_abdb7104232133a8c2c3dfa5e3b8b5864} 
+\index{Sprite@{Sprite}!getNormalMap@{getNormalMap}}
+\index{getNormalMap@{getNormalMap}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getNormalMap()}{getNormalMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTexture}{Texture}} \texorpdfstring{$\ast$}{*} Sprite\+::get\+Normal\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+renvoie la normal map du sprite 
+
+\begin{DoxyReturn}{Returns}
+sprite\+Normal\+Map pointeur vers la \doxylink{classTexture}{Texture} de la normal map 
+\end{DoxyReturn}
+\Hypertarget{classSprite_a893f004e6c5e827be939b0e362c97cc9}\label{classSprite_a893f004e6c5e827be939b0e362c97cc9} 
+\index{Sprite@{Sprite}!getRGBFilterState@{getRGBFilterState}}
+\index{getRGBFilterState@{getRGBFilterState}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getRGBFilterState()}{getRGBFilterState()}}
+{\footnotesize\ttfamily bool Sprite\+::get\+RGBFilter\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie si oui ou non le filtre de couleur est activé 
+
+\begin{DoxyReturn}{Returns}
+is\+RGBFilter 
+\end{DoxyReturn}
+\Hypertarget{classSprite_a8c2d1f891be61ecb841266d1dbf9f5dc}\label{classSprite_a8c2d1f891be61ecb841266d1dbf9f5dc} 
+\index{Sprite@{Sprite}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTexture}{Texture}} \texorpdfstring{$\ast$}{*} Sprite\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+renvoie un pointeur vers la texture du sprite 
+
+\begin{DoxyReturn}{Returns}
+sprite\+Texture pointeur vers la \doxylink{classTexture}{Texture} du sprite 
+\end{DoxyReturn}
+\Hypertarget{classSprite_abb3f0673884d42b6b116f0c4d1a47b77}\label{classSprite_abb3f0673884d42b6b116f0c4d1a47b77} 
+\index{Sprite@{Sprite}!operator=@{operator=}}
+\index{operator=@{operator=}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSprite}{Sprite}} \& Sprite\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSprite}{Sprite}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Operateur = de sprite. 
+
+\Hypertarget{classSprite_afeffb47a9068348799c1d452e8607ac7}\label{classSprite_afeffb47a9068348799c1d452e8607ac7} 
+\index{Sprite@{Sprite}!setNormalMap@{setNormalMap}}
+\index{setNormalMap@{setNormalMap}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setNormalMap()}{setNormalMap()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Normal\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTexture}{Texture}} \&}]{n\+Normal\+Map }\end{DoxyParamCaption})}
+
+
+
+Change la texture de la normal map du sprite. 
+
+le \doxylink{classSprite}{Sprite} utilise automatiquement sa normal map lors du rendue dès que le pointer vers celle ci est non null
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Normal\+Map} & \doxylink{classTexture}{Texture} de normal map \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSprite_ab299bab24ce0057164243ec5b8a2bb6b}\label{classSprite_ab299bab24ce0057164243ec5b8a2bb6b} 
+\index{Sprite@{Sprite}!setRGBFilterState@{setRGBFilterState}}
+\index{setRGBFilterState@{setRGBFilterState}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setRGBFilterState()}{setRGBFilterState()}}
+{\footnotesize\ttfamily void Sprite\+::set\+RGBFilter\+State (\begin{DoxyParamCaption}\item[{bool}]{etat }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}etat du filtre de couleur. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em etat} & Etat du filtre de couleur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSprite_a2e579e2e543017ea87acc42e5d7108b0}\label{classSprite_a2e579e2e543017ea87acc42e5d7108b0} 
+\index{Sprite@{Sprite}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTexture}{Texture}} \&}]{n\+Texture }\end{DoxyParamCaption})}
+
+
+
+Change la texture du sprite. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Texture} & texture \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSprite_ab8de3004c927130c36f888ec52712f0a}\label{classSprite_ab8de3004c927130c36f888ec52712f0a} 
+\index{Sprite@{Sprite}!updateVBO@{updateVBO}}
+\index{updateVBO@{updateVBO}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{updateVBO()}{updateVBO()}}
+{\footnotesize\ttfamily void Sprite\+::update\+VBO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classShape_a0bd6fb14dd56a06c5e31660b9ad49089}{Shape}}.
+
+\Hypertarget{classSprite_a43628352a0e151acdb3b68c9be2c9109}\label{classSprite_a43628352a0e151acdb3b68c9be2c9109} 
+\index{Sprite@{Sprite}!updateVBOAlpha@{updateVBOAlpha}}
+\index{updateVBOAlpha@{updateVBOAlpha}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{updateVBOAlpha()}{updateVBOAlpha()}}
+{\footnotesize\ttfamily void Sprite\+::update\+VBOAlpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classShape_a385d7399b1d55b51f2174fec54dd3d34}{Shape}}.
+
+\Hypertarget{classSprite_ab0926ec6fb759d24b1df3eab12f2a70e}\label{classSprite_ab0926ec6fb759d24b1df3eab12f2a70e} 
+\index{Sprite@{Sprite}!updateVBORGB@{updateVBORGB}}
+\index{updateVBORGB@{updateVBORGB}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{updateVBORGB()}{updateVBORGB()}}
+{\footnotesize\ttfamily void Sprite\+::update\+VBORGB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classShape_a70b8ee5551305947c1161e794a6d719a}{Shape}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSprite_a02928ae567a2c404d015f12105ca7be0}\label{classSprite_a02928ae567a2c404d015f12105ca7be0} 
+\index{Sprite@{Sprite}!indices@{indices}}
+\index{indices@{indices}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{indices}{indices}}
+{\footnotesize\ttfamily GLuint Sprite\+::indices\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classSprite_a5fbebfdd07cac349aeff218d5eb45f7f}\label{classSprite_a5fbebfdd07cac349aeff218d5eb45f7f} 
+\index{Sprite@{Sprite}!isRGBFilter@{isRGBFilter}}
+\index{isRGBFilter@{isRGBFilter}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{isRGBFilter}{isRGBFilter}}
+{\footnotesize\ttfamily bool Sprite\+::is\+RGBFilter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classSprite_a12b8c342fa7a071938c31488e1de49be}\label{classSprite_a12b8c342fa7a071938c31488e1de49be} 
+\index{Sprite@{Sprite}!spriteNormalMap@{spriteNormalMap}}
+\index{spriteNormalMap@{spriteNormalMap}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{spriteNormalMap}{spriteNormalMap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTexture}{Texture}}\texorpdfstring{$\ast$}{*} Sprite\+::sprite\+Normal\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSprite_a97ec7379cfba1907f068809e6379ab4e}\label{classSprite_a97ec7379cfba1907f068809e6379ab4e} 
+\index{Sprite@{Sprite}!spriteTexture@{spriteTexture}}
+\index{spriteTexture@{spriteTexture}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{spriteTexture}{spriteTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTexture}{Texture}}\texorpdfstring{$\ast$}{*} Sprite\+::sprite\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSprite_ae3299c5e7dcc6a8eddfebb538f9354a3}\label{classSprite_ae3299c5e7dcc6a8eddfebb538f9354a3} 
+\index{Sprite@{Sprite}!vertices@{vertices}}
+\index{vertices@{vertices}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{vertices}{vertices}}
+{\footnotesize\ttfamily GLfloat Sprite\+::vertices\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+BBOP/\+Graphics/\mbox{\hyperlink{spriteClass_8h}{sprite\+Class.\+h}}\item 
+src/\+BBOP/\+Graphics/\mbox{\hyperlink{spriteClass_8cpp}{sprite\+Class.\+cpp}}\end{DoxyCompactItemize}

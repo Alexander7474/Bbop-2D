@@ -1,0 +1,35 @@
+\doxysection{animated\+Sprite\+Class.\+h}
+\hypertarget{animatedSpriteClass_8h_source}{}\label{animatedSpriteClass_8h_source}\index{include/BBOP/Graphics/animatedSpriteClass.h@{include/BBOP/Graphics/animatedSpriteClass.h}}
+\mbox{\hyperlink{animatedSpriteClass_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{spriteClass_8h}{spriteClass.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAnimatedSprite}{AnimatedSprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSprite}{Sprite}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classAnimatedSprite_a1147eb833593fa4c28854b96a84413a9}{AnimatedSprite}}(std::string\ \_animated\_sprite\_sheet,\ \mbox{\hyperlink{classVector2i}{Vector2i}}\ \_size,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_frame\_t,\ \textcolor{keywordtype}{int}\ \_dead\_frame,\ \textcolor{keywordtype}{bool}\ \_random\_start);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classAnimatedSprite_a1147eb833593fa4c28854b96a84413a9}{AnimatedSprite}}(std::string\ \_animated\_sprite\_sheet,\ \mbox{\hyperlink{classVector2i}{Vector2i}}\ \_size,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_frame\_t,\ \textcolor{keywordtype}{int}\ \_dead\_frame);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classAnimatedSprite_a1147eb833593fa4c28854b96a84413a9}{AnimatedSprite}}(std::string\ \_animated\_sprite\_sheet,\ \mbox{\hyperlink{classVector2i}{Vector2i}}\ \_size,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_frame\_t);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classAnimatedSprite_a1147eb833593fa4c28854b96a84413a9}{AnimatedSprite}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAnimatedSprite_a8441e07d3ae6bb4c76946bb82238d826}{update}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<Texture>\ \&\mbox{\hyperlink{classAnimatedSprite_a741ea12f5cd57621bc157e8c933f9274}{getSpriteSheet}}();}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<Texture>\ \mbox{\hyperlink{classAnimatedSprite_a67e297a98cf6067069ffed10f1f08653}{animated\_sprite\_texture}};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classAnimatedSprite_a3541363f4ce2ac22c605e4060f5f4c4a}{frame\_cpt}};\ \textcolor{comment}{//<!\ compteur\ de\ frame}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classAnimatedSprite_a63ce9db8d802e3f0350e6aaef1452a52}{n\_frame}};\ \ \ \textcolor{comment}{//<!\ nombre\ de\ frame}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classAnimatedSprite_ae59175f4400c4fd72d5d917135fb24bd}{frame\_t}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<!\ timing\ entre\ les\ frames}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classAnimatedSprite_a3983e4f6a38a65467d7e20159fb937ea}{total\_t}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<!\ temps\ total\ de\ l'anim}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classAnimatedSprite_ae44277dda8ff2a25a0aa42ca3fb3767d}{anim\_start}};\ \ \ \ \ \ \textcolor{comment}{//<!\ depart\ de\ l'anim}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classAnimatedSprite_ac52736764abcaca6cae3e927b818ad3b}{last\_frame\_t}};\ \ \ \ \ \ \textcolor{comment}{//<!\ timing\ de\ la\ dernière\ frame}}
+\DoxyCodeLine{00052\ \};}
+
+\end{DoxyCode}

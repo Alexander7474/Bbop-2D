@@ -1,0 +1,72 @@
+\doxysection{collision\+Box\+Class.\+h}
+\hypertarget{collisionBoxClass_8h_source}{}\label{collisionBoxClass_8h_source}\index{include/BBOP/Graphics/collisionBoxClass.h@{include/BBOP/Graphics/collisionBoxClass.h}}
+\mbox{\hyperlink{collisionBoxClass_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ collisionBoxClass.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Ce\ programme\ est\ distribué\ sous\ les\ termes\ de\ la\ Licence\ Publique}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Générale\ GNU,\ version\ 3.0,\ telle\ que\ publiée\ par\ la\ Free\ Software}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Foundation.\ Consultez\ la\ Licence\ Publique\ Générale\ GNU\ pour\ plus\ de}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ détails.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ Vous\ devez\ avoir\ reçu\ une\ copie\ de\ la\ Licence\ Publique\ Générale\ GNU}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ en\ même\ temps\ que\ ce\ programme.\ Si\ ce\ n'est\ pas\ le\ cas,\ consultez}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ <https://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COLLISION\_BOX\_CLASS\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COLLISION\_BOX\_CLASS\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bbopMathClass_8h}{bbopMathClass.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{geometricClass_8h}{geometricClass.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCollisionBox}{CollisionBox}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGeometric}{Geometric}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classCollisionBox_a11e887724dd21a42caa87411018de342}{CollisionBox}}(\mbox{\hyperlink{classVector2f}{Vector2f}}\ nPos,\ \mbox{\hyperlink{classVector2f}{Vector2f}}\ nOrigin,\ \mbox{\hyperlink{classVector2f}{Vector2f}}\ nSize,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ nRotation);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classCollisionBox_a11e887724dd21a42caa87411018de342}{CollisionBox}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classGeometric}{Geometric}}\ \&to\_follow);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classCollisionBox_a11e887724dd21a42caa87411018de342}{CollisionBox}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCollisionBox_a74639fe7c6a7105af10ab7ce59a1ffd2}{check}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCollisionBox}{CollisionBox}}\ \&otherBox)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCollisionBox_a7e4a1c23eb0513f0d10d83d9ffc6679d}{checkWithRotation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCollisionBox}{CollisionBox}}\ \&otherBox)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classVector2f}{Vector2f}}\ \mbox{\hyperlink{classCollisionBox_a8c9274a9771030514d87af2ef68bf88e}{getOffsetX}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classVector2f}{Vector2f}}\ \mbox{\hyperlink{classCollisionBox_a77f54b62be806b1a986a57478c38a6a1}{getOffsetY}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCollisionBox_a51c49847af58d00d433c63359d6a3928}{setOffsetX}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector2f}{Vector2f}}\ \&off\_);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCollisionBox_a51c49847af58d00d433c63359d6a3928}{setOffsetX}}(\textcolor{keywordtype}{float}\ x\_,\ \textcolor{keywordtype}{float}\ y\_);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCollisionBox_a09e890b2c99bd6da7500eb214c1a3f2b}{setOffsetY}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector2f}{Vector2f}}\ \&off\_);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCollisionBox_a09e890b2c99bd6da7500eb214c1a3f2b}{setOffsetY}}(\textcolor{keywordtype}{float}\ x\_,\ \textcolor{keywordtype}{float}\ y\_);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCollisionBox_ad9cc9886e37e4268366846287094cd07}{follow}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classGeometric}{Geometric}}\ \&to\_follow);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCollisionBox_a69e2bbb7afd5a3d2c8dcae8fcf407b8f}{getTop}}();}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCollisionBox_ad1988ce5c0496512b83bc31c4c03d765}{getBottom}}();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCollisionBox_ac46113d09cf1308431fc699de0bf39ce}{getLeft}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCollisionBox_ab58c9ae6bf88bc82ec6d36ecc5cb6969}{getRight}}();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCollisionBox_a8d0c01685c90a45c54f03a77b8232d3d}{flipHorizontally}}();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCollisionBox_aee9026f7977f98c07ae905e68e0beb11}{flipVertically}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{classVector2f}{Vector2f}}\ \mbox{\hyperlink{classCollisionBox_a56ffc1531d3248bcd2935ec957bcddf6}{offsetX}};\ \textcolor{comment}{//<!\ rétrécicement\ X}}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{classVector2f}{Vector2f}}\ \mbox{\hyperlink{classCollisionBox_a592183b7486d63b3d85a727b4bbc7b6f}{offsetY}};\ \textcolor{comment}{//<!\ rétrécicement\ Y}}
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !COLLISION\_BOX\_CLASS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,10 @@
+<map id="CollisionBox" name="CollisionBox">
+<area shape="rect" id="Node000001" title="gère une boîte de collision" alt="" coords="14,276,117,301"/>
+<area shape="rect" id="Node000002" href="$classGeometric.html" title="gère un objet avec de propriété géométrique" alt="" coords="124,199,215,225"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,235,83,278,80,274,140,231"/>
+<area shape="rect" id="Node000003" href="$classVector2f.html" title=" " alt="" coords="33,80,109,105"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="70,119,65,169,64,227,67,276,62,276,59,227,60,169,65,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,114,162,197,158,201,87,118"/>
+<area shape="rect" id="Node000004" href="$classVector2.html" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="73,45,73,80,68,80,68,45"/>
+</map>

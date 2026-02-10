@@ -1,0 +1,9 @@
+<map id="AnimatedSprite" name="AnimatedSprite">
+<area shape="rect" id="Node000001" title="Gère un Sprite qui joue une aniomation en boucle." alt="" coords="5,225,128,251"/>
+<area shape="rect" id="Node000002" href="$classSprite.html" title="Gère un Sprite (Rectangle avec une Texture)" alt="" coords="37,152,97,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,191,69,225,64,225,64,191"/>
+<area shape="rect" id="Node000003" href="$classShape.html" title="Class parente de toutes les formes géométriques(RectangleShape, ConvexShape, CircleShape,..." alt="" coords="35,79,98,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="69,118,69,152,64,152,64,118"/>
+<area shape="rect" id="Node000004" href="$classBbopDrawable.html" title="Class Parent de tous ce qui peut être dessiné par une Scene." alt="" coords="8,5,125,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="69,44,69,79,64,79,64,44"/>
+</map>

@@ -1,0 +1,275 @@
+\doxysection{Map Class Reference}
+\hypertarget{classMap}{}\label{classMap}\index{Map@{Map}}
+
+
+La class \doxylink{classMap}{Map} initialise une map LDTK ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$map\+Class.\+h$>$}
+
+
+
+Collaboration diagram for Map\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défault de \doxylink{classMap}{Map}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMap_af2aea75012c24f79aad04afad9451cf7}{Map}} (const char \texorpdfstring{$\ast$}{*}map\+\_\+folder)
+\begin{DoxyCompactList}\small\item\em Constructeur de \doxylink{classMap}{Map}. This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMap_af19b58ddac9be188873d8e24133dd95b}{Map}} (const \mbox{\hyperlink{classMap}{Map}} \&other)
+\begin{DoxyCompactList}\small\item\em Conctructeur par copie de \doxylink{classMap}{Map}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMap_aa403fbe09394ccf39747588f5168e3b2}{\texorpdfstring{$\sim$}{\string~}\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Supprime toutes les texture opengl de la map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_a39d2887c926e64b2fc0954ea7fb7885a}{Draw}} (\mbox{\hyperlink{classScene}{Scene}} \&scene, \mbox{\hyperlink{classCamera}{Camera}} \&ground\+\_\+camera)
+\begin{DoxyCompactList}\small\item\em Dessine la map sur l\textquotesingle{}écran, à utiliser avec une scene ou une autre méthode draw. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_aec249fed8550d4817d39039d49532243}{remplissage}} (const char \texorpdfstring{$\ast$}{*}tiles\+\_\+folder)
+\begin{DoxyCompactList}\small\item\em Prend un dossier fais avec ldtk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_ab12643cc3a8d5e48f566c1abb571e9bf}{update}} ()
+\begin{DoxyCompactList}\small\item\em update de la map \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classSprite}{Sprite}} $>$ \& \mbox{\hyperlink{classMap_a7eefb13fe0cd86c6b887f46ddb0157bd}{get\+Tiles}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classCollisionBox}{Collision\+Box}} $>$ \& \mbox{\hyperlink{classMap_a36789dcf2d9fce57daeac83fa3b6fd6f}{get\+Collision}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classVector2f}{Vector2f}} $>$ \& \mbox{\hyperlink{classMap_a091b561e6f70168ad371f047a105d9cf}{get\+Spawn\+Points}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classSprite}{Sprite}} $>$ \mbox{\hyperlink{classMap_a5c54f75f28d76c63717d68822c8dc84b}{tiles}}
+\begin{DoxyCompactList}\small\item\em Vecteur de \doxylink{classSprite}{Sprite} pour stocké les tuiles de la map. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classCollisionBox}{Collision\+Box}} $>$ \mbox{\hyperlink{classMap_ad3ef82b2ea21f04ef093187faafbefd9}{collision\+\_\+layer}}
+\begin{DoxyCompactList}\small\item\em stock les collision de la box \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVector2f}{Vector2f}} $>$ \mbox{\hyperlink{classMap_a1f3e0248f6a673392eee68a316463b25}{spawn\+\_\+points}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classAnimatedSprite}{Animated\+Sprite}} $>$ \mbox{\hyperlink{classMap_af7e8a10ef51b54e7480feec3a2445727}{animated\+\_\+sprites}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classLight}{Light}} $>$ \mbox{\hyperlink{classMap_ae0d87136f985c82cc4184176474db4e8}{lights}}
+\item 
+\mbox{\hyperlink{classSprite}{Sprite}} \mbox{\hyperlink{classMap_a2e71decf43f0046544d0cef12d8156c1}{background}}
+\begin{DoxyCompactList}\small\item\em Background du jeu. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classMap_ac70237253e05964e92495b7d1f0dbcf7}{y\+\_\+size}}
+\item 
+float \mbox{\hyperlink{classMap_a12476044b12120b9ccf5ae1117045e6a}{x\+\_\+size}}
+\item 
+float \mbox{\hyperlink{classMap_a9a88e284c14af067271e2d0b9309cf56}{global\+\_\+illumination}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMap_aa2fab026580d6f14280c2ffb8063a314}{Game}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La class \doxylink{classMap}{Map} initialise une map LDTK ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMap_a0f5ad0fd4563497b4214038cbca8b582}\label{classMap_a0f5ad0fd4563497b4214038cbca8b582} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défault de \doxylink{classMap}{Map}. 
+
+Par défault de dossier de la map et assets/map/default/
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classMap_a0f5ad0fd4563497b4214038cbca8b582}{Map\+::\+Map()}; 
+\end{DoxySeeAlso}
+\Hypertarget{classMap_af2aea75012c24f79aad04afad9451cf7}\label{classMap_af2aea75012c24f79aad04afad9451cf7} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{map\+\_\+folder }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \doxylink{classMap}{Map}. This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles\+\_\+folder} & Chemin d\textquotesingle{}accès vers le dossier contenant la map au format ldtk \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMap_af19b58ddac9be188873d8e24133dd95b}\label{classMap_af19b58ddac9be188873d8e24133dd95b} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Conctructeur par copie de \doxylink{classMap}{Map}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Autre \doxylink{classMap}{Map} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMap_aa403fbe09394ccf39747588f5168e3b2}\label{classMap_aa403fbe09394ccf39747588f5168e3b2} 
+\index{Map@{Map}!````~Map@{\texorpdfstring{$\sim$}{\string~}Map}}
+\index{````~Map@{\texorpdfstring{$\sim$}{\string~}Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Map()}{\string~Map()}}
+{\footnotesize\ttfamily Map\+::\texorpdfstring{$\sim$}{\string~}\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les texture opengl de la map. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMap_a39d2887c926e64b2fc0954ea7fb7885a}\label{classMap_a39d2887c926e64b2fc0954ea7fb7885a} 
+\index{Map@{Map}!Draw@{Draw}}
+\index{Draw@{Draw}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Map\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} \&}]{scene,  }\item[{\mbox{\hyperlink{classCamera}{Camera}} \&}]{ground\+\_\+camera }\end{DoxyParamCaption})}
+
+
+
+Dessine la map sur l\textquotesingle{}écran, à utiliser avec une scene ou une autre méthode draw. 
+
+\Hypertarget{classMap_a36789dcf2d9fce57daeac83fa3b6fd6f}\label{classMap_a36789dcf2d9fce57daeac83fa3b6fd6f} 
+\index{Map@{Map}!getCollision@{getCollision}}
+\index{getCollision@{getCollision}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getCollision()}{getCollision()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classCollisionBox}{Collision\+Box}} $>$ \& Map\+::get\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMap_a091b561e6f70168ad371f047a105d9cf}\label{classMap_a091b561e6f70168ad371f047a105d9cf} 
+\index{Map@{Map}!getSpawnPoints@{getSpawnPoints}}
+\index{getSpawnPoints@{getSpawnPoints}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getSpawnPoints()}{getSpawnPoints()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classVector2f}{Vector2f}} $>$ \& Map\+::get\+Spawn\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMap_a7eefb13fe0cd86c6b887f46ddb0157bd}\label{classMap_a7eefb13fe0cd86c6b887f46ddb0157bd} 
+\index{Map@{Map}!getTiles@{getTiles}}
+\index{getTiles@{getTiles}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getTiles()}{getTiles()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classSprite}{Sprite}} $>$ \& Map\+::get\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMap_aec249fed8550d4817d39039d49532243}\label{classMap_aec249fed8550d4817d39039d49532243} 
+\index{Map@{Map}!remplissage@{remplissage}}
+\index{remplissage@{remplissage}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{remplissage()}{remplissage()}}
+{\footnotesize\ttfamily void Map\+::remplissage (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{tiles\+\_\+folder }\end{DoxyParamCaption})}
+
+
+
+Prend un dossier fais avec ldtk. 
+
+\Hypertarget{classMap_ab12643cc3a8d5e48f566c1abb571e9bf}\label{classMap_ab12643cc3a8d5e48f566c1abb571e9bf} 
+\index{Map@{Map}!update@{update}}
+\index{update@{update}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Map\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+update de la map 
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classMap_aa2fab026580d6f14280c2ffb8063a314}\label{classMap_aa2fab026580d6f14280c2ffb8063a314} 
+\index{Map@{Map}!Game@{Game}}
+\index{Game@{Game}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Game}{Game}}
+{\footnotesize\ttfamily friend class Game\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMap_af7e8a10ef51b54e7480feec3a2445727}\label{classMap_af7e8a10ef51b54e7480feec3a2445727} 
+\index{Map@{Map}!animated\_sprites@{animated\_sprites}}
+\index{animated\_sprites@{animated\_sprites}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{animated\_sprites}{animated\_sprites}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classAnimatedSprite}{Animated\+Sprite}}$>$ Map\+::animated\+\_\+sprites\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMap_a2e71decf43f0046544d0cef12d8156c1}\label{classMap_a2e71decf43f0046544d0cef12d8156c1} 
+\index{Map@{Map}!background@{background}}
+\index{background@{background}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSprite}{Sprite}} Map\+::background\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Background du jeu. 
+
+\Hypertarget{classMap_ad3ef82b2ea21f04ef093187faafbefd9}\label{classMap_ad3ef82b2ea21f04ef093187faafbefd9} 
+\index{Map@{Map}!collision\_layer@{collision\_layer}}
+\index{collision\_layer@{collision\_layer}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{collision\_layer}{collision\_layer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classCollisionBox}{Collision\+Box}}$>$ Map\+::collision\+\_\+layer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stock les collision de la box 
+
+\Hypertarget{classMap_a9a88e284c14af067271e2d0b9309cf56}\label{classMap_a9a88e284c14af067271e2d0b9309cf56} 
+\index{Map@{Map}!global\_illumination@{global\_illumination}}
+\index{global\_illumination@{global\_illumination}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{global\_illumination}{global\_illumination}}
+{\footnotesize\ttfamily float Map\+::global\+\_\+illumination\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMap_ae0d87136f985c82cc4184176474db4e8}\label{classMap_ae0d87136f985c82cc4184176474db4e8} 
+\index{Map@{Map}!lights@{lights}}
+\index{lights@{lights}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{lights}{lights}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classLight}{Light}}$>$ Map\+::lights\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMap_a1f3e0248f6a673392eee68a316463b25}\label{classMap_a1f3e0248f6a673392eee68a316463b25} 
+\index{Map@{Map}!spawn\_points@{spawn\_points}}
+\index{spawn\_points@{spawn\_points}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{spawn\_points}{spawn\_points}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVector2f}{Vector2f}}$>$ Map\+::spawn\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMap_a5c54f75f28d76c63717d68822c8dc84b}\label{classMap_a5c54f75f28d76c63717d68822c8dc84b} 
+\index{Map@{Map}!tiles@{tiles}}
+\index{tiles@{tiles}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{tiles}{tiles}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classSprite}{Sprite}}$>$ Map\+::tiles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vecteur de \doxylink{classSprite}{Sprite} pour stocké les tuiles de la map. 
+
+\Hypertarget{classMap_a12476044b12120b9ccf5ae1117045e6a}\label{classMap_a12476044b12120b9ccf5ae1117045e6a} 
+\index{Map@{Map}!x\_size@{x\_size}}
+\index{x\_size@{x\_size}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{x\_size}{x\_size}}
+{\footnotesize\ttfamily float Map\+::x\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classMap_ac70237253e05964e92495b7d1f0dbcf7}\label{classMap_ac70237253e05964e92495b7d1f0dbcf7} 
+\index{Map@{Map}!y\_size@{y\_size}}
+\index{y\_size@{y\_size}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{y\_size}{y\_size}}
+{\footnotesize\ttfamily float Map\+::y\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+BBOP/\+Graphics/\mbox{\hyperlink{mapClass_8h}{map\+Class.\+h}}\item 
+src/\+BBOP/\+Graphics/\mbox{\hyperlink{mapClass_8cpp}{map\+Class.\+cpp}}\end{DoxyCompactItemize}
