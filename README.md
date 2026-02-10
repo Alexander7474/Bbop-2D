@@ -63,13 +63,13 @@ int main()
 
 ## Features
 
-A non-exhaustive list of features
+A non-exhaustive list of features:
 
-- Sprite
-- Geometric Shape (Rectangle, Circle, Convex, Triangle...)
-- Basic CollisionBox
-- Light and NormalMap for light reflexion
-- Camera
+- Sprite.
+- Geometric Shape (Rectangle, Circle, Convex, Triangle...).
+- Basic CollisionBox.
+- Light and NormalMap for light reflexion.
+- Camera.
 
 ## Contributing
 
