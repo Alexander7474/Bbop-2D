@@ -1,74 +1,59 @@
-# Bbop 2D Library
+# Bbop-2D
 
 ![GitHub License](https://img.shields.io/github/license/Alexander7474/Bbop-Library)
 ![GitHub Release](https://img.shields.io/github/v/release/Alexander7474/Bbop-Library?include_prereleases&color=pink)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Alexander7474/Bbop-Library?link=https%3A%2F%2Fgithub.com%2FAlexander7474%2FBbop-Library%2Fcommits%2Fmain%2F)
 
-Bbop est un projet de librairie graphique utilisant l'api opengl.   
-La librairie permet de créer des jeux vidéos 2D ou des applications de bureau.
+Bbop-2D is a graphics library based on [OpenGL](https://www.opengl.org/), specifically designed for **2D game development**.  
+It stands out with its support for **lighting and normal maps**, enabling the creation of visually rich and immersive environments, even in a 2D context.
 
-# Naviguer
+[Installation](#installation)   
+[Features](#features)  
+[Documentation](https://alexander7474.github.io/bbop-web-docs/)   
+[Report Issue](https://github.com/Alexander7474/Bbop-Library/issues)  
+[Contribute](contribute)  
 
-[![Installation](https://img.shields.io/badge/Installation-lightgreen?style=for-the-badge)](#installation)   
-[![Static Badge](https://img.shields.io/badge/Documentation-lightblue?style=for-the-badge)](https://alexander7474.github.io/bbop-web-docs/)   
-[![Static Badge](https://img.shields.io/badge/Exemple-lightyellow?style=for-the-badge)](#exemple)   
-[![Static Badge](https://img.shields.io/badge/Report_Bug-red?style=for-the-badge&logoColor=red)](#report-bug)   
+## Installation  
 
-# Installation  
-
-## Librairies externes
-
-### ![Static Badge](https://img.shields.io/badge/Debian-Packages-grey?style=for-the-badge&logo=debian&labelColor=D70A53)
+### External Libraries
 
 ```
 sudo apt-get install libglew-dev libfreetype6-dev 
 ```
 
-### ![Static Badge](https://img.shields.io/badge/Arch_Linux-Packages-grey?style=for-the-badge&logo=arch-linux&logoColor=fff&labelColor=1793D1) 
+Install [GLM](https://github.com/g-truc/glm), [GLFW](https://github.com/glfw/glfw), and [LDTKLoader](https://github.com/Madour/LDtkLoader).
 
-```
-sudo pacman -S glew freetype2
-```
+### Install Bbop
 
+Bbop-2D require at least a C++17 compiler. Older complier will not work due to GLM.
 
-+ Installer GLM, GLFW3 et LDTKLoader.
-
-## Compiler et installer bbop
-
-### ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ```
 git clone https://github.com/Alexander7474/Bbop-Library.git
 cd Bbop-Library
 make && sudo make install
 ```
 
-# Exemple
+### Simple loop example
+
+This is a basic loop with the mandatory functions you need to use the library.
 
 ```
 int main()
 {
-    //creation de la fenêtre glfw
     GLFWwindow * window;
-    //initialisation de la lib
     bbopInit(1920,1080,"window name",window);
-    //main while loop
     while (!glfwWindowShouldClose(window))
     {
-      // clear de la fenêtre en noire
       bbopCleanWindow(window,Vector3i(0,0,0),1.0f));
     
       ///////////////
-      // ton code ici
+      // your code
       ///////////////
     
-      // vérification des erreurs
       bbopErrorCheck();
-      // swap du back buffer avec le front buffer
       glfwSwapBuffer(window);
-      // recupération des events glfw
       glfwPollEvents();
     }
-    // destruction de la fen^tre et fin de glfw
     glfwDestroyWindow(window);
     glfwTerminate();
 
@@ -76,6 +61,23 @@ int main()
 }
 ```
 
-# Report Bug
+## Features
 
-[![Static Badge](https://img.shields.io/badge/Report_issue-github-black?style=for-the-badge&logo=github)](https://github.com/Alexander7474/Bbop-Library/issues)
+A non-exhaustive list of features
+
+- Sprite
+- Geametric Shape (Rectangle, Circle, Convex, Triangle...)
+- Basic collision
+- Light and NormalMap for light reflexion
+- Camera
+
+## Contributing
+
+We welcome contributions! If you want to help improve Bbop-2D, feel free to submit a [pull request](https://github.com/Alexander7474/Bbop-2D/pulls).  
+
+Please make sure to **follow the project’s coding style**. You can easily format your code using:  
+
+- The `format_code.sh` script in the root of the repository.  
+- Or directly `clang-format` command with `.clang-format` file in te root of the repository.  
+
+Following the style helps keep the code clean and consistent for everyone.
