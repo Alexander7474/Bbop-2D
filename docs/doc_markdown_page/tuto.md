@@ -1,298 +1,445 @@
+---
 
-# Tuto 
+# Tuto
 
-Voici une série de tuto sur la plus part des class de la librairie, il décrive le rôle de chaque class mais ne donne pas tous les détails. \n 
-La documentation elle pourra répondre à toutes vos questions. \n 
+Ce tuto n'en est qu'une vue d'ensemble pratique.
 
-## Info 
+Convention utilisée dans toute la lib : **tous les getters sont `const`**, les setters ont
+souvent deux surcharges (`set(const Vector2f&)` et `set(float, float)`).
 
-Tous les getters de la librairie sont marqués comme const.
+[TOC]
 
-## Mise en place 
+## 1. Mise en place du projet
 
-Premier programme hello world avec Bbop, affichage d'un rectangle blanc. \n
+### 1.1 Dépendances
 
-Initialisation de la librairie avec une fenêtre glfw. \n 
-```
-GLFWwindow *window;
-bbopInit(1920,1080,"name",window);
-```
+Bbop-2D s'appuie sur OpenGL via GLFW/GLEW, GLM pour les maths matricielles, FreeType pour les
+polices et LDtkLoader pour le format de map. Le C++17 est le minimum requis (GLM en a besoin).
 
-Mise en place d'une Scene pour afficher notre premier rectangle. \n
-```
-Scene scene;
-```
-
-Creation d'un rectangle. \n
-```
-RectangleShape rectangle;
-rectangle.setPosition(100.f,100.f); //changement de position 
-rectangle.setSize(500.f,500.f); //changement de la taille du rectangle
+```bash
+sudo apt-get install libglew-dev libfreetype6-dev
+# + GLM, GLFW, LDTKLoader installés séparément
+git clone https://github.com/Alexander7474/Bbop-2D.git
+cd Bbop-2D
+make && sudo make install
 ```
 
-Exemple dans une boucle d'affichage avec une fenêtre glfw. \n
+### 1.2 Le header unique
+
+Pas besoin d'inclure chaque header un par un : `Graphics.h` ré-exporte tout (Scene, Shape,
+Sprite, AnimatedSprite, Camera, Light, Texture, Map, CollisionBox, Font/TexteBox, les vecteurs...).
+
+```cpp
+#include "BBOP/Graphics.h"
 ```
-int main() {
-  
-  GLFWwindow * window;
-  bbopInit(1920,1080,"name",window);
-  
-  Scene scene;
 
-  RectangleShape rectangle;
-  rectangle.setPosition(100.f, 100.f);
-  rectangle.setSize(500.f,500.f);
+### 1.3 Boucle minimale
 
-  while (!glfwWindowShouldClose(window))
-  {
-    // Nettoyage de la fenêtre
-    bbopCleanWindow(window, Vector3i(0,0,0),1.0);
+Trois fonctions globales structurent obligatoirement le cycle de vie : `bbopInit`,
+`bbopCleanWindow`, `bbopErrorCheck`. Le reste (swap buffer, poll events) reste du GLFW pur,
+Bbop-2D ne le masque pas.
 
-    // On 'active' la scene pour donner au shader opengl les variables uniforms
-    scene.Use();
+```cpp
+int main()
+{
+    GLFWwindow *window;
+    bbopInit(1920, 1080, "demo", window);
 
-    // Affichage du rectangle
-    scene.Draw(rectangle);
+    Scene scene; // scene par défaut : lumière ambiante blanche, intensité 1.0
 
-    // Faire le rendue du frame buffer de la fenêtre
-    scene.render();
-    
-    // Verfication d'erreur opengl
-    bbopErrorCheck();
+    while (!glfwWindowShouldClose(window))
+    {
+        bbopCleanWindow(window, Vector3i(0, 0, 0), 1.0f);
 
-    // Passage du front buffer pour afficher le rendue opengl sur la fenêtre glfw 
-    glfwSwapBuffers(window);
-    glfwPollEvents();
-  }
-  
-  // Suppression de la fenêtre
-  glfwDestroyWindow(window);
-  glfwTerminate();
-  
-  return 0;
+        scene.Use();      // envoie les uniforms (camera, lumière ambiante...) au shader
+        // ... vos Draw() ici ...
+        scene.render();   // calcule l'éclairage final et blit le framebuffer
+
+        bbopErrorCheck();
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    glfwDestroyWindow(window);
+    glfwTerminate();
+    return 0;
 }
 ```
 
-## Forme géométrique / Shape
+Le pipeline de rendu d'une frame est toujours le même : `Use()` → N×`Draw()` →
+(optionnel) `addLight()` → `render()`. `render()` vide la liste de lumières de la `Scene`, il
+faut donc la réalimenter à chaque frame si vous voulez un éclairage persistant.
 
-Toutes les formes géométriques hérites de la class mère Shape, elles ont donc en commun la plus part de leurs attributs mais les utilisent de différente manières. \n
-Ces attributs sont tous accessible avec des getters et setters. \n
+D'autres utilitaires globaux existent dans `bbopFunc.h` :
 
-Attributs communs. \n
-```
-Vector2f position; //position
-Vector2f size; //taille
-Vector2f origin; //origine
-float rotation; //angle de rotation en radians
-float alpha; //transparence
-Vector3i Color; // Couleur au format rgb
-CollisionBox shapeCollisionBox: // boîte de collision
-bool autoUpdateCollision; // Si true, la boîte de collision se met à jour automatiquement (true par défault)
+```cpp
+bbopChangeWindowSize(1280, 720);         // redimensionne la fenêtre GLFW
+bbopChangeWindowResolution(1280, 720);   // change la résolution logique (BBOP_WINDOW_RESOLUTION)
+bbopDebugCollisionBox(box, scene);       // dessine une CollisionBox pour debug (lent, debug only)
 ```
 
-Toutes les Shape hérites de BbopDrawable, qui est la class mère de tous les objets dessinables de la librairie. \n
+## 2. Maths : `Vector2`/`Vector3`/`Vector4`
 
-### Rectangle / RectangleShape
+Templates simples sans surcharge d'opérateurs arithmétiques (pas de `+`/`-`/`*` builtin),
+juste des structures de données typées avec des alias concrets :
 
-Le rectangle est la forme la plus simple de la librairie et possède les attributs suivant. \n 
-Tous les attributs de la Shape sont utilisés de manière trivial ! \n
+```cpp
+Vector2f posF(10.f, 20.f);
+Vector2i posI(10, 20);
+Vector3i rgb(255, 128, 0);   // utilisé partout pour les couleurs (0-255)
+Vector4<double> v4(1.0, 2.0, 3.0, 4.0);
 
-Exemple simple de pour créer un rectangle bleu de 100px par 100px \n
+float d = bbopGetDistance(Vector2f(0,0), Vector2f(3,4)); // == 5.f
 ```
-//création du rectangle 
+
+`Vector3i` est la convention couleur de toute la lib (RGB 8 bits), pas de `Vector3f` normalisé
+0-1 pour les couleurs.
+
+## 3. `BbopDrawable` et la hiérarchie `Shape`
+
+Tout ce qui peut être passé à `Scene::Draw()` hérite de `BbopDrawable` (interface : une seule
+méthode virtuelle pure `Draw(GLint *renderUniforms)`). `Shape` est la classe mère concrète de
+toutes les formes géométriques (`RectangleShape`, `ConvexShape`, `CircleShape`, `Sprite`).
+
+Attributs communs exposés par get/set (`position`, `size`, `origin`, `rotation` en radians,
+`alpha`, `color` en `Vector3i`, et une `CollisionBox` auto-suivie) :
+
+```cpp
 RectangleShape rect;
-rect.setSize(100.f,100.f);
-rect.setColor(0,0,255);
+rect.setSize(100.f, 100.f);
+rect.setPosition(50.f, 50.f);
+rect.setOrigin(50.f, 50.f);     // pivot de rotation/scale, en coordonnées locales
+rect.setColor(0, 128, 255);
+rect.setAlpha(0.8f);
+rect.setRotation(0.78f);        // radians
+rect.move(Vector2f(1.f, 0.f));  // déplacement relatif
 
-//affichage dans la boucle principale avec la scene 
 scene.Draw(rect);
 ```
 
-!!! AVANT TOUS AFFICHAGE IL FAUT SAVOIR UTILISER LA CLASS Scene !!! \n
+### 3.1 `ConvexShape` / `CircleShape`
 
-### Forme Convex / ConvexShape
+`ConvexShape` prend un nombre de points et un tableau de `Vector2f` (polygone arbitraire,
+triangulé en éventail).
 
-todo
-
-#### Cercle / CircleShape
-
-todo
-
-#### Et les triangles ?
-
-todo \n
-
-### Sprite
-
-Le Sprite est basiquement un rectangle avec une Texture. \n 
-
-Elle stock cette texture avec un pointeur et le setter associé. \n 
-```
-Texture *spriteTexture;
-sprite.setTexture(Texture nTexture); // !!! l'objet passé en paramètre n'est pas un pointeur !!!
+```cpp
+Vector2f pts[3] = { {0,0}, {100,0}, {50,100}}; // triangle
+ConvexShape triangle(3, pts);
+triangle.setPosition(200.f, 200.f);
 ```
 
-Une des grosse différence avec le RectangleShape est que le Sprite gère ```Vector3i Color``` comme un filtre de couleur sur la texture. \n 
-Ce filtre peut-être activé avec getter et setter. 
-```
-sprite.setRGBFilterState(bool etat);
-sprite.getRGBFilterState() const;
-```
+`CircleShape` hérite de `ConvexShape` et génère un polygone régulier :
 
-#### Sprite animé
-
-La class AnimatedSprite permet de créer un sprite avec une sprite sheet. \n 
-Elle va animé ce Sprite automatiquement en fonction de la durée entre chaque frame. \n
-
-Exemple: \n 
-```
-AnimatedSprite anim("chemin/vers/spritesheet", Vector2i(ligne,colonne), tps_entre_chaque_frame, frame_morte);
-
-anim.update(); //mise a jour de l'anim dans la boucle principale
-
-scene.Draw(anim); //affichage du sprite
+```cpp
+CircleShape circle(32, 50.f);     // 32 points, rayon 50px (3 points == triangle !)
+circle.setColor(255, 0, 0);
+circle.setRadius(60.f);           // recalcule la géométrie
 ```
 
-## Scene 
+### 3.2 Collisions : `CollisionBox`
 
-La Scene est l'une des class principale de la librairie, elle sert à afficher les BbopDrawable et configurer le rendue de la lumière. \n
+Chaque `Shape` embarque une `CollisionBox` (AABB) qui suit automatiquement sa géométrie tant
+que `autoUpdateCollision` est `true` (valeur par défaut). Désactivez ce suivi si vous voulez
+gérer une box manuellement (hitbox réduite par rapport au sprite, par ex.).
 
-La Scene possède des attributs pour paramètrer la lumière ambiant. \n 
-```
-floar ambiantLightIntensity; // intensité de la lumière ambiante, avec 1.f la scene affiche les objets telle qu'ils sont.
-Vector3i ambiantLightColor; // couleur de la lumière ambiant RGB
-```
+```cpp
+sprite.setAutoUpdateCollision(false);
+sprite.getCollisionBox().setOffsetX(Vector2f(10.f, 10.f)); // rétrécit la box de 10px de chaque côté en x
+sprite.getCollisionBox().setOffsetY(Vector2f(5.f, 0.f));
 
-La Scene possède aussi un pointeur vers une camera pour déterminer le point de vue avec le quel afficher les BbopDrawable. \n
-```
-Camera *sceneCamera; // par défault nullptr 
-```
-
-On peut donc utiliser une camera personnalisé pour afficher des éléments dans notre Scene. \n
-```
-scene.useCamera(Camera* _cam);
-```
-
-Pour déssiner sur une Scene lors d'une frame il faut d'abord "l'utiliser" pour transmettre les infos de la Scene au GPU. \n 
-```
-scene.Use(); 
-```
-
-Après cela on peut dessiner des BbopDrawable. \n 
-```
-scene.Draw(const BbopDrawable b);
-```
-
-Voici un exemple du pipeline complet de rendue avec une Scene. \n 
-```
-scene.Use();
-
-scene.Draw(const BbopDrawable b);
-
-scene.addLight(Light l); // ajoute une lumière à l'environement de la Scene 
-
-scene.render(); // rend le frame buffer de la scene avec la lumière 
-```
-
-La methode  ```render()``` supprime le vecteur de lumière de la scene, il ne faut donc pas oublier d'ajouter les lumières à chaque frames. \n 
-
-## Camera
-
-La camera permet de regarder a des endroit précis dans la Scene. \n
-
-Elle utilise une position et une scale qui détermine là ou elle regarde et le zoom de celle ci. \n
-
-Exemple \n
-```
-Camera cam;
-cam.setPosition(100.f,100.f); // centre de la camera placé en x:100 y:100 
-cam.setScale(0.8); //scale de cam réduit donc elle zoom
-```
-
-## Collision
-
-Toute les shapes possède une instance de CollisionBox qui suit automatiquement les dimensions de la shape.\n
-!!! Attenetion, la boîte de collision est rectangulaire, elle n'est donc pas représentative des Shape autre que RectangleShape et Sprite. \n 
-Il, n'y à pas encore de gestion des collision circulaire,triangulaire et convex, il faut donc l'implémenter vous même (faite un fork svppp) !!! \n
-
-On peut annuler ce suivi avec ce setter: \n 
-```
-shape.setAutoUpdateCollisionBox(bool etat);
-```
-
-On peut récupérer la CollisionBox d'une Shape pour s'en servir dans la gestion des collision: \n 
-```
-shape.getCollisionBox(); // recup de la collision box
-
-// test de la collision en deux sprite 
-if(sprite1.getCollisionBox().check(sprite2.getCollisionBox()))
+if (sprite1.getCollisionBox().check(sprite2.getCollisionBox()))
 {
-  //do something
+    // AABB simple, ignore la rotation : rapide
+}
+if (sprite1.getCollisionBox().checkWithRotation(sprite2.getCollisionBox()))
+{
+    // SAT avec rotation : plus coûteux, à réserver aux cas qui en ont besoin
 }
 ```
 
-## Lumop
+`CollisionBox` hérite de `Geometric` (position/origin/size/rotation génériques) et peut être
+construite indépendamment d'une `Shape`, ou faire `.follow(const Geometric&)` pour se
+recaler sur un objet géométrique quelconque.
 
-Bbop2D intègre une gestion de la lumière (Lumop) \n
+⚠️ Seules `RectangleShape` et `Sprite` ont une `CollisionBox` réellement fidèle à leur forme ;
+pour `ConvexShape`/`CircleShape` la box reste un simple rectangle englobant.
 
-Les reflets de la lumière dans la scène sont calculer lors d'une deuxième passe de rendue sur le frame buffer de la scene avec un shader personnalié. \n
+## 4. Textures et `Sprite`
 
-### Light 
+### 4.1 `Texture`
 
-La class Light est un simple lumière à 360°. \n
-Elle possède les getters et setters pour changer tous ces attributs. \n
-
-Exemple: \n 
-```
-//créer un light 
-Light light(Vector2f(x,y), intensité, Vector3i(R,G,B), atténuation_constante, atténuation_linéaire, atténuation_quadratique);
-
-//dans la boucle d'affichage 
-scene.addLight(light);
+```cpp
+Texture tex("assets/rock.png");          // charge l'image entière (PNG uniquement, testé)
+int w = tex.getWidth(), h = tex.getHeight();
 ```
 
-La light va venir émettre de la lumière en plus de l'éclaire ambiant de la scene, cela permet un éclairage dynamique, personnalisé et plus détaillé. \n 
+Chargement avancé via les fonctions libres de `textureClass.h`, utile pour découper une
+spritesheet sans passer par `AnimatedSprite` :
 
-### Light directionnel
+```cpp
+Image img = bbopLoadImage("assets/sheet.png", 4);                 // RGBA
+Image sub = bbopCCutImage(img, 0, 0, 64, 64);                     // crop CPU
+Texture frame(sub);
+bbopFreeImage(img);                                                // libère le buffer CPU
 
-La light possède deux attribut pour la diriger. \n 
+// ou en un seul appel :
+Image partial = bbopLoadPartialImage("assets/sheet.png", 4, 64, 0, 64, 64);
 
-```
-float openAngle; // angle d'ouverture de la lumière 
-float rotationAngle; // angle de rotation de la lumière 
-```
-
-### Normal Map
-
-Lumop intégre la gestion de normal map sur les Sprite. \n 
-Une normal map permet un éclairage dynamique d'une texture pour donner l'impression de relief. \n
-
-Un Sprite peut se voire attribué une Texture pour représenter sa normal Map. \n 
-```
-sprite.setNormalMap(const Texturea& normalMap); // alloue dynamiquement un nouvelle espace mem vers la texture opengl
+// découpage automatique d'une grille en N textures (gauche -> droite, ligne par ligne)
+std::vector<Texture> frames = bbopLoadSpriteSheet("assets/sheet.png", 1 /*rows*/, 5 /*cols*/);
 ```
 
-La scene créé un deuxième frame buffer qui contient les normals maps à utiliser lors du rendue final de la lumière. \n
+### 4.2 `Sprite`
 
-## Map
+`Sprite` hérite de `Shape` : un rectangle texturé. La couleur (`Vector3i`) devient un **filtre
+multiplicatif** sur la texture, activable indépendamment :
 
-todo
+```cpp
+Sprite player(Texture("assets/player.png"));
+player.setPosition(400.f, 300.f);
+player.setSize(128.f, 128.f);
 
-## Math 
+player.setColor(255, 0, 0);
+player.setRGBFilterState(true);   // teinte rouge appliquée sur la texture
+player.setRGBFilterState(false);  // texture affichée sans teinte (défaut)
 
-Bbop contient sa propre gestion des vecteurs.\n
-
-Tous les transfert e point ou de couleur se font à l'origine par le passage d'un vecteur. Toute les méthode n'intégre pas un passage a plusieur paramètre pour faire passer un vecteur.\n
-
-## Texture
-
-La class Texture permet la creation et l'utilisation simplifé de texture openGL. \n
-Elle est utilisé par Sprite. \n
-
-Exemple: \n
+player.flipHorizontally();
+player.flipVertically();
 ```
-Texture texture("chemin/vers/la/texture");
 
-texture.Bind(); //bind de la texture dans le shader opengl 
-// après avoir bind manuellement une texture, on peut par exemple utiliser un NoTextureSprite 
+Texture remplaçable à chaud, et normal map optionnelle pour l'éclairage dynamique (voir §6) :
+
+```cpp
+player.setTexture(Texture("assets/player2.png"));
+player.setNormalMap(Texture("assets/player_normal.png"));
+Texture *tex = player.getTexture();
 ```
+
+`NoTextureSprite` est une variante qui ne bind pas de texture automatiquement à `Draw()` :
+utile pour des effets manuels ou pour afficher un framebuffer (`scene.DrawFrameBuffer(...)`
+l'utilise en interne).
+
+### 4.3 `AnimatedSprite`
+
+Hérite de `Sprite`, gère une spritesheet et l'avancement des frames en fonction du temps.
+
+```cpp
+// spritesheet de 1 ligne, 5 colonnes, 0.1s entre chaque frame, pas de frame morte
+AnimatedSprite candle("assets/candle_sheet.png", Vector2i(5, 1), 0.1f, 0);
+candle.setSize(270.f, 270.f);
+candle.setOrigin(candle.getSize().x / 2.f, 55.f);
+
+// dans la boucle :
+candle.update();      // avance l'animation, renvoie true quand un cycle est terminé
+scene.Draw(candle);
+```
+
+`getSpriteSheet()` expose directement le `std::vector<Texture>` si vous voulez piloter
+manuellement l'affichage d'une frame précise plutôt que de laisser `update()` faire défiler.
+
+## 5. `Scene` et `Camera`
+
+### 5.1 `Scene`
+
+`Scene` est le point de passage obligé pour tout rendu : elle porte le shader, la lumière
+ambiante, la caméra active et le framebuffer (texture couleur + texture normal map) sur lequel
+elle dessine avant de calculer l'éclairage final.
+
+```cpp
+Scene scene(0.3f, Vector3i(255, 255, 255)); // intensité ambiante 0.3, lumière blanche
+
+scene.setAmbiantLightValue(0.5f);
+scene.setAmbiantLightColor(Vector3i(200, 200, 255));
+```
+
+### 5.2 `Camera`
+
+```cpp
+Camera cam(Vector2f(960.f, 540.f), 1.0f); // centre + scale (1.0 == résolution native)
+cam.setPosition(Vector2f(0.f, 0.f));
+cam.setScale(0.8f);                       // < 1.0 : dézoom (on voit plus large)
+cam.move(Vector2f(5.f, 0.f));
+
+scene.useCamera(&cam);   // toutes les Scene::Draw() suivantes utilisent ce point de vue
+// ...
+scene.useCamera(nullptr); // retour à la caméra par défaut
+```
+
+Conversions souris → monde, utiles pour de l'interaction :
+
+```cpp
+double mx, my;
+glfwGetCursorPos(window, &mx, &my);
+Vector2f worldPos = cam.camPosToWorldPos(
+    cam.screenPosToCamPos(Vector2f((float)mx, (float)my)));
+```
+
+Culling manuel (à appeler vous-même avant `Draw()` si vous gérez beaucoup d'objets) :
+
+```cpp
+if (cam.isInCamView(sprite)) scene.Draw(sprite);
+// variante avec une CollisionBox directement :
+if (cam.isInCamView(sprite.getCollisionBox())) scene.Draw(sprite);
+```
+
+## 6. Lumière dynamique (« Lumop ») et normal maps
+
+L'éclairage est calculé en deux passes : la `Scene` dessine d'abord sur un framebuffer
+(couleur + normal map), puis `render()` recompose l'image finale en appliquant la lumière
+ambiante et chaque `Light` ajoutée via `addLight()`.
+
+```cpp
+Light torch(
+    Vector2f(400.f, 300.f), // position
+    0.9f,                   // intensité
+    Vector3i(255, 180, 80), // couleur
+    1.5f, 3.0f, 4.5f);      // atténuation constante / linéaire / quadratique
+
+// dans la boucle, après les Draw() :
+scene.addLight(torch);
+scene.render();
+```
+
+Une `Light` peut être restreinte en cône (spot light) :
+
+```cpp
+torch.setOpenAngle(0.6f);      // angle d'ouverture (radians)
+torch.setRotationAngle(1.57f); // direction du cône
+```
+
+### Normal maps
+
+Toute `Sprite` qui possède une normal map (texture en espace tangent classique, canaux RGB =
+XYZ de la normale) en bénéficie automatiquement dès que le pointeur est non-null :
+
+```cpp
+Sprite wall("assets/wall.png");
+wall.setNormalMap(Texture("assets/wall_normal.png"));
+// scene.Draw(wall) suffit, le second framebuffer (normal map) est rempli automatiquement
+```
+
+Sans normal map, une `Sprite` est éclairée comme une surface plane orientée vers la caméra.
+
+## 7. Texte : `Font` / `TexteBox`
+
+```cpp
+Font arial(32, "fonts/arial.ttf");   // ne charge que les 128 premiers caractères du .ttf
+
+TexteBox label("Score: 0", &arial);
+label.setPosition(20.f, 20.f);
+label.setColor(Vector3i(255, 255, 255));
+
+// mise à jour dynamique
+label.setTexte("Score: 42");
+label.buildTexteBox();   // recalcule la géométrie des glyphes après setTexte/setFont
+
+scene.Draw(label);
+```
+
+`TexteBox` hérite directement de `BbopDrawable` (pas de `Shape`) : pas de `CollisionBox`,
+pas de `setSize` direct, la taille (`getSize()`) est dérivée du texte rendu.
+
+⚠️ Des plantages mémoire sont possibles avec des tableaux statiques de `TexteBox` :
+préférez `std::vector<TexteBox>` si vous en gérez plusieurs dynamiquement.
+
+## 8. Cartes LDtk : `Map`
+
+`Map` charge un projet exporté au format [LDtk](https://ldtk.io/) (tuiles, calques de
+collision, points de spawn, sprites animés et lumières placées dans l'éditeur).
+
+```cpp
+Map level("mapModel/map"); // dossier contenant l'export LDtk
+
+// dans la boucle :
+level.update();
+level.Draw(scene, cam);
+
+// exploitation des données chargées :
+for (auto &box : level.getCollision())
+    if (player.getCollisionBox().check(box)) { /* résolution de collision */ }
+
+auto &spawns = level.getSpawnPoints();
+if (!spawns.empty()) player.setPosition(spawns[0]);
+```
+
+`Map` reste volontairement minimal côté API publique (pas de gestion de calques multiples
+configurable depuis le code) : pour un usage avancé, mieux vaut s'inspirer de son
+implémentation et composer ses propres `Sprite`/`CollisionBox` à partir du LDtk si vous avez
+besoin de plus de contrôle.
+
+## 9. Benchmark intégré
+
+Le module `Performance/benchmark.h` fournit un stress-test rapide de la pipeline de rendu,
+pratique pour profiler une `Scene` donnée :
+
+```cpp
+#include "BBOP/Performance/benchmark.h"
+
+bbopBenchMark(window, scene); // boucle de stress-test, retourne false en cas d'erreur
+```
+
+## 10. Exemple récapitulatif
+
+Assemble la majorité des notions ci-dessus : sprite avec normal map, lumière qui suit la
+souris, sprite animé, caméra par défaut pour la conversion de coordonnées.
+
+```cpp
+#include "BBOP/Graphics.h"
+
+int main()
+{
+    GLFWwindow *window;
+    bbopInit(1920, 1080, "demo", window);
+
+    Scene scene(0.1f, Vector3i(255, 255, 255));
+    Camera cam;
+
+    Sprite rock("assets/rock.png");
+    rock.setNormalMap(Texture("assets/rock_normal.png"));
+    rock.setPosition(800.f, 400.f);
+    rock.setSize(500.f, 500.f);
+
+    AnimatedSprite candle("assets/candle_sheet.png", Vector2i(5, 1), 0.1f, 0);
+    candle.setSize(270.f, 270.f);
+    candle.setOrigin(candle.getSize().x / 2.f, 55.f);
+
+    Light light(Vector2f(0.f, 0.f), 0.9f, Vector3i(255, 255, 255), 1.5f, 3.0f, 4.5f);
+
+    while (!glfwWindowShouldClose(window))
+    {
+        bbopCleanWindow(window, Vector3i(0, 0, 0), 1.0f);
+
+        double mx, my;
+        glfwGetCursorPos(window, &mx, &my);
+        Vector2f worldPos = cam.camPosToWorldPos(
+            cam.screenPosToCamPos(Vector2f((float)mx, (float)my)));
+        light.setPosition(worldPos);
+        candle.setPosition(worldPos);
+
+        scene.Use();
+        candle.update();
+
+        scene.Draw(rock);
+        scene.Draw(candle);
+        scene.addLight(light);
+        scene.render();
+
+        bbopErrorCheck();
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    glfwDestroyWindow(window);
+    glfwTerminate();
+    return 0;
+}
+```
+
+## Pour aller plus loin
+
+- `VAO`/`VBO`/`EBO` (`Graphics/VAO.h`, `VBO.h`, `EBO.h`) et `Shader`/`shaders.h` sont accessibles
+  si vous voulez écrire votre propre `BbopDrawable` personnalisé en dessous du niveau `Shape`.
+- `Geometric` (`geometricClass.h`) est la classe de base légère à hériter pour décrire un objet
+  purement géométrique sans rendu (utilisée par `CollisionBox`).
+- Le code source reste la référence ultime : chaque header est court et commenté, n'hésitez pas
+  à l'ouvrir directement pour les détails d'implémentation non couverts ici.
