@@ -30,7 +30,7 @@ The entry point of your local documentation is in `docs/html/index.html`.
 sudo apt-get install libglew-dev libfreetype6-dev 
 ```
 
-Install [GLM](https://github.com/g-truc/glm), [GLFW](https://github.com/glfw/glfw), and [LDTKLoader](https://github.com/Madour/LDtkLoader).
+Install [GLM](https://github.com/g-truc/glm), [GLFW](https://github.com/glfw/glfw), [stb](https://github.com/nothings/stb), and [LDTKLoader](https://github.com/Madour/LDtkLoader).
 
 ### Install Bbop
 
