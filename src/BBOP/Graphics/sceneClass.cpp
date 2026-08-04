@@ -199,12 +199,14 @@ void Scene::render()
 		GL_FALSE, glm::value_ptr(projection));
 
 	//transfert des lumières
-	glUniform1i(lightRenderUniforms[BBOP_UNIFORM_ADDR_LIGHTS_N],
-		lightsVec.size());
-	glBindBufferBase(GL_UNIFORM_BUFFER, 0, lightsUBO);
-	glBufferSubData(GL_UNIFORM_BUFFER, 0,
-		lightsVec.size() * sizeof(UniformLight), &lightsVec[0]);
-	lightsVec.clear();
+	if (lightsVec.size() > 0) {
+		glUniform1i(lightRenderUniforms[BBOP_UNIFORM_ADDR_LIGHTS_N],
+			lightsVec.size());
+		glBindBufferBase(GL_UNIFORM_BUFFER, 0, lightsUBO);
+		glBufferSubData(GL_UNIFORM_BUFFER, 0,
+			lightsVec.size() * sizeof(UniformLight), &lightsVec[0]);
+		lightsVec.clear();
+	}
 
 	frameBufferSprite.setSize(
 		BBOP_WINDOW_RESOLUTION.x, BBOP_WINDOW_RESOLUTION.y);
