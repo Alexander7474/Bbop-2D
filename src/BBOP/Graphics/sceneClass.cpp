@@ -62,7 +62,7 @@ Scene::Scene(float nAmbiantLightValue, Vector3i nAmbiantLightColor)
 	glGenBuffers(1, &lightsUBO);
 	glBindBuffer(GL_UNIFORM_BUFFER, lightsUBO);
 	glBufferData(GL_UNIFORM_BUFFER, 100 * sizeof(UniformLight),
-		&lightsVec[0], GL_DYNAMIC_DRAW);
+		nullptr, GL_DYNAMIC_DRAW);
 	ambiantLight =
 		Vector3f(ambiantLightValue * (ambiantLightColor.x / 255.0f),
 			ambiantLightValue * (ambiantLightColor.y / 255.0f),

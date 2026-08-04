@@ -1,7 +1,7 @@
 CC = g++
 #comment this if you are on macOS
-CFLAGS = -Wall -I/usr/include/freetype2 -g
-LIBS = -lglfw3 -lGLEW -lGL -lfreetype -lLDtkLoader
+CFLAGS = -std=c++17 -Wall -I/usr/include/freetype2 -g
+LIBS = -lglfw -lGLEW -lGL -lfreetype -lLDtkLoader
 
 #Uncomment if you use macOS or if you are gay
 #CFLAGS = -std=c++11 -Wall -I/opt/homebrew/Cellar/freetype/2.13.2/include/freetype2 -I/opt/homebrew/Cellar/glew/2.2.0_1/include -I/usr/local/include/GLFW
